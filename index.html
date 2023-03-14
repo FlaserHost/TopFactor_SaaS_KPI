@@ -3,13 +3,274 @@
 <head>
     <meta charset="UTF-8">
     <title>Программный продукт ТопФактор:Управление подбором персонала на базе 1С</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css">
     <link rel="stylesheet" href="src/css/staff_selection/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
 </head>
 <body>
     <header class="page-header">
-        <div class="page_header__wrapper">
-
+        <div class="header-top">
+            <div class="page_header__wrapper">
+                <div class="search-area">
+                    <input class="header-search-field" id="header-search-field" type="search" placeholder="Поиск по сайту">
+                    <input class="header-search-btn" id="header-search-btn" type="submit" value="">
+                </div>
+                <div class="order-call-area">
+                    <span class="phone-number">+7 495-508-56-27</span>
+                    <a class="order-call-link" href="http://topfactor.pro/others/contact_us.php">Заказать звонок</a>
+                </div>
+                <div class="language-area" id="language"></div>
+            </div>
+        </div>
+        <div class="header-bottom">
+            <div class="header-bottom__wrapper">
+                <div class="logo">
+                    <figure>
+                        <img class="logo-img" src="src/img/staff_selection/header/logo.png" alt="top-factor-logo">
+                    </figure>
+                </div>
+                <nav class="header-navigation-menu">
+                    <ul class="header-navigation-list">
+                        <li class="header-navigation-item">
+                            <a href="#">Решения</a>
+                        </li>
+                        <li class="header-navigation-item">
+                            <a href="#">Блог</a>
+                        </li>
+                        <li class="header-navigation-item">
+                            <a href="#">Услуги</a>
+                        </li>
+                        <li class="header-navigation-item">
+                            <a href="#">Мероприятия</a>
+                        </li>
+                        <li class="header-navigation-item">
+                            <a href="#">О компании</a>
+                        </li>
+                    </ul>
+                </nav>
+                <button class="header-demo-btn" id="header-demo-btn" type="button">Демо-версия</button>
+            </div>
         </div>
     </header>
+    <main class="main-content">
+        <section class="main-content__slider">
+            <div class="slider swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide first-slide">
+                        <div class="black-glass">
+                            <div class="slide-content-wrapper">
+                                <div class="slide-content">
+                                    <h2>Кадровый электронный документооборот с Госключом</h2>
+                                    <p>
+                                        Подписать документ КЭДО быстрее, чем сварить кофе.<br>
+                                        Цифровые кадровые процессы, дистанционное трудоустройство, охрана труда
+                                    </p>
+                                    <a href="">Заказать презентацию</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide second-slide">
+                        <div class="black-glass">
+                            <div class="slide-content-wrapper">
+                                <div class="slide-content">
+                                    <h2>Управление рабочим временем онлайн</h2>
+                                    <p>
+                                        График отпусков.<br>
+                                        Рабочий график дежурств для вахтовых, сменных и штабных сотрудников.<br>
+                                        Учет рабочего времени
+                                    </p>
+                                    <a href="">Заказать презентацию</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide third-slide">
+                        <div class="black-glass">
+                            <div class="slide-content-wrapper">
+                                <div class="slide-content">
+                                    <h2>Личный кабинет сотрудника: Все HR-сервисы в одном окне</h2>
+                                    <p>Постановка и согласование KPI/OKR, онбординг, оценка и планы развития (ИПР)</p>
+                                    <a href="">Заказать презентацию</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="arrows-closer">
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
+        </section>
+        <section class="main-content-menu">
+            <nav class="main-content-menu__navigation">
+                <ul class="main-content-menu__list">
+                    <li>
+                        <a href="#">Обзор</a>
+                    </li>
+                    <li>
+                        <a href="#">Этапы внедрения</a>
+                    </li>
+                    <li>
+                        <a href="#">Рассчитать стоимость</a>
+                    </li>
+                    <li>
+                        <a href="#">Кейсы</a>
+                    </li>
+                </ul>
+            </nav>
+        </section>
+        <section class="main-content-review">
+            <div class="grid-block">
+                <article class="grid-item">
+                    <div class="grid-item-header">
+                        <figure>
+                            <img class="grid-item-logo" src="src/img/staff_selection/main-content/grid-items/1.dollar.png" alt="">
+                        </figure>
+                        <h3>Кадровый электронный документооборот</h3>
+                    </div>
+                    <p class="grid-item-text">
+                        Оформление запросов и заявлений, обращений с использованием ЭП.
+                        Подписание электронных кадровых документов
+                    </p>
+                    <a class="grid-item-link" href="#">Подробнее</a>
+                </article>
+                <article class="grid-item">
+                    <div class="grid-item-header">
+                        <figure>
+                            <img class="grid-item-logo" src="src/img/staff_selection/main-content/grid-items/2.paperfly.png" alt="">
+                        </figure>
+                        <h3>Управление рабочим временем сотрудников</h3>
+                    </div>
+                    <p class="grid-item-text">
+                        Согласование графика отпусков, командировок, удаленной работы и изменение графиков онлайн.
+                        Контроль загруженности работников
+                    </p>
+                    <a class="grid-item-link" href="#">Подробнее</a>
+                </article>
+                <article class="grid-item">
+                    <div class="grid-item-header">
+                        <figure>
+                            <img class="grid-item-logo" src="src/img/staff_selection/main-content/grid-items/3.monitor.png" alt="">
+                        </figure>
+                        <h3>Интеграция с приложением Госключ</h3>
+                    </div>
+                    <p class="grid-item-text">
+                        Выпуск ЭП Госключ бесплатно в режиме онлайн. Юридически значимое подписание кадровых документов.
+                        Применение для задач охраны труда
+                    </p>
+                    <a class="grid-item-link" href="#">Подробнее</a>
+                </article>
+                <article class="grid-item">
+                    <div class="grid-item-header">
+                        <figure>
+                            <img class="grid-item-logo" src="src/img/staff_selection/main-content/grid-items/4.talk.png" alt="">
+                        </figure>
+                        <h3>Трудоустройство сотрудников онлайн</h3>
+                    </div>
+                    <p class="grid-item-text">
+                        Прием кандидатов на работу онлайн.
+                        Личный кабинет кандидата: выпуска электронной подписи и подписания трудового соглашения
+                    </p>
+                    <a class="grid-item-link" href="#">Подробнее</a>
+                </article>
+                <article class="grid-item">
+                    <div class="grid-item-header">
+                        <figure>
+                            <img class="grid-item-logo" src="src/img/staff_selection/main-content/grid-items/5.people.png" alt="">
+                        </figure>
+                        <h3>Рабочее расписание для вахт, смен и дежурств</h3>
+                    </div>
+                    <p class="grid-item-text">
+                        Формирование плановых графиков, контроль нормативов. формирование личного расписания с учетом плановых отсутствий.
+                        Формирование табеля учета рабочего времени
+                    </p>
+                    <a class="grid-item-link" href="#">Подробнее</a>
+                </article>
+                <article class="grid-item">
+                    <div class="grid-item-header">
+                        <figure>
+                            <img class="grid-item-logo" src="src/img/staff_selection/main-content/grid-items/6.plan.png" alt="">
+                        </figure>
+                        <h3>Единая точка доступа к HR-сервисам</h3>
+                    </div>
+                    <p class="grid-item-text">
+                        Постановка и согласование KPI/OKR, оценка результативности и расчет премии,
+                        онбординг, оценка и планы развития (ИПР), диагностика вовлеченности и выгорания
+                    </p>
+                    <a class="grid-item-link" href="#">Подробнее</a>
+                </article>
+                <article class="grid-item">
+                    <div class="grid-item-header">
+                        <figure>
+                            <img class="grid-item-logo" src="src/img/staff_selection/main-content/grid-items/7.thoughts.png" alt="">
+                        </figure>
+                        <h3>Конструктор процессов и документов</h3>
+                    </div>
+                    <p class="grid-item-text">
+                        Конструктор бизнес-процессов для кастомизации маршрутов КЭДО.
+                        Настройка форм документов. Уведомления о новых сообщениях, задачах, событиях, статусах бизнес-процессов
+                    </p>
+                    <a class="grid-item-link" href="#">Подробнее</a>
+                </article>
+                <article class="grid-item">
+                    <div class="grid-item-header">
+                        <figure>
+                            <img class="grid-item-logo" src="src/img/staff_selection/main-content/grid-items/8.puzzle.png" alt="">
+                        </figure>
+                        <h3>Мобильное приложение для КЭДО</h3>
+                    </div>
+                    <p class="grid-item-text">
+                        Доступ к личному кабинету сотруднику. Оформление заявлений, согласование и подписание электронных документов онлайн.
+                        Доступ к личному графику и рабочему расписанию
+                    </p>
+                    <a class="grid-item-link" href="#">Подробнее</a>
+                </article>
+                <article class="grid-item">
+                    <div class="grid-item-header">
+                        <figure>
+                            <img class="grid-item-logo" src="src/img/staff_selection/main-content/grid-items/9.panel.png" alt="">
+                        </figure>
+                        <h3>Интеграция с кадровой системой (1С:ЗУП)</h3>
+                    </div>
+                    <p class="grid-item-text">
+                        Автоматическое создание личного кабинета сотрудника на основании данных из кадровой системы.
+                        Двусторонняя синхронизация кадровой информации
+                    </p>
+                    <a class="grid-item-link" href="#">Подробнее</a>
+                </article>
+            </div>
+        </section>
+        <section class="main-content__why-solution">
+            <h2>Почему это решение?</h2>
+            <div class="solutions-container">
+                <article class="solution-item solution-item-1">
+                    <h3>Ваши данные будут надежно защищены</h3>
+                    <p>Защита информации реализована на платформе 1С:Предприятие 8.3, которая сертифицирована для работы с персональными данными любой категории</p>
+                </article>
+                <article class="solution-item solution-item-2">
+                    <h3>Вы будете использовать российский продукт</h3>
+                    <p>Продукт внесен в единый реестр российских программ для электронных вычислительных машин и баз данных Минкомсвязи РФ под номером <a href="https://reestr.digital.gov.ru/reestr/575781/">13742</a></p>
+                </article>
+                <article class="solution-item solution-item-3">
+                    <h3>Вы будете использовать удобный для вас вид доступа к данным</h3>
+                    <ul>
+                        <li>
+                            <span>Облачный сервис</span>
+                        </li>
+                        <li>
+                            <span>Корпоративная система</span>
+                        </li>
+                        <li>
+                            <span>Мобильное приложение</span>
+                        </li>
+                    </ul>
+                </article>
+            </div>
+        </section>
+    </main>
+    <script src="src/js/staff_selection/script.js"></script>
 </body>
 </html>
