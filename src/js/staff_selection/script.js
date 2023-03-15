@@ -5,7 +5,8 @@ language.onclick = (e) => {
     const langDropExist = document.querySelectorAll(".language-dropdown-list")
         .length;
 
-    if (langDropExist === 0) {
+    if (langDropExist === 0)
+    {
         const dropDownList = `<div class="language-dropdown-list">
             <ul class="languages-list">
                 <li class="lang-item test1" id="ru-lang">
@@ -28,17 +29,15 @@ language.onclick = (e) => {
 };
 
 document.onclick = (e) => {
-    const langDrop = document.querySelectorAll(".language-dropdown-list");
-    const langDropExist = document.querySelectorAll(".language-dropdown-list")
-        .length;
-    const parent = e.target.closest(".language-area");
+     const langDrop = document.querySelectorAll(".language-dropdown-list");
+     const langDropExist = document.querySelectorAll(".language-dropdown-list").length;
+     const parent = e.target.closest(".language-area");
 
-    if (langDropExist > 0 && parent === null) {
-        langDrop[0].remove();
-        language.classList.remove("language-area-active");
-    } else {
-        return false;
-    }
+     if (langDropExist > 0 && parent === null)
+     {
+         langDrop[0].remove();
+         language.classList.remove("language-area-active");
+     }
 };
 
 const swiper = new Swiper(".swiper", {
@@ -61,16 +60,21 @@ const accordionRows = Array.from(document.querySelectorAll(".accordion-row__head
 accordionRows.forEach((item, i, arr) => {
     item.addEventListener("click", (e) => {
         arr.forEach((el) => {
-            el.nextElementSibling.style.height = 0;
+            el.nextElementSibling.style.height = '0';
             el.classList.remove("active-accordion-row");
         });
 
-        const selectorHidden = item.nextElementSibling.querySelector(
-            ".hidden-block"
-        );
+        const selectorHidden = item.nextElementSibling.querySelector(".hidden-block");
         const neededHeight = selectorHidden.getBoundingClientRect().height;
 
         item.nextElementSibling.style.height = `${neededHeight}px`;
         item.classList.add("active-accordion-row");
     });
 });
+
+const phoneField = document.getElementById("phone-field");
+
+Inputmask({
+    mask:"+7 (999) 999-9999",
+    showMaskOnHover: !1
+}).mask(phoneField);

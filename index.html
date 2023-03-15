@@ -11,6 +11,7 @@
     />
     <link rel="stylesheet" href="src/css/staff_selection/style.css" />
     <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/5.0.7/inputmask.min.js"></script>
 </head>
 <body>
 <header class="page-header">
@@ -690,15 +691,36 @@
                     </div>
                     <div class="field-area phone-field-area">
                         <label for="phone-field">Телефон * :</label>
-                        <input class="calculator-field" id="phone-field" name="phone-field" type="tel">
+                        <input class="calculator-field" id="phone-field" name="phone-field" type="tel" placeholder="+7 (___) ___-____">
                     </div>
                     <div class="field-area email-field-area">
                         <label for="email-field">E-mail * :</label>
                         <input class="calculator-field" id="email-field" name="email-field" type="email">
                     </div>
                 </div>
+                <div class="calculator-row third-calculator-row">
+                    <div class="checkbox-area">
+                        <input class="calculator-checkbox" id="agree-checkbox" name="agree-checkbox" type="checkbox" checked>
+                        <label for="agree-checkbox">Ставя отметку, я даю своё согласие на обработку моих персональных данных и согласен с <a class="privacy-policy" href="https://topfactor.pro/politika-konfidentsialnosti.php">Политикой информационной безопасности</a> *</label>
+                    </div>
+                    <div class="checkbox-area">
+                        <input class="calculator-checkbox" id="get-announcements-checkbox" name="get-announcements-checkbox" type="checkbox" checked>
+                        <label for="get-announcements-checkbox">Я хочу получать анонсы мероприятий, новости, интересные статьи</label>
+                    </div>
+                </div>
+                <div class="calculator-row fourth-calculator-row">
+                   <div class="complete-form-block">
+                       <button class="calculate-btn" id="calculate-btn" type="submit">Рассчитать стоимость</button>
+                       <div class="captcha-area">
+                           <!-- интересное кино с капчей -->
+                       </div>
+                   </div>
+                </div>
             </form>
         </div>
+    </section>
+    <section class="main-content__examples">
+        <h2>Примеры решения бизнес-задач с использованием предлагаемого продукта</h2>
     </section>
 </main>
 <script src="src/js/staff_selection/script.js"></script>
