@@ -1,11 +1,11 @@
-const language = document.getElementById('language');
+const language = document.getElementById("language");
 
-language.onclick = e => {
-    const langDrop = document.querySelectorAll('.language-dropdown-list');
-    const langDropExist = document.querySelectorAll('.language-dropdown-list').length;
+language.onclick = (e) => {
+    const langDrop = document.querySelectorAll(".language-dropdown-list");
+    const langDropExist = document.querySelectorAll(".language-dropdown-list")
+        .length;
 
-    if (langDropExist === 0)
-    {
+    if (langDropExist === 0) {
         const dropDownList = `<div class="language-dropdown-list">
             <ul class="languages-list">
                 <li class="lang-item test1" id="ru-lang">
@@ -20,41 +20,57 @@ language.onclick = e => {
             </ul>
         </div>`;
 
-        e.target.insertAdjacentHTML('beforeend', dropDownList);
-        e.target.classList.add('language-area-active');
-    }
-    else
-    {
+        e.target.insertAdjacentHTML("beforeend", dropDownList);
+        e.target.classList.add("language-area-active");
+    } else {
         return false;
     }
-}
+};
 
-document.onclick = e => {
-    const langDrop = document.querySelectorAll('.language-dropdown-list');
-    const langDropExist = document.querySelectorAll('.language-dropdown-list').length;
-    const parent = e.target.closest('.language-area');
+document.onclick = (e) => {
+    const langDrop = document.querySelectorAll(".language-dropdown-list");
+    const langDropExist = document.querySelectorAll(".language-dropdown-list")
+        .length;
+    const parent = e.target.closest(".language-area");
 
-    if (langDropExist > 0 && parent === null)
-    {
+    if (langDropExist > 0 && parent === null) {
         langDrop[0].remove();
-        language.classList.remove('language-area-active');
-    }
-    else
-    {
+        language.classList.remove("language-area-active");
+    } else {
         return false;
     }
-}
+};
 
-const swiper = new Swiper('.swiper', {
-    direction: 'horizontal',
+const swiper = new Swiper(".swiper", {
+    direction: "horizontal",
     loop: true,
 
     pagination: {
-        el: '.swiper-pagination',
+        el: ".swiper-pagination"
     },
 
     navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-    },
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev"
+    }
+});
+
+// accordion section
+const accordionRows = Array.from(document.querySelectorAll(".accordion-row__header"));
+
+accordionRows.forEach((item, i, arr) => {
+    item.addEventListener("click", (e) => {
+        arr.forEach((el) => {
+            el.nextElementSibling.style.height = 0;
+            el.classList.remove("active-accordion-row");
+        });
+
+        const selectorHidden = item.nextElementSibling.querySelector(
+            ".hidden-block"
+        );
+        const neededHeight = selectorHidden.getBoundingClientRect().height;
+
+        item.nextElementSibling.style.height = `${neededHeight}px`;
+        item.classList.add("active-accordion-row");
+    });
 });
