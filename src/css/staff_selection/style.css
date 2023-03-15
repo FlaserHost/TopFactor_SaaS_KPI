@@ -967,3 +967,102 @@ input[type="search"]::-webkit-search-results-decoration {
     background-color: transparent;
     color: #17A5A3;
 }
+
+.examples-slider-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 1140px;
+    margin-top: 100px;
+    overflow-x: clip;
+}
+
+.examples-swiper {
+    min-height: 338px;
+}
+
+.example-slide {
+    height: auto;
+    padding: 10px 20px 20px;
+    border: 1px solid #000;
+}
+
+.examples-slider-wrapper > .swiper-button-prev,
+.examples-slider-wrapper > .swiper-button-next {
+    display: none;
+}
+
+.arrows-shadow {
+    position: relative;
+}
+
+.arrow {
+    width: 27px;
+    height: 44px;
+    background: url('../../img/staff_selection/main-content/examples-slider/arrow.svg') no-repeat center / 100% 100%;
+    position: absolute;
+    top: 50%;
+    z-index: 11;
+    cursor: pointer;
+}
+
+.prev-arrow {
+    right: calc(100% + 15px);
+    transform: translateY(50%);
+}
+
+.next-arrow {
+    left: calc(100% + 15px);
+    transform: translateY(50%) rotate(180deg);
+}
+
+.swiper-horizontal > .swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal {
+    bottom: -50px;
+}
+
+.swiper-pagination-bullet {
+    background-color: rgba(0, 0, 0, .9);
+}
+
+.swiper-pagination-bullet-active {
+    background-color: #2D99D6;
+}
+
+.example-slide__img {
+    width: 100%;
+}
+
+.example-slide > p {
+    width: 100%;
+    word-break: break-word;
+    padding-top: 40px;
+    font-size: 17px;
+    font-family: HelveticaNeueCyr-Roman, Arial, sans-serif;
+    text-transform: uppercase;
+    font-weight: 100;
+}
+
+.read-review {
+    width: 100%;
+    max-width: 1140px;
+    display: flex;
+    justify-content: center;
+    margin-top: 150px;
+}
+
+.read-review-link {
+    display: block;
+    padding: 20px 25px;
+    text-transform: uppercase;
+    color: #fff;
+    cursor: pointer;
+    transition: .4s ease;
+    background-color: #029292;
+    border: 1px solid #029292;
+    font-family: HelveticaNeueCyr-Roman, Arial, sans-serif;
+}
+
+.read-review-link:hover {
+    background-color: transparent;
+    color: #029292;
+}
+

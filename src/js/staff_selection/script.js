@@ -40,7 +40,7 @@ document.onclick = (e) => {
      }
 };
 
-const swiper = new Swiper(".swiper", {
+const swiperUnderheader = new Swiper(".swiper", {
     direction: "horizontal",
     loop: true,
 
@@ -72,9 +72,38 @@ accordionRows.forEach((item, i, arr) => {
     });
 });
 
+// phone mask
 const phoneField = document.getElementById("phone-field");
 
 Inputmask({
     mask:"+7 (999) 999-9999",
     showMaskOnHover: !1
 }).mask(phoneField);
+
+// examples slider
+const swiperExamples = new Swiper(".examples-slider-wrapper", {
+    direction: "horizontal",
+    slidesPerView: '3',
+    spaceBetween: 30,
+    loop: true,
+
+    pagination: {
+        el: ".swiper-pagination"
+    },
+
+    navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev"
+    }
+});
+
+// examples-slider-arrows
+const arrows = Array.from(document.querySelectorAll('.arrow'));
+
+arrows.forEach(arrowItem => {
+    arrowItem.addEventListener('click', el => {
+        const currentArrow = el.target.getAttribute('id');
+
+        document.querySelector(`.under-${currentArrow}`).click();
+    })
+});
