@@ -1,0 +1,109 @@
+.main-content__page-destination {
+    width: 100%;
+    height: 1095px;
+    background-color: #fff;
+}
+
+.page-destination-content {
+    width: 100%;
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 80px 20px;
+}
+
+.page-destination-header {
+    width: 100%;
+    position: relative;
+    text-align: center;
+    font-family: HelveticaNeueCyr-Roman, Arial, sans-serif;
+}
+
+.page-destination-header > h2 {
+    position: relative;
+    text-transform: uppercase;
+    color: #313844;
+}
+
+.page-destination-header > h2:after {
+    content: '';
+    display: block;
+    width: 165px;
+    height: 4px;
+    background-color: #0072bb;
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.back-link {
+    padding: 8px 20px;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    border-radius: 20px;
+    background-color: #0072bb;
+    cursor: pointer;
+    color: #fff;
+    font-family: HelveticaNeueCyr-Roman, Arial, sans-serif;
+    font-weight: 100;
+    font-size: 14px;
+    z-index: 1;
+    transition: .4s ease;
+    border: 1px solid #0072bb;
+}
+
+.back-link:hover {
+    background-color: transparent;
+    color: #0072bb;
+}
+
+.page-destination-body {
+    display: flex;
+    align-items: flex-start;
+    width: 100%;
+    min-height: 754px;
+    margin-top: 110px;
+}
+
+.page-destination-body__menu-block {
+    position: sticky;
+    top: 50px;
+    width: 360px;
+}
+
+.menu-list {
+    border: 1px solid #0072BC;
+}
+
+.menu-item-link {
+    display: block;
+    padding: 20px 12px;
+    font-family: HelveticaNeueCyr-Roman, Arial, sans-serif;
+    text-transform: uppercase;
+    color: #313844;
+    background-color: #E0E9F2;
+    transition: .4s ease;
+}
+
+.active-menu-item {
+    background-color: #0072BC;
+    color: #fff;
+}
+
+.active-menu-item,
+.menu-item-link:not(.active-menu-item):hover {
+    color: #fff;
+}
+
+.menu-item-link:not(.active-menu-item):hover {
+    background-color: #029292;
+}
+
+.menu-list-item:not(:first-child) > .menu-item-link {
+    border-top: 1px solid #0072BC;
+}
+
+
+

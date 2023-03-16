@@ -1017,15 +1017,15 @@ input[type="search"]::-webkit-search-results-decoration {
     transform: translateY(50%) rotate(180deg);
 }
 
-.swiper-horizontal > .swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal {
+.main-content__examples .swiper-horizontal > .swiper-pagination-bullets, .main-content__examples .swiper-pagination-bullets.swiper-pagination-horizontal {
     bottom: -50px;
 }
 
-.swiper-pagination-bullet {
+.main-content__examples .swiper-pagination-bullet {
     background-color: rgba(0, 0, 0, .9);
 }
 
-.swiper-pagination-bullet-active {
+.main-content__examples .swiper-pagination-bullet-active {
     background-color: #2D99D6;
 }
 
