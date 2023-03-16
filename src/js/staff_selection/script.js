@@ -29,15 +29,15 @@ language.onclick = (e) => {
 };
 
 document.onclick = (e) => {
-     const langDrop = document.querySelectorAll(".language-dropdown-list");
-     const langDropExist = document.querySelectorAll(".language-dropdown-list").length;
-     const parent = e.target.closest(".language-area");
+    const langDrop = document.querySelectorAll(".language-dropdown-list");
+    const langDropExist = document.querySelectorAll(".language-dropdown-list").length;
+    const parent = e.target.closest(".language-area");
 
-     if (langDropExist > 0 && parent === null)
-     {
-         langDrop[0].remove();
-         language.classList.remove("language-area-active");
-     }
+    if (langDropExist > 0 && parent === null)
+    {
+        langDrop[0].remove();
+        language.classList.remove("language-area-active");
+    }
 };
 
 const swiperUnderheader = new Swiper(".swiper", {
@@ -55,11 +55,16 @@ const swiperUnderheader = new Swiper(".swiper", {
 });
 
 // accordion section
+
+const firstAccordionRowHeight = document.querySelector('.accordion-row:first-child > .accordion-row__content > .hidden-block').getBoundingClientRect().height;
+document.querySelector('.accordion-row:first-child > .accordion-row__content').style.height = `${firstAccordionRowHeight}px`;
+
 const accordionRows = Array.from(document.querySelectorAll(".accordion-row__header"));
 
 accordionRows.forEach((item, i, arr) => {
     item.addEventListener("click", (e) => {
         arr.forEach((el) => {
+            el.nextElementSibling.style.transition = 'height .6s ease';
             el.nextElementSibling.style.height = '0';
             el.classList.remove("active-accordion-row");
         });
@@ -76,7 +81,7 @@ accordionRows.forEach((item, i, arr) => {
 const phoneField = document.getElementById("phone-field");
 
 Inputmask({
-    mask:"+7 (999) 999-9999",
+    mask: "+7 (999) 999-9999",
     showMaskOnHover: !1
 }).mask(phoneField);
 

@@ -814,7 +814,7 @@ input[type="search"]::-webkit-search-results-decoration {
 .accordion-row__header,
 .accordion-row-item__header {
     min-height: 60px;
-    transition: 0.6s ease;
+    transition: .6s ease;
 }
 
 .accordion-row__header:not(.active-accordion-row):hover {
@@ -822,9 +822,8 @@ input[type="search"]::-webkit-search-results-decoration {
 }
 
 .accordion-row__content {
-    overflow: hidden;
     height: 0;
-    transition: height 0.6s ease;
+    overflow: hidden;
 }
 
 .hidden-block {
@@ -1151,7 +1150,7 @@ input[type="search"]::-webkit-search-results-decoration {
 }
 
 .phone-call > a {
-    display: block;
+    display: table;
 }
 
 .footer-page__describe,
