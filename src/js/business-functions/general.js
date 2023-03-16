@@ -51,29 +51,6 @@ const swiperUnderheader = new Swiper(".swiper", {
     }
 });
 
-// accordion section
-
-const firstAccordionRowHeight = document.querySelector('.accordion-row:first-child > .accordion-row__content > .hidden-block').getBoundingClientRect().height;
-document.querySelector('.accordion-row:first-child > .accordion-row__content').style.height = `${firstAccordionRowHeight}px`;
-
-const accordionRows = Array.from(document.querySelectorAll(".accordion-row__header"));
-
-accordionRows.forEach((item, i, arr) => {
-    item.addEventListener("click", (e) => {
-        arr.forEach((el) => {
-            el.nextElementSibling.style.transition = 'height .6s ease';
-            el.nextElementSibling.style.height = '0';
-            el.classList.remove("active-accordion-row");
-        });
-
-        const selectorHidden = item.nextElementSibling.querySelector(".hidden-block");
-        const neededHeight = selectorHidden.getBoundingClientRect().height;
-
-        item.nextElementSibling.style.height = `${neededHeight}px`;
-        item.classList.add("active-accordion-row");
-    });
-});
-
 // phone mask
 const phoneField = document.getElementById("phone-field");
 
@@ -81,31 +58,3 @@ Inputmask({
     mask: "+7 (999) 999-9999",
     showMaskOnHover: !1
 }).mask(phoneField);
-
-// examples slider
-const swiperExamples = new Swiper(".examples-slider-wrapper", {
-    direction: "horizontal",
-    slidesPerView: '3',
-    spaceBetween: 30,
-    loop: true,
-
-    pagination: {
-        el: ".swiper-pagination"
-    },
-
-    navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev"
-    }
-});
-
-// examples-slider-arrows
-const arrows = Array.from(document.querySelectorAll('.arrow'));
-
-arrows.forEach(arrowItem => {
-    arrowItem.addEventListener('click', el => {
-        const currentArrow = el.target.getAttribute('id');
-
-        document.querySelector(`.under-${currentArrow}`).click();
-    })
-});
