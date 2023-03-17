@@ -124,3 +124,8 @@ links.forEach(link => {
         document.querySelector('html').scroll({top: +destinationPosition, behavior: "smooth"})
     })
 });
+
+// header menu links preventdefault
+const headerMenuLinks = Array.from(document.querySelectorAll('.header-menu-link'));
+
+headerMenuLinks.forEach(link => link.addEventListener('click', event => event.preventDefault()));
