@@ -986,6 +986,17 @@ input[type="search"]::-webkit-search-results-decoration {
     height: auto;
     padding: 10px 20px 20px;
     border: 1px solid #000;
+    cursor: pointer;
+}
+
+.example-slide a {
+    font-size: 16px;
+    transition: color .4s ease;
+}
+
+.example-slide:hover > p > a {
+    text-decoration: underline;
+    color: #0072bc;
 }
 
 .examples-slider-wrapper > .swiper-button-prev,
@@ -1248,6 +1259,11 @@ input[type="search"]::-webkit-search-results-decoration {
     color: #0072cb;
     font-weight: 600;
     font-size: 16px;
+    transition: .4s ease;
+}
+
+.footer-navigation a:hover {
+    color: #2CC6F5;
 }
 
 .footer-navigation__list > li:not(:first-child) {

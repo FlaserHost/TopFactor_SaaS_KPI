@@ -109,3 +109,18 @@ arrows.forEach(arrowItem => {
         document.querySelector(`.under-${currentArrow}`).click();
     })
 });
+
+// move to anchors
+
+const links = Array.from(document.querySelectorAll('.anchor-link'));
+
+links.forEach(link => {
+    link.addEventListener('click', e => {
+        e.preventDefault();
+
+        const destination = e.target.getAttribute('href');
+        const destinationPosition = document.querySelector(destination).offsetTop;
+
+        document.querySelector('html').scroll({top: +destinationPosition, behavior: "smooth"})
+    })
+});
