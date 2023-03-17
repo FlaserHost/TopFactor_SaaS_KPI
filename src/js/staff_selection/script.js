@@ -37,6 +37,7 @@ document.onclick = (e) => {
     }
 };
 
+// головной слайдер
 const swiperUnderheader = new Swiper(".swiper", {
     direction: "horizontal",
     loop: true,
@@ -51,7 +52,7 @@ const swiperUnderheader = new Swiper(".swiper", {
     }
 });
 
-// accordion section
+// аккордеон
 
 const firstAccordionRowHeight = document.querySelector('.accordion-row:first-child > .accordion-row__content > .hidden-block').getBoundingClientRect().height;
 document.querySelector('.accordion-row:first-child > .accordion-row__content').style.height = `${firstAccordionRowHeight}px`;
@@ -74,7 +75,7 @@ accordionRows.forEach((item, i, arr) => {
     });
 });
 
-// phone mask
+// маска телефона
 const phoneField = document.getElementById("phone-field");
 
 Inputmask({
@@ -82,7 +83,7 @@ Inputmask({
     showMaskOnHover: !1
 }).mask(phoneField);
 
-// examples slider
+// нижниий слайдер
 const swiperExamples = new Swiper(".examples-slider-wrapper", {
     direction: "horizontal",
     slidesPerView: '3',
@@ -99,7 +100,7 @@ const swiperExamples = new Swiper(".examples-slider-wrapper", {
     }
 });
 
-// examples-slider-arrows
+// стрелки нижнего слайдера
 const arrows = Array.from(document.querySelectorAll('.arrow'));
 
 arrows.forEach(arrowItem => {
@@ -110,7 +111,7 @@ arrows.forEach(arrowItem => {
     })
 });
 
-// move to anchors
+// прокрутка до якорей
 
 const links = Array.from(document.querySelectorAll('.anchor-link'));
 
@@ -125,10 +126,14 @@ links.forEach(link => {
     })
 });
 
-// header menu links preventdefault
+// отключение головных меню-ссылок
 const headerMenuLinks = Array.from(document.querySelectorAll('.header-menu-link'));
 
 headerMenuLinks.forEach(link => link.addEventListener('click', event => event.preventDefault()));
+
+
+// запрет отрицательного значения
+document.getElementById('recruiter-amount-field').addEventListener('input', e => {if (e.target.value < 0) e.target.value = 0});
 
 // AOS
 
