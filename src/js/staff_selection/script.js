@@ -129,3 +129,7 @@ links.forEach(link => {
 const headerMenuLinks = Array.from(document.querySelectorAll('.header-menu-link'));
 
 headerMenuLinks.forEach(link => link.addEventListener('click', event => event.preventDefault()));
+
+// AOS
+
+AOS.init();
