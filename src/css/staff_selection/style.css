@@ -707,6 +707,7 @@ input[type="search"]::-webkit-search-results-decoration {
     justify-content: center;
     align-items: center;
     margin: 0 auto;
+    padding: 0 10px;
 }
 
 .ipad {
@@ -731,6 +732,7 @@ input[type="search"]::-webkit-search-results-decoration {
 .demo-test-blue-block__text > h2 {
     font-family: HelveticaNeueCyr-Bold, Arial, sans-serif;
     font-size: 32px;
+    word-break: break-word;
 }
 
 .demo-link {

@@ -13,6 +13,10 @@
     .burger_btn {
         display: block;
     }
+
+    .demo-test-blue-block__text {
+        margin-left: 20px;
+    }
 }
 
 @media (max-width: 675px) {
