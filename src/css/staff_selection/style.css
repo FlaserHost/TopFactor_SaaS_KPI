@@ -911,7 +911,6 @@ input[type="search"]::-webkit-search-results-decoration {
 
 .third-calculator-row {
     padding-left: 30px;
-    flex-wrap: nowrap;
 }
 
 .third-calculator-row label {
@@ -940,6 +939,10 @@ input[type="search"]::-webkit-search-results-decoration {
 
 .calculator-checkbox:checked + label:before {
     background: #C9DDEC url('../../img/staff_selection/main-content/calculator/checkbox-tick.svg') no-repeat center / 130% 130%;
+}
+
+label.get-announcements-checkbox-label {
+    width: 500px;
 }
 
 .privacy-policy:hover {
