@@ -1,3 +1,9 @@
+@media (max-width: 1000px) {
+    .grid-block {
+        grid: repeat(4, 1fr) / repeat(2, 1fr);
+    }
+}
+
 @media (max-width: 983px) {
     .header-navigation-menu,
     .menu-panel {
@@ -7,6 +13,10 @@
     .burger_btn {
         display: block;
     }
+}
 
-
+@media (max-width: 675px) {
+    .grid-block {
+        grid: repeat(9, 1fr) / 1fr;
+    }
 }
