@@ -1,0 +1,12 @@
+@media (max-width: 983px) {
+    .header-navigation-menu,
+    .menu-panel {
+        display: none;
+    }
+
+    .burger_btn {
+        display: block;
+    }
+
+
+}
