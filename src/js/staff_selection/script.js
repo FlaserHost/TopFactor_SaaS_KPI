@@ -1,6 +1,8 @@
 const language = document.getElementById("language"); // получение панели смены языков
+const burgerPanel = document.getElementById('hide-burger-menu'); // получение элемента скрытой панели
+const searchFieldPlatform = document.getElementById('hidden-field-keeper');
 
-// обработка нажатия
+// обработка нажатия на панель смены языков
 language.onclick = (e) => {
     const langDrop = document.querySelectorAll(".language-dropdown-list"); // получения элемента со списком языков
     const langDropExist = langDrop.length; // получение факта о существовании списка языков
@@ -10,13 +12,13 @@ language.onclick = (e) => {
         // запись конструкции списка в переменную
         const dropDownList = `<div class="language-dropdown-list">
             <ul class="languages-list">
-                <li class="lang-item test1" id="ru-lang">
+                <li class="lang-item" id="ru-lang">
                     <a href="https://topfactor.pro/podbor-personala/?lang=ru">Русский</a>
                 </li>
-                <li class="lang-item test2" id="en-lang">
+                <li class="lang-item" id="en-lang">
                     <a href="https://topfactor.pro/podbor-personala/?lang=en">Английский</a>
                 </li>
-                <li class="lang-item test3" id="de-lang">
+                <li class="lang-item" id="de-lang">
                     <a href="https://topfactor.pro/podbor-personala/?lang=de">Немецкий</a>
                 </li>
             </ul>
@@ -29,6 +31,7 @@ language.onclick = (e) => {
 
 // обработка нажатия в рамках всего документа (делегирование события)
 document.onclick = (e) => {
+    // скрытие элемента со списком языков
     const langDrop = document.querySelectorAll(".language-dropdown-list"); // получение элемента со списком языков
     const langDropExist = langDrop.length; // получение факта существования списка
     const parent = e.target.closest(".language-area"); // получения родительского элемента списка
@@ -39,18 +42,13 @@ document.onclick = (e) => {
         language.classList.remove("language-area-active"); // снятие класса активности
     }
 
-    const burgerPanel = document.querySelector('.hide-burger-menu'); // получение элемента скрытой панели
-    const burgerPanelParent = e.target.closest('.hide-burger-menu'); // получение элемента скрытой панели как родителя
+    // скрытие бургер панели
     const header = e.target.closest('header'); // получение элемента header как родителя
+    header === null && burgerPanel.classList.remove('show'); // скрытие панель посредством удаления класса
 
-    // если панель на текущий момент выдвинута, и нажатие произошло не по одному из ее дочерних элементов или не по элементу header, то скрыть панель
-    if (
-        !e.target.classList.contains('hide-burger-menu') &&
-        burgerPanelParent === null &&
-        header === null
-    ) {
-        burgerPanel.classList.remove('show'); // скрытие панель посредством удаления класса
-    }
+    // скрытие поля поиска (для мобильных устройств)
+    const searchFieldPlatformParent = e.target.closest('.hidden-search-area');
+    searchFieldPlatformParent === null && searchFieldPlatform.classList.remove('hidden-field-showed');
 };
 
 // головной слайдер
@@ -71,9 +69,11 @@ const swiperUnderheader = new Swiper(".swiper", {
 // аккордеон
 
 // получение высоты первого элемента аккордеона
-const firstAccordionRowHeight = document.querySelector('.accordion-row:first-child > .accordion-row__content > .hidden-block').getBoundingClientRect().height;
+const selectorsOne = '.accordion-row:first-child > .accordion-row__content > .hidden-block';
+const firstAccordionRowHeight = document.querySelector(selectorsOne).getBoundingClientRect().height;
 // присвоение высоты первому элементу аккордеона (для плавности скрытия)
-document.querySelector('.accordion-row:first-child > .accordion-row__content').style.height = `${firstAccordionRowHeight}px`;
+const selectorsTwo = '.accordion-row:first-child > .accordion-row__content';
+document.querySelector(selectorsTwo).style.height = `${firstAccordionRowHeight}px`;
 
 const accordionRows = Array.from(document.querySelectorAll(".accordion-row__header")); // получение всех элементов аккордеона
 
@@ -105,7 +105,7 @@ Inputmask({
 // нижниий слайдер
 const swiperExamples = new Swiper(".examples-slider-wrapper", {
     direction: "horizontal",
-    slidesPerView: '3',
+    slidesPerView: window.outerWidth < 800 ? '2' : '3',
     spaceBetween: 30,
     loop: true,
 
@@ -125,7 +125,6 @@ const arrows = Array.from(document.querySelectorAll('.arrow'));
 arrows.forEach(arrowItem => {
     arrowItem.addEventListener('click', el => {
         const currentArrow = el.target.getAttribute('id');
-
         document.querySelector(`.under-${currentArrow}`).click();
     })
 });
@@ -154,8 +153,11 @@ headerMenuLinks.forEach(link => link.addEventListener('click', event => event.pr
 // запрет отрицательного значения
 document.getElementById('recruiter-amount-field').addEventListener('input', e => {if (e.target.value < 0) e.target.value = 0});
 
-const hideBurgerMenu = document.querySelector('.hide-burger-menu');
-document.getElementById('burger_btn').addEventListener('click', () => hideBurgerMenu.classList.toggle('show'));
+// показ бургер панели
+document.getElementById('burger_btn').onclick = () => burgerPanel.classList.toggle('show');
+
+// показ скрытого поля поиска (для мобильных устройств)
+document.getElementById('hidden-header-search-btn').onclick = () => searchFieldPlatform.classList.toggle('hidden-field-showed');
 
 // AOS
 

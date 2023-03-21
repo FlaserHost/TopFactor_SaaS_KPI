@@ -2,6 +2,7 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Программный продукт ТопФактор: Управление подбором персонала на базе 1С</title>
     <link rel="shortcut icon" href="src/img/favicon.ico">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
@@ -15,9 +16,16 @@
 <header class="page-header">
     <div class="header-top">
         <div class="page_header__wrapper">
+            <div class="hidden-search-area">
+                <div class="hidden-field-keeper" id="hidden-field-keeper">
+                    <input class="header-search-field" id="hidden-header-search-field" type="search" placeholder="Поиск по сайту">
+                    <button class="hidden-field-launch-search-btn" id="hidden-field-launch-search-btn" type="submit">Найти</button>
+                </div>
+                <button class="header-search-btn" id="hidden-header-search-btn" type="button"></button>
+            </div>
             <div class="search-area">
                 <input class="header-search-field" id="header-search-field" type="search" placeholder="Поиск по сайту">
-                <input class="header-search-btn" id="header-search-btn" type="submit" value="">
+                <button class="header-search-btn" id="header-search-btn" type="submit"></button>
             </div>
             <div class="order-call-area">
                 <span class="phone-number">+7 495-508-56-27</span>
@@ -172,7 +180,7 @@
             <button class="header-demo-btn" id="header-demo-btn" type="button">Демо-версия</button>
         </div>
     </div>
-    <div class="hide-burger-menu">
+    <div class="hide-burger-menu" id="hide-burger-menu">
         <nav>
             <ul class="burger-outer-list">
                 <li>

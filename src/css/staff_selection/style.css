@@ -64,7 +64,7 @@ input[type="search"]::-webkit-search-results-decoration {
 .header-top {
     width: 100%;
     height: 56px;
-    background: #313844;
+    background-color: #313844;
     color: #fff;
 }
 
@@ -84,8 +84,18 @@ input[type="search"]::-webkit-search-results-decoration {
     justify-content: space-between;
 }
 
-.search-area {
+.search-area,
+.hidden-search-area {
     position: relative;
+}
+
+.hidden-search-area,
+.header-search-btn {
+    width: 36px;
+}
+
+.hidden-search-area {
+    height: 100%;
 }
 
 .header-search-field {
@@ -104,9 +114,8 @@ input[type="search"]::-webkit-search-results-decoration {
 }
 
 .header-search-btn {
-    position: absolute;
-    width: 36px;
     height: 36px;
+    position: absolute;
     right: 0;
     top: 50%;
     border: none;
@@ -116,6 +125,41 @@ input[type="search"]::-webkit-search-results-decoration {
     background: transparent
     url("../../img/staff_selection/header/icon-header-search.png") no-repeat
     center / 60% 60%;
+}
+
+.hidden-search-area {
+    display: none;
+}
+
+.hidden-field-keeper {
+    width: 300px;
+    height: 46px;
+    display: flex;
+    align-items: center;
+    background-color: #313844;
+    padding: 20px 5px;
+    position: absolute;
+    top: -100%;
+    transition: top .4s ease;
+}
+
+.hidden-field-showed {
+    top: 100%;
+}
+
+.hidden-field-launch-search-btn {
+    height: 36px;
+    background-color: #fff;
+    font-size: 13px;
+    border-radius: 0 5px 5px 0;
+    border: none;
+    outline: none;
+    padding: 10px 15px;
+    cursor: pointer;
+}
+
+.hidden-field-keeper > .header-search-field {
+    border-radius: 5px 0 0 5px;
 }
 
 .order-call-area {
@@ -410,19 +454,9 @@ input[type="search"]::-webkit-search-results-decoration {
 
 .main-content-menu {
     width: 100%;
-    /* было */
-    /* height: 100px; */
-
-    /* стало */
-    /* responsive */
     min-height: 100px;
     padding: 0 10px 20px;
-    /* ----- */
-
     background-color: #0072bc;
-
-    /* было */
-    /*padding: 0 10px;*/
 }
 
 .main-content-menu__navigation {
@@ -434,18 +468,13 @@ input[type="search"]::-webkit-search-results-decoration {
 
 .main-content-menu__list {
     display: flex;
-    /* responsive */
     flex-wrap: wrap;
-    /* ----- */
     width: 100%;
     height: 100%;
     align-items: center;
 }
 
-.main-content-menu__list > li:not(:last-child /* :first-child */) {
-    /* было */
-    /* margin-left: 16px */
-    /* стало */
+.main-content-menu__list > li:not(:last-child) {
     margin-right: 16px;
 }
 
@@ -560,8 +589,9 @@ input[type="search"]::-webkit-search-results-decoration {
 }
 
 .main-content__why-solution {
-    height: 536px;
+    min-height: 536px;
     background-color: #e0e9f2;
+    padding: 80px 20px;
 }
 
 .stages {
@@ -578,6 +608,8 @@ input[type="search"]::-webkit-search-results-decoration {
     font-size: 23px;
     color: #313844;
     position: relative;
+    text-align: center;
+    line-height: 35px;
 }
 
 .main-content__why-solution > h2:after,
@@ -600,7 +632,7 @@ input[type="search"]::-webkit-search-results-decoration {
     justify-content: space-between;
     width: 100%;
     max-width: 1140px;
-    margin-top: 100px;
+    flex-wrap: wrap;
 }
 
 .solutions-container h3,
@@ -658,14 +690,8 @@ input[type="search"]::-webkit-search-results-decoration {
     display: flex;
     flex-direction: column;
     position: relative;
-}
-
-.solutions-container > .solution-item:first-child {
+    margin-top: 100px;
     margin-left: 35px;
-}
-
-.solutions-container > .solution-item:not(:first-child) {
-    margin-left: 50px;
 }
 
 .solution-item:before {
@@ -694,9 +720,11 @@ input[type="search"]::-webkit-search-results-decoration {
 
 .demo-test-blue-block {
     width: 100%;
-    height: 450px;
+    min-height: 450px;
     background-color: #0072bc;
-    padding-top: 10px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
 }
 
 .demo-test__container {
@@ -881,7 +909,7 @@ input[type="search"]::-webkit-search-results-decoration {
 }
 
 .main-content__calculator {
-    height: 762px;
+    min-height: 762px;
     background-color: #e0e9f2;
     padding: 80px 20px;
 }
@@ -941,7 +969,7 @@ input[type="search"]::-webkit-search-results-decoration {
 }
 
 .third-calculator-row label {
-    width: 530px;
+    max-width: 530px;
     position: relative;
     cursor: pointer;
     padding-left: 5px;
@@ -969,7 +997,7 @@ input[type="search"]::-webkit-search-results-decoration {
 }
 
 label.get-announcements-checkbox-label {
-    width: 500px;
+    max-width: 500px;
 }
 
 .privacy-policy:hover {
