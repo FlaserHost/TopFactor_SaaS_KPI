@@ -103,9 +103,13 @@ Inputmask({
 }).mask(phoneField);
 
 // нижниий слайдер
+let slidesOnView = '3';
+if (window.outerWidth < 800) slidesOnView = '2';
+if (window.outerWidth < 426) slidesOnView = '1';
+
 const swiperExamples = new Swiper(".examples-slider-wrapper", {
     direction: "horizontal",
-    slidesPerView: window.outerWidth < 800 ? '2' : '3',
+    slidesPerView: slidesOnView,
     spaceBetween: 30,
     loop: true,
 

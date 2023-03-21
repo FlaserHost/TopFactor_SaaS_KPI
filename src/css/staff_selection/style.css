@@ -1154,13 +1154,11 @@ label.get-announcements-checkbox-label {
 }
 
 .footer-row-content {
+    min-height: 137px;
+    padding-top: 30px;
     max-width: 1140px;
     display: flex;
     justify-content: space-between;
-}
-
-.footer-row-content > div {
-    width: calc((100% - 99px) / 3);
 }
 
 .footer-page__logo-img {
@@ -1373,11 +1371,6 @@ div.social-links {
     background: #2664AE url('../../img/staff_selection/footer/social-linked-in.png') no-repeat 55% 40% / 50% 50%;
 }
 
-.footer-row-content {
-    min-height: 137px;
-    padding-top: 30px;
-}
-
 .footer-row-content > div {
     width: calc((100% - 30px) / 3);
 }
@@ -1507,8 +1500,8 @@ div.social-links {
     font-family: HelveticaNeueCyr-Roman, Arial, sans-serif;
     background-color: #E0E9F2;
     padding: 10px;
-    font-size: 10px;
-    min-width: 269px;
+    font-size: 12px;
+    width: 100%;
     position: absolute;
     top: 100%;
     right: 100%;
@@ -1552,4 +1545,9 @@ div.social-links {
 
 .burger-inner-list > li {
     margin-top: 3px;
+}
+
+.hidden-link {
+    font-family: HelveticaNeueCyr-Roman, Arial, sans-serif;
+    display: none;
 }
