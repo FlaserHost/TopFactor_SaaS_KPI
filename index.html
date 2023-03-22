@@ -10,7 +10,6 @@
     <link rel="stylesheet" href="src/css/staff_selection/style.css">
     <link rel="stylesheet" href="src/css/staff_selection/adaptive.css">
     <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/5.0.7/inputmask.min.js"></script>
 </head>
 <body>
 <header class="page-header">
@@ -797,48 +796,45 @@
         </div>
     </section>
     <section class="main-content__calculator" id="calculator-section">
-        <h2>Рассчитать стоимость</h2>
+        <h2>Сравнить тарифы на облачную версию</h2>
         <div class="calculator-form-wrapper">
-            <form class="calculator-form" id="calculator-form" action="#" method="POST">
-                <div class="calculator-row first-calculator-row">
-                    <div class="field-area recruiter-amount-area">
-                        <label for="recruiter-amount-field">Количество рекрутеров * :</label>
-                        <input class="calculator-field" id="recruiter-amount-field" name="recruiter-amount-field" type="number">
-                    </div>
-                </div>
-                <div class="calculator-row second-calculator-row">
-                    <div class="field-area fio-field-area">
-                        <label for="fio-field">ФИО * :</label>
-                        <input class="calculator-field" id="fio-field" name="fio-field" type="text">
-                    </div>
-                    <div class="field-area phone-field-area">
-                        <label for="phone-field">Телефон * :</label>
-                        <input class="calculator-field" id="phone-field" name="phone-field" type="tel" placeholder="+7 (___) ___-____">
-                    </div>
-                    <div class="field-area email-field-area">
-                        <label for="email-field">E-mail * :</label>
-                        <input class="calculator-field" id="email-field" name="email-field" type="email">
-                    </div>
-                </div>
-                <div class="calculator-row third-calculator-row">
-                    <div class="checkbox-area">
-                        <input class="calculator-checkbox" id="agree-checkbox" name="agree-checkbox" type="checkbox" checked>
-                        <label for="agree-checkbox">Ставя отметку, я даю своё согласие на обработку моих персональных данных и согласен с <a class="privacy-policy" href="https://topfactor.pro/politika-konfidentsialnosti.php">Политикой информационной безопасности</a> *</label>
-                    </div>
-                    <div class="checkbox-area">
-                        <input class="calculator-checkbox" id="get-announcements-checkbox" name="get-announcements-checkbox" type="checkbox" checked>
-                        <label class="get-announcements-checkbox-label" for="get-announcements-checkbox">Я хочу получать анонсы мероприятий, новости, интересные статьи</label>
-                    </div>
-                </div>
-                <div class="calculator-row fourth-calculator-row">
-                    <div class="complete-form-block">
-                        <button class="calculate-btn" id="calculate-btn" type="submit">Рассчитать стоимость</button>
-                        <div class="captcha-area">
-                            <!-- интересное кино с капчей -->
+            <div class="new-form-area">
+                <h3>Заполните поля чтобы рассчитать стоимость</h3>
+                <form class="new-form" id="new-calculator-form" action="#" method="POST">
+                    <div class="new-form__new-form-fields">
+                        <div class="field-area field-area-1">
+                            <input class="form-field form-field-1" id="kedo-field" name="kedo-field" type="number" placeholder="5000">
+                            <div class="field-description">
+                                <div class="question-mark"></div>
+                                <label for="kedo-field">Количество сотрудников в КЭДО</label>
+                                <div class="question-hint">
+                                    <p>Сотрудники, которые могут подписывать документы с помощью ЭП</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="field-area field-area-2">
+                            <input class="form-field form-field-1" id="vcep-field" name="vcep-field" type="number" placeholder="100">
+                            <div class="field-description">
+                                <div class="question-mark"></div>
+                                <label for="vcep-field">Количество УКЭП</label>
+                                <div class="question-hint">
+                                    <p>Сотрудники, которые могут подписывать документы со стороны работодателя</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="field-area field-area-3">
+                            <input class="form-field form-field-1" id="number-of-connections-field" name="number-of-connections-field" type="number" placeholder="100">
+                            <div class="field-description">
+                                <div class="question-mark"></div>
+                                <label for="number-of-connections-field">Количество одновременных подключений к веб-версии</label>
+                                <div class="question-hint">
+                                    <p>Для Руководителя</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </form>
+                </form>
+            </div>
         </div>
     </section>
     <section class="main-content__examples" id="examples-section">

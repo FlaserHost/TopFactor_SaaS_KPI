@@ -921,7 +921,7 @@ input[type="search"]::-webkit-search-results-decoration {
 .calculator-form-wrapper {
     width: 100%;
     max-width: 1140px;
-    margin-top: 110px;
+    margin-top: 60px;
 }
 
 .calculator-row {
@@ -994,10 +994,6 @@ input[type="search"]::-webkit-search-results-decoration {
     border: 1px solid #9CA3A9;
     border-radius: 3px;
     transition: .1s ease;
-}
-
-.calculator-checkbox:checked + label:before {
-    background: #C9DDEC url('../../img/staff_selection/main-content/calculator/checkbox-tick.svg') no-repeat center / 130% 130%;
 }
 
 label.get-announcements-checkbox-label {
@@ -1554,4 +1550,77 @@ div.social-links {
 .hidden-link {
     font-family: HelveticaNeueCyr-Roman, Arial, sans-serif;
     display: none;
+}
+
+.main-content__calculator {
+    font-family: HelveticaNeueCyr-Roman, Arial, sans-serif;
+}
+
+.new-form {
+    margin-top: 30px;
+}
+
+.new-form-area > h3 {
+    text-align: center;
+}
+
+.new-form__new-form-fields {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.field-area {
+    width: 362px;
+}
+
+.field-description {
+    padding: 7px 20px 0 0;
+    display: flex;
+    position: relative;
+}
+
+.question-hint {
+    position: absolute;
+    left: 0;
+    top: calc(100% + 30px);
+    width: 230px;
+    height: 118px;
+    box-shadow: 0 6px 10px -1px #888;
+    padding: 0 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    opacity: 0;
+    transition: opacity .4s ease;
+    pointer-events: none;
+}
+
+.field-description > label {
+    font-size: 18px;
+    margin-left: 10px;
+}
+
+.form-field {
+    width: 100%;
+    height: 50px;
+    padding: 10px;
+    outline: none;
+}
+
+.form-field,
+.form-field::placeholder {
+    font-size: 16px;
+}
+
+.question-mark {
+    min-width: 20px;
+    max-height: 20px;
+    background: url('../../img/staff_selection/main-content/calculator/question-mark.svg') no-repeat center / 100% 100%;
+    border-radius: 50%;
+}
+
+.question-mark:hover ~ .question-hint {
+    opacity: 1;
 }

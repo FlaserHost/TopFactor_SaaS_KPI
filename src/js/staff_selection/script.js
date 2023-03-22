@@ -94,14 +94,6 @@ accordionRows.forEach((item, i, arr) => {
     });
 });
 
-// маска телефона
-const phoneField = document.getElementById("phone-field");
-
-Inputmask({
-    mask: "+7 (999) 999-9999",
-    showMaskOnHover: !1
-}).mask(phoneField);
-
 // нижниий слайдер
 let slidesOnView = '3';
 if (window.outerWidth < 800) slidesOnView = '2';
@@ -137,10 +129,6 @@ arrows.forEach(arrowItem => {
 const headerMenuLinks = Array.from(document.querySelectorAll('.header-menu-link'));
 
 headerMenuLinks.forEach(link => link.addEventListener('click', event => event.preventDefault()));
-
-
-// запрет отрицательного значения
-document.getElementById('recruiter-amount-field').addEventListener('input', e => {if (e.target.value < 0) e.target.value = 0});
 
 // показ бургер панели
 document.getElementById('burger_btn').onclick = () => burgerPanel.classList.toggle('show');

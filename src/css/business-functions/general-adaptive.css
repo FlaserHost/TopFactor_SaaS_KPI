@@ -1,8 +1,14 @@
 @media (max-width: 426px) {
     .back-link {
-        top: 0;
-        bottom: 100%;
-        left: 50%;
-        transform: translate(-50%, -150%);
+        position: static;
+        display: inline-block;
+    }
+
+    .page-destination-body {
+        justify-content: center;
+    }
+
+    .page-destination-body__menu-block {
+        position: static;
     }
 }
