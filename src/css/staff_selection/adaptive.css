@@ -4,6 +4,32 @@
     }
 }
 
+@media (max-width: 1024px) {
+    .main-content-menu__list a {
+        width: 239px;
+    }
+
+    .stages__accordion {
+        padding: 0 10px;
+    }
+
+    .examples-slider-wrapper {
+        width: 888px;
+    }
+
+    .field-area {
+        width: 314px;
+    }
+
+    .new-form-btn {
+        padding: 20px 44px;
+    }
+
+    .footer-page {
+        padding: 0 20px;
+    }
+}
+
 @media (max-width: 1000px) {
     .grid-block {
         grid: repeat(4, 1fr) / repeat(2, 1fr);
@@ -105,18 +131,8 @@
         padding: 80px 10px;
     }
 
-    .second-calculator-row {
-        flex-direction: column;
-    }
-
-    .calculator-row:not(.third-calculator-row) {
-        justify-content: center;
-        align-items: center;
-    }
-
-    .third-calculator-row {
-        padding-left: 135px;
-        margin-top: 10px;
+    .field-area {
+        width: 230px;
     }
 
     .examples-slider-wrapper {
@@ -138,10 +154,6 @@
     .describe-btn,
     .footer-page__demo-version-link {
         font-size: 13px;
-    }
-
-    .footer-page {
-        padding: 0 20px;
     }
 }
 
@@ -194,8 +206,29 @@
         width: 404px;
     }
 
-    .third-calculator-row {
-        padding-left: 44px;
+    .new-form__new-form-fields,
+    .new-form-btns {
+        display: block;
+    }
+
+    .field-area {
+        width: 100%;
+    }
+
+    .new-form-btn-1 {
+        display: none;
+    }
+
+    .new-form-btn-2 {
+        width: 100%;
+    }
+
+    .form-field {
+        padding-right: 35px;
+    }
+
+    .triangle-btn {
+        display: block;
     }
 
     .examples-slider-wrapper {
@@ -328,28 +361,6 @@
 
     .examples-slider-wrapper {
         width: 274px;
-    }
-
-    .calculator-row:not(.third-calculator-row) {
-        justify-content: flex-start;
-        align-items: flex-start;
-    }
-
-    .calculator-row {
-        display: block;
-    }
-
-    .third-calculator-row {
-        padding-left: 30px;
-    }
-
-    .calculator-row input:not(input[type="checkbox"]) {
-        width: 100%;
-    }
-
-    .calculate-btn {
-        font-size: 20px;
-        width: 100%;
     }
 }
 

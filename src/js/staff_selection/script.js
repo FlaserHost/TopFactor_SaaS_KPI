@@ -136,6 +136,20 @@ document.getElementById('burger_btn').onclick = () => burgerPanel.classList.togg
 // показ скрытого поля поиска (для мобильных устройств)
 document.getElementById('hidden-header-search-btn').onclick = () => searchFieldPlatform.classList.toggle('hidden-field-showed');
 
+// треугольники регулировщики
+const triangles = Array.from(document.querySelectorAll('.triangle-btn'));
+
+triangles.forEach(triangle => {
+    triangle.addEventListener('click', e => {
+        const currentProperty = e.target.getAttribute('data-property');
+        const closestInput = e.target.closest('.input-place').querySelector('.form-field');
+        let closestInputValue = +closestInput.value;
+
+        currentProperty === 'up' ? closestInputValue++ : closestInputValue--;
+        closestInput.value = closestInputValue;
+    });
+});
+
 // AOS
 
 AOS.init();
