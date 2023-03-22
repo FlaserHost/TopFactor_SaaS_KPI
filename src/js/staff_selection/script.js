@@ -7,7 +7,7 @@ language.onclick = (e) => {
     const langDrop = document.querySelectorAll(".language-dropdown-list"); // получения элемента со списком языков
     const langDropExist = langDrop.length; // получение факта о существовании списка языков
 
-    if (langDropExist === 0) // если списка не существует, то создать
+    if (!langDropExist) // если списка не существует, то создать
     {
         // запись конструкции списка в переменную
         const dropDownList = `<div class="language-dropdown-list">
