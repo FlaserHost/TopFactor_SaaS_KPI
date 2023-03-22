@@ -133,21 +133,6 @@ arrows.forEach(arrowItem => {
     })
 });
 
-// прокрутка до якорей
-
-const links = Array.from(document.querySelectorAll('.anchor-link'));
-
-links.forEach(link => {
-    link.addEventListener('click', e => {
-        e.preventDefault();
-
-        const destination = e.target.getAttribute('href');
-        const destinationPosition = document.querySelector(destination).offsetTop;
-
-        document.querySelector('html').scroll({top: +destinationPosition, behavior: "smooth"})
-    })
-});
-
 // отключение головных меню-ссылок
 const headerMenuLinks = Array.from(document.querySelectorAll('.header-menu-link'));
 
