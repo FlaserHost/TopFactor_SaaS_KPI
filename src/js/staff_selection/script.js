@@ -146,10 +146,23 @@ triangles.forEach(triangle => {
         let closestInputValue = +closestInput.value;
 
         currentProperty === 'up' ? closestInputValue++ : closestInputValue--;
-        closestInput.value = closestInputValue;
+        closestInput.value = closestInputValue >= 0 ? closestInputValue : 0;
     });
 });
 
-// AOS
+// ограничение числовых полей
+const numberFields = Array.from(document.querySelectorAll('.new-calculator-form .form-field'));
+numberFields.forEach(field => field.addEventListener('input', e => e.target.value = +e.target.value));
+numberFields.forEach(field => {
+    field.addEventListener('blur', e => {
+        if (e.target.value === '0')
+        {
+            e.target.value = '';
+            e.target.focus();
+            e.target.blur();
+        }
+    })
+});
 
+// AOS
 AOS.init();

@@ -206,7 +206,7 @@
         width: 404px;
     }
 
-    .new-form__new-form-fields,
+    .new-calculator-form__new-form-fields,
     .new-form-btns {
         display: block;
     }
@@ -233,6 +233,10 @@
 
     .examples-slider-wrapper {
         width: 323px;
+    }
+
+    .field-description > label {
+        font-size: 16px;
     }
 
     .footer-row-content {
@@ -359,6 +363,10 @@
         font-size: 25px;
     }
 
+    .new-calculator-form {
+        margin-top: 30px;
+    }
+
     .examples-slider-wrapper {
         width: 274px;
     }
@@ -400,6 +408,10 @@
 
     .calculate-btn {
         font-size: 16px;
+    }
+
+    .field-description > label {
+        font-size: 14px;
     }
 
     .examples-slider-wrapper {

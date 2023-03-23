@@ -1462,7 +1462,7 @@ div.social-links {
     text-align: center;
 }
 
-.new-form__new-form-fields {
+.new-calculator-form__new-form-fields {
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -1547,8 +1547,8 @@ div.social-links {
 }
 
 .question-mark {
-    min-width: 20px;
-    max-height: 20px;
+    width: 20px;
+    height: 20px;
     background: url('../../img/staff_selection/main-content/calculator/question-mark.svg') no-repeat center / 100% 100%;
     border-radius: 50%;
 }
