@@ -397,6 +397,10 @@
         font-size: 10px;
     }
 
+    .accordion-row__header {
+        font-size: 12px;
+    }
+
     .demo-link {
         padding: 16px 22px;
         font-size: 11px;

@@ -10,13 +10,13 @@ language.onclick = (e) => {
     {
         const dropDownList = `<div class="language-dropdown-list">
             <ul class="languages-list">
-                <li class="lang-item test1" id="ru-lang">
+                <li class="lang-item" id="ru-lang">
                     <a href="https://topfactor.pro/podbor-personala/?lang=ru">Русский</a>
                 </li>
-                <li class="lang-item test2" id="en-lang">
+                <li class="lang-item" id="en-lang">
                     <a href="https://topfactor.pro/podbor-personala/?lang=en">Английский</a>
                 </li>
-                <li class="lang-item test3" id="de-lang">
+                <li class="lang-item" id="de-lang">
                     <a href="https://topfactor.pro/podbor-personala/?lang=de">Немецкий</a>
                 </li>
             </ul>
@@ -62,18 +62,9 @@ const swiperUnderheader = new Swiper(".swiper", {
     }
 });
 
-// phone mask
-const phoneField = document.getElementById("phone-field");
-
-Inputmask({
-    mask: "+7 (999) 999-9999",
-    showMaskOnHover: !1
-}).mask(phoneField);
-
 const headerMenuLinks = Array.from(document.querySelectorAll('.header-menu-link'));
 
 headerMenuLinks.forEach(link => link.addEventListener('click', event => event.preventDefault()));
-document.getElementById('recruiter-amount-field').addEventListener('input', e => {if (e.target.value < 0) e.target.value = 0});
 
 // показ бургер панели
 document.getElementById('burger_btn').onclick = () => burgerPanel.classList.toggle('show');

@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>КАЛЬКУЛЯТОР SAAS</title>
+    <link rel="shortcut icon" href="../../src/img/favicon.ico">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css">
+    <link rel="stylesheet" href="../../src/css/staff_selection/style.css">
+    <link rel="stylesheet" href="../../src/css/demo-version/demo-version.css">
+    <link rel="stylesheet" href="../../src/css/staff_selection/adaptive.css">
+    <link rel="stylesheet" href="../../src/css/demo-version/demo-version-adaptive.css">
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+</head>
+<body>
+<header class="page-header">
+    <div class="header-top">
+        <div class="page_header__wrapper">
+            <div class="hidden-search-area">
+                <div class="hidden-field-keeper" id="hidden-field-keeper">
+                    <input class="header-search-field" id="hidden-header-search-field" type="search" placeholder="Поиск по сайту">
+                    <button class="hidden-field-launch-search-btn" id="hidden-field-launch-search-btn" type="submit">Найти</button>
+                </div>
+                <button class="header-search-btn" id="hidden-header-search-btn" type="button"></button>
+            </div>
+            <div class="search-area">
+                <input class="header-search-field" id="header-search-field" type="search" placeholder="Поиск по сайту">
+                <input class="header-search-btn" id="header-search-btn" type="submit" value="">
+            </div>
+            <div class="order-call-area">
+                <a class="phone-number" href="tel:+74955085627">+7 495-508-56-27</a>
+                <a class="order-call-link" href="http://topfactor.pro/others/contact_us.php">Заказать звонок</a>
+            </div>
+            <div class="language-area" id="language"></div>
+        </div>
+    </div>
+    <div class="header-bottom">
+        <div class="header-bottom__wrapper">
+            <div class="logo">
+                <button class="burger_btn" id="burger_btn" type="button"></button>
+                <a href="../../index.html">
+                    <figure>
+                        <img class="logo-img" src="../../src/img/staff_selection/header/logo.png" alt="top-factor-logo">
+                    </figure>
+                </a>
+            </div>
+            <nav class="header-navigation-menu">
+                <ul class="header-navigation-list">
+                    <li class="header-navigation-item">
+                        <a href="#">Решения</a>
+                        <div class="menu-panel">
+                            <ul>
+                                <li>
+                                    <a class="sub-menu-link" href="">Управление по целям и KPI</a>
+                                </li>
+                                <li>
+                                    <a class="sub-menu-link" href="">Личный кабинет сотрудника</a>
+                                </li>
+                                <li>
+                                    <a class="sub-menu-link" href="">Подбор персонала</a>
+                                </li>
+                                <li>
+                                    <a class="sub-menu-link" href="">Управление талантами</a>
+                                </li>
+                                <li>
+                                    <a class="sub-menu-link" href="">Диагностика вовлеченности</a>
+                                </li>
+                                <li>
+                                    <a class="sub-menu-link" href="">Кафетерий льгот</a>
+                                </li>
+                                <li>
+                                    <a class="sub-menu-link" href="">Релизы</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="header-navigation-item">
+                        <a href="#">Блог</a>
+                        <div class="menu-panel">
+                            <ul>
+                                <li>
+                                    <a class="sub-menu-link" href="">Новости</a>
+                                </li>
+                                <li>
+                                    <a class="sub-menu-link" href="">Кейсы</a>
+                                </li>
+                                <li>
+                                    <a class="sub-menu-link" href="">Методики</a>
+                                </li>
+                                <li>
+                                    <a class="sub-menu-link" href="">Статьи</a>
+                                </li>
+                                <li>
+                                    <a class="sub-menu-link" href="">Видео</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="header-navigation-item">
+                        <a href="#">Услуги</a>
+                        <div class="menu-panel">
+                            <ul class="menu-outer-list">
+                                <li>
+                                    <h3>Консатлинговые услуги</h3>
+                                    <ul class="menu-inner-list">
+                                        <li>
+                                            <a class="sub-menu-link" href="">Рабочая сессия по разработке KPI</a>
+                                        </li>
+                                        <li>
+                                            <a class="sub-menu-link" href="">Видео-методика, «разработка KPI за 5 дней»</a>
+                                        </li>
+                                        <li>
+                                            <a class="sub-menu-link" href="">Разработка модели компетенций в компании</a>
+                                        </li>
+                                        <li>
+                                            <a class="sub-menu-link" href="">Разработка и внедрение гибкого пакета льгот</a>
+                                        </li>
+                                        <li>
+                                            <a class="sub-menu-link" href="">Оценка 360</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <h3 class="inner-shift">Услуги по внедрению</h3>
+                                    <ul class="menu-inner-list">
+                                        <li>
+                                            <a class="sub-menu-link" href="">Предпроектное обследование</a>
+                                        </li>
+                                        <li>
+                                            <a class="sub-menu-link" href="">Интеграция с конфигурацией 1С:Предприятие</a>
+                                        </li>
+                                        <li>
+                                            <a class="sub-menu-link" href="">Настройка ПП</a>
+                                        </li>
+                                        <li>
+                                            <a class="sub-menu-link" href="">Настройка трансляции данных из 1С:Предприятия</a>
+                                        </li>
+                                        <li>
+                                            <a class="sub-menu-link" href="">Тестирование</a>
+                                        </li>
+                                        <li>
+                                            <a class="sub-menu-link" href="">Обучение</a>
+                                        </li>
+                                        <li>
+                                            <a class="sub-menu-link" href="">Опытная эксплуатация</a>
+                                        </li>
+                                        <li>
+                                            <a class="sub-menu-link" href="">Поддержка</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="header-navigation-item">
+                        <a href="#">Мероприятия</a>
+                    </li>
+                    <li class="header-navigation-item">
+                        <a href="#">О компании</a>
+                        <div class="menu-panel">
+                            <ul>
+                                <li>
+                                    <a class="sub-menu-link" href="">ТопФактор</a>
+                                </li>
+                                <li>
+                                    <a class="sub-menu-link" href="">Наша команда</a>
+                                </li>
+                                <li>
+                                    <a class="sub-menu-link" href="">Контакты</a>
+                                </li>
+                                <li>
+                                    <a class="sub-menu-link" href="">Вакансии</a>
+                                </li>
+                                <li>
+                                    <a class="sub-menu-link" href="">Партнерам</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+            <button class="header-demo-btn" id="header-demo-btn" type="button">Демо-версия</button>
+        </div>
+    </div>
+    <div class="hide-burger-menu" id="hide-burger-menu">
+        <nav>
+            <ul class="burger-outer-list">
+                <li>
+                    <h3>Решения</h3>
+                    <ul class="burger-inner-list">
+                        <li><a class="burger-sub-menu-link" href="#">Управление по целям и KPI</a></li>
+                        <li><a class="burger-sub-menu-link" href="#">Личный кабинет сотрудника</a></li>
+                        <li><a class="burger-sub-menu-link" href="#">Подбор персонала</a></li>
+                        <li><a class="burger-sub-menu-link" href="#">Управление талантами</a></li>
+                        <li><a class="burger-sub-menu-link" href="#">Диагностика вовлеченности</a></li>
+                        <li><a class="burger-sub-menu-link" href="#">Кафетерий льгот</a></li>
+                        <li><a class="burger-sub-menu-link" href="#">Релизы</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <h3>Блог</h3>
+                    <ul class="burger-inner-list">
+                        <li><a class="burger-sub-menu-link" href="#">Новости</a></li>
+                        <li><a class="burger-sub-menu-link" href="#">Кейсы</a></li>
+                        <li><a class="burger-sub-menu-link" href="#">Методики</a></li>
+                        <li><a class="burger-sub-menu-link" href="#">Статьи</a></li>
+                        <li><a class="burger-sub-menu-link" href="#">Видео</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <h3>Услуги</h3>
+                    <ul class="burger-inner-list">
+                        <li>
+                            <h4>Консалтинговые услуги</h4>
+                            <ul class="burger-inner-list services">
+                                <li><a class="burger-sub-menu-link" href="#">Рабочая сессия по разработке KPI</a></li>
+                                <li><a class="burger-sub-menu-link" href="#">Видео-методика, «разработка KPI за 5 дней»</a></li>
+                                <li><a class="burger-sub-menu-link" href="#">Разработка модели компетенций в компании</a></li>
+                                <li><a class="burger-sub-menu-link" href="#">Разработка и внедрение гибкого пакета льгот</a></li>
+                                <li><a class="burger-sub-menu-link" href="#">Оценка 360</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <h4>Услуги по внедрению</h4>
+                            <ul class="burger-inner-list services">
+                                <li><a class="burger-sub-menu-link" href="#">Предпроектное обследование</a></li>
+                                <li><a class="burger-sub-menu-link" href="#">Интеграция с конфигурацией 1С:Предприятие</a></li>
+                                <li><a class="burger-sub-menu-link" href="#">Настройка ПП</a></li>
+                                <li><a class="burger-sub-menu-link" href="#">Настройка трансляции данных из 1С:Предприятия</a></li>
+                                <li><a class="burger-sub-menu-link" href="#">Тестирование</a></li>
+                                <li><a class="burger-sub-menu-link" href="#">Обучение</a></li>
+                                <li><a class="burger-sub-menu-link" href="#">Опытная эксплуатация</a></li>
+                                <li><a class="burger-sub-menu-link" href="#">Поддержка</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <h3>Мероприятия</h3>
+                </li>
+                <li>
+                    <h3>О компании</h3>
+                    <ul class="burger-inner-list">
+                        <li><a class="burger-sub-menu-link" href="#">ТопФактор</a></li>
+                        <li><a class="burger-sub-menu-link" href="#">Наша команда</a></li>
+                        <li><a class="burger-sub-menu-link" href="#">Контакты</a></li>
+                        <li><a class="burger-sub-menu-link" href="#">Вакансии</a></li>
+                        <li><a class="burger-sub-menu-link" href="#">Партнерам</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</header>
+<main class="main-content">
+    <section class="main-content__banner">
+        <div class="content">
+            <h1>Калькулятор Saas</h1>
+            <p>Чтобы задать вопросы по расчету на программный продукт "ТопФактор:Личный кабинет сотрудника"<br>напишите данные для связи с Вами.</p>
+        </div>
+    </section>
+    <section class="main-content__page-form">
+        <div class="form-wrapper">
+            <form class="contact-form" action="#" method="POST">
+                <div class="contact-form__field-area">
+                    <label class="form-label name-label required" for="name-field">Имя:</label>
+                    <input class="contact-form-field name-field" id="name-field" name="name-field" type="text" autocomplete="off" required>
+                </div>
+                <div class="contact-form__field-area">
+                    <label class="form-label lastname-label required" for="lastname-field">Фамилия:</label>
+                    <input class="contact-form-field lastname-field" id="lastname-field" name="lastname-field" type="text" autocomplete="off" required>
+                </div>
+                <div class="contact-form__field-area">
+                    <label class="form-label organisation-name-label required" for="organisation-name-field">Наименование организации:</label>
+                    <input class="contact-form-field organisation-name-field" id="organisation-name-field" name="organisation-name-field" type="text" autocomplete="off" required>
+                </div>
+                <div class="contact-form__field-area">
+                    <label class="form-label email-label required" for="email-field">Контактный e-mail:</label>
+                    <input class="contact-form-field email-field" id="email-field" name="email-field" type="email" autocomplete="off" required>
+                </div>
+                <div class="contact-form__field-area">
+                    <label class="form-label phone-label required" for="phone-field">Контактный телефон:</label>
+                    <input class="contact-form-field phone-field" id="phone-field" name="phone-field" type="tel" autocomplete="off" required>
+                </div>
+                <div class="contact-form__field-area">
+                    <h3 class="required">Согласие на обработку персональных данных</h3>
+                    <input class="contact-form-checkbox personal-data-agreed-checkbox" id="personal-data-agreed-checkbox" name="personal-data-agreed-checkbox" type="checkbox" checked>
+                    <label class="form-label checkbox-label personal-data-agreed-checkbox-label" for="personal-data-agreed-checkbox">
+                        Ставя отметку, я даю своё согласие на обработку моих персональных данных, принимаю <a class="checkbox-label-offer-link" href="#">условия Оферты</a> по использованию сайта и согласен с <a class="checkbox-label-privacy-policy" href="#">Политикой конфиденциальности</a>
+                    </label>
+                </div>
+                <div class="contact-form__field-area">
+                    <h3 class="nowrap">Согласие на получение рассылки ТопФактор</h3>
+                    <input class="contact-form-checkbox distribution-checkbox" id="distribution-checkbox" name="distribution-checkbox" type="checkbox" checked>
+                    <label class="form-label checkbox-label distribution-checkbox-label" for="distribution-checkbox">
+                        Я хочу получать анонсы мероприятий, новости, интересные статьи от команды ТопФактор
+                    </label>
+                </div>
+                <button class="contact-form-submit-btn" id="contact-form-submit-btn" type="submit">Заказать</button>
+            </form>
+        </div>
+    </section>
+    <section class="main-content__examples" id="examples-section">
+        <h2>Примеры решения бизнес-задач с использованием предлагаемого продукта</h2>
+        <div class="arrows-shadow">
+            <div class="arrow prev-arrow" id="prev"></div>
+            <div class="examples-slider-wrapper">
+                <div class="swiper-wrapper examples-swiper">
+                    <div class="swiper-slide example-slide">
+                        <figure>
+                            <img class="example-slide__img" src="../../src/img/staff_selection/main-content/examples-slider/1.png" alt="">
+                        </figure>
+                        <p>
+                            <a href="https://topfactor.pro/blog/otzyv-o-vnedrenii-kpi-upravleniya-v-kompanii-ooo-tayten-pauer-solyushn-/" title="Отзыв о внедрении KPI-управления в компании ООО 'Тайтэн Пауэр Солюшн'">
+                                Отзыв о внедрении KPI-управления в компании ООО "Тайтэн Пауэр Солюшн"
+                            </a>
+                        </p>
+                    </div>
+                    <div class="swiper-slide example-slide">
+                        <figure>
+                            <img class="example-slide__img" src="../../src/img/staff_selection/main-content/examples-slider/2.png" alt="">
+                        </figure>
+                        <p>
+                            <a href="https://topfactor.pro/blog/otzyv-kompanii-ooo-planeta-leta-po-pilotnomu-proektu-upravlenie-komandnoy-vovlechennostyu-i-effektiv/" title="Отзыв компании ООО 'Планета Лета' по проекту 'Управление командной вовлеченностью и эффективностью'">
+                                Отзыв компании ООО "Планета Лета" по проекту "Управление командной вовлеченностью и эффективностью"
+                            </a>
+                        </p>
+                    </div>
+                    <div class="swiper-slide example-slide">
+                        <figure>
+                            <img class="example-slide__img" src="../../src/img/staff_selection/main-content/examples-slider/3.png" alt="">
+                        </figure>
+                        <p>
+                            <a href="https://topfactor.pro/blog/otzyv-o-provedenii-proekta-diagnostiki-vovlechennosti-i-motivatsii-v-kompanii-tayten-pauer-solyushn/" title="Отзыв о проведении проекта диагностики вовлеченности и мотивации в компании 'Тайтэн пауэр солюшн'">
+                                Отзыв о проведении проекта диагностики вовлеченности и мотивации в компании "Тайтэн пауэр солюшн"
+                            </a>
+                        </p>
+                    </div>
+                    <div class="swiper-slide example-slide">
+                        <figure>
+                            <img class="example-slide__img" src="../../src/img/staff_selection/main-content/examples-slider/4.png" alt="">
+                        </figure>
+                        <p>
+                            <a href="https://topfactor.pro/blog/otzyv-kompanii-ooo-yutim-o-vnedrenii-rasshireniya-programmnogo-produkta-1s-predpriyatie-upravlenie-p/" title="Отзыв компании ООО 'Ютим' по проекту 'Управление командной вовлеченностью и эффективностью'">
+                                Отзыв компании ООО "Ютим" по проекту "Управление командной вовлеченностью и эффективностью"
+                            </a>
+                        </p>
+                    </div>
+                    <div class="swiper-slide example-slide">
+                        <figure>
+                            <img class="example-slide__img" src="../../src/img/staff_selection/main-content/examples-slider/5.png" alt="">
+                        </figure>
+                        <p>
+                            <a href="https://topfactor.pro/blog/otzyv-kompanii-doktor-mebel/" title="Отзыв компании 'Доктор Мебель' по проекту автоматизации системы целевого и KPI-управления">
+                                Отзыв компании "Доктор Мебель" по проекту автоматизации системы целевого и KPI-управления
+                            </a>
+                        </p>
+                    </div>
+                    <div class="swiper-slide example-slide">
+                        <figure>
+                            <img class="example-slide__img" src="../../src/img/staff_selection/main-content/examples-slider/6.jpg" alt="">
+                        </figure>
+                        <p>
+                            <a href="https://topfactor.pro/blog/otzyv-kompanii-kezi/" title="Отзыв по проекту внедрения кафетерия льгот в фармацевтической компании Chiesi">
+                                Отзыв по проекту внедрения кафетерия льгот в фармацевтической компании Chiesi
+                            </a>
+                        </p>
+                    </div>
+                </div>
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-prev under-prev"></div>
+                <div class="swiper-button-next under-next"></div>
+            </div>
+            <div class="arrow next-arrow" id="next"></div>
+        </div>
+        <div class="read-review">
+            <a class="read-review-link" href="http://topfactor.pro/blog/?group=525">Читать все отзывы</a>
+        </div>
+    </section>
+</main>
+<footer class="footer-page">
+    <section class="footer-row footer-row-1">
+        <div class="footer-row-content">
+            <div class="footer-page__info">
+                <figure>
+                    <img class="footer-page__logo-img" src="../../src/img/staff_selection/header/logo.png" alt="top-factor-logo">
+                </figure>
+                <div class="contacts">
+                    <div class="address">
+                        <p>
+                            115419, г. Москва,<br>
+                            ул. Шаболовка, д. 34, стр.5, офис 7
+                        </p>
+                    </div>
+                    <div class="phone-call">
+                        <a href="tel:+74955085627">+7 495-508-56-27</a>
+                        <a class="order-call-footer-link" href="#">Заказать звонок</a>
+                    </div>
+                    <div class="email-info">
+                        <a href="mailto:info@topfactor.pro">info@topfactor.pro</a>
+                    </div>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/KPI1C">
+                            <div class="social-visualizer facebook"></div>
+                        </a>
+                        <a href="http://vk.com/event74249743">
+                            <div class="social-visualizer vk"></div>
+                        </a>
+                        <a href="https://t.me/digital4hr">
+                            <div class="social-visualizer telegram"></div>
+                        </a>
+                        <a href="https://www.linkedin.com/grp/home?gid=8112464">
+                            <div class="social-visualizer linkedin"></div>
+                        </a>
+                    </div>
+                </div>
+                <a class="footer-page__demo-version-link hidden-link" href="">Демо-версия</a>
+            </div>
+            <div class="footer-page__describe">
+                <h3>Подписка</h3>
+                <p>
+                    У нас предусмотрены специальные акции и скидки только для подписчиков!
+                    Мы делимся с Вами только свежей и актуальной информацией и новостями.
+                </p>
+                <ul>
+                    <li>
+                        <a href="http://topfactor.pro/blog/?group=524">Новости HR-автоматизации</a>
+                    </li>
+                    <li>
+                        <a href="http://topfactor.pro/calendar-of-events/">Анонсы мероприятий</a>
+                    </li>
+                    <li>
+                        <a href="http://topfactor.pro/blog/?group=523">Комментарии экспертов</a>
+                    </li>
+                </ul>
+                <input class="describe-field" id="describe-field"  name="describe-field" type="email" placeholder="Ваш E-mail">
+                <button class="describe-btn" id="describe-btn" type="button">Подписаться на новости</button>
+            </div>
+            <div class="footer-page__navigation">
+                <nav class="footer-navigation">
+                    <ul class="footer-navigation__list">
+                        <li>
+                            <a href="http://topfactor.pro/maps.php">Карта сайта</a>
+                        </li>
+                        <li>
+                            <a href="http://topfactor.pro/calendar-of-events/">Расписание мероприятий</a>
+                        </li>
+                        <li>
+                            <a href="https://topfactor.pro/blog/">Блог</a>
+                        </li>
+                        <li>
+                            <a href="https://topfactor.pro/about/">О компании</a>
+                        </li>
+                        <li>
+                            <a href="https://topfactor.pro/partners/select-partners/">Партнеры</a>
+                        </li>
+                        <li>
+                            <a href="http://topfactor.pro/partners/become-a-partner.php">Стать партнером</a>
+                        </li>
+                        <li>
+                            <a href="https://topfactor.pro/services/services-technology/">Консалтинговые услуги</a>
+                        </li>
+                        <li>
+                            <a href="https://topfactor.pro/services/services-kpi/">Услуги по внедрению</a>
+                        </li>
+                    </ul>
+                </nav>
+                <a class="footer-page__demo-version-link showed-link" href="">Демо-версия</a>
+            </div>
+        </div>
+    </section>
+    <section class="footer-row footer-row-2">
+        <div class="footer-row-content showed-link">
+            <div class="footer-privacy-policy">
+                <a class="footer-privacy-policy-link" href="https://topfactor.pro/politika-konfidentsialnosti.php" target="_blank">Политика информационной безопасности</a>
+                <a class="footer-privacy-policy-link" href="https://topfactor.pro/politika-konfidentsialnosti-mobilnogo-prilozheniya/" target="_blank">Политика конфиденциальности мобильного приложения</a>
+            </div>
+            <div class="offer-block">
+                <span>2023©ТопФактор. Все права защищены.</span>
+                <a class="offer-link" href="https://topfactor.pro/oferta.php">Оферта на оказание консультационных услуг</a>
+            </div>
+            <div class="license-block">
+                <a class="license-link" href="https://topfactor.pro/litsenzirovanie/">Лицензирование</a>
+            </div>
+        </div>
+        <div class="footer-hidden-row-content hidden-link">
+            <div class="offer-block">
+                <span>2023©ТопФактор. Все права защищены.</span>
+            </div>
+            <div class="footer-privacy-policy">
+                <a class="footer-privacy-policy-link" href="https://topfactor.pro/politika-konfidentsialnosti.php" target="_blank">Политика информационной безопасности</a>
+                <a class="footer-privacy-policy-link" href="https://topfactor.pro/politika-konfidentsialnosti-mobilnogo-prilozheniya/" target="_blank">Политика конфиденциальности мобильного приложения</a>
+            </div>
+            <div class="license-block">
+                <a class="license-link" href="https://topfactor.pro/litsenzirovanie/">Лицензирование</a>
+            </div>
+            <div class="offer-block">
+                <a class="offer-link" href="https://topfactor.pro/oferta.php">Оферта на оказание консультационных услуг</a>
+            </div>
+        </div>
+    </section>
+</footer>
+<script src="../../src/js/bottom-swiper/bottom-swiper.js"></script>
+<script src="../../src/js/business-functions/general.js"></script>
+</body>
+</html>

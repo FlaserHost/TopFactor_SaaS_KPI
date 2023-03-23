@@ -150,6 +150,7 @@ input[type="search"]::-webkit-search-results-decoration {
     position: absolute;
     top: -100%;
     transition: top .4s ease;
+    z-index: 4;
 }
 
 .hidden-field-showed {
@@ -189,6 +190,7 @@ input[type="search"]::-webkit-search-results-decoration {
 .phone-number {
     font-family: HelveticaNeueCyr-Bold, Arial, sans-serif;
     font-size: 22px;
+    color: #fff;
 }
 
 .order-call-link {
@@ -339,11 +341,10 @@ input[type="search"]::-webkit-search-results-decoration {
     background-color: #0072bc;
     color: #fff;
     text-transform: uppercase;
-    outline: none;
     cursor: pointer;
     font-family: HelveticaNeueCyr-Roman, Arial, sans-serif;
     font-size: 16px;
-    transition: 0.3s;
+    transition: .3s ease;
 }
 
 .header-demo-btn:hover {
@@ -1486,6 +1487,7 @@ div.social-links {
     box-shadow: 0 6px 10px -1px #888;
     padding: 30px 30px;
     background-color: #fff;
+    z-index: 3;
     opacity: 0;
     transition: opacity .4s ease;
     pointer-events: none;
