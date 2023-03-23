@@ -142,9 +142,26 @@ numberFields.forEach(field => {
         }
     })
 });
+const rates = document.querySelector('.rates-outer-block').offsetTop * -1;
+document.addEventListener('scroll', e => {
+    const scrollWindow = document.body.getBoundingClientRect().top;
+    const tableHeader = document.querySelector('.rates-wrapper');
 
-// тарифы и функции
-alert(document.querySelector('.main-content__calculator').scrollTop);
+    if (scrollWindow <= rates)
+    {
+        tableHeader.classList.add('fixed-header-bg-color');
+    }
+    else
+    {
+        tableHeader.classList.remove('fixed-header-bg-color');
+    }
+
+
+
+
+
+});
+
 
 // AOS
 AOS.init();
