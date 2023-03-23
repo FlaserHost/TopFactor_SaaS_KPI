@@ -1547,7 +1547,7 @@ div.social-links {
 }
 
 .question-mark {
-    width: 20px;
+    min-width: 20px;
     height: 20px;
     background: url('../../img/staff_selection/main-content/calculator/question-mark.svg') no-repeat center / 100% 100%;
     border-radius: 50%;
