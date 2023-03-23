@@ -143,5 +143,8 @@ numberFields.forEach(field => {
     })
 });
 
+// тарифы и функции
+alert(document.querySelector('.main-content__calculator').scrollTop);
+
 // AOS
 AOS.init();

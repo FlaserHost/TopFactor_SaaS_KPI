@@ -920,7 +920,6 @@ input[type="search"]::-webkit-search-results-decoration {
 
 .main-content__calculator {
     min-height: 762px;
-    background-color: #e0e9f2;
     padding: 80px 20px;
 }
 
@@ -1604,10 +1603,24 @@ div.social-links {
     margin-top: 80px;
 }
 
-.table-rates {
+.table-rates,
+.functions-table {
     width: 100%;
     border-collapse: collapse;
     font-family: HelveticaNeueCyr-Roman, Arial, sans-serif;
+}
+
+.functions-table tr {
+    border-top: 1px solid #313844;
+    display: flex;
+}
+
+.functions-table tr > td:not(:first-child) {
+    width: 285px;
+}
+
+.functions-table tr > td:first-child {
+    flex-grow: 1;
 }
 
 .header-row {
@@ -1659,5 +1672,6 @@ div.social-links {
 
 .functions-window {
     width: 100%;
-
+    background-color: #FBFBFB;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, .25);
 }
