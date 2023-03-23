@@ -1451,10 +1451,10 @@ div.social-links {
 }
 
 .hidden-link {
-    font-family: HelveticaNeueCyr-Roman, Arial, sans-serif;
     display: none;
 }
 
+.hidden-link,
 .main-content__calculator {
     font-family: HelveticaNeueCyr-Roman, Arial, sans-serif;
 }
@@ -1596,4 +1596,68 @@ div.social-links {
 .new-form-btn-2:hover {
     background-color: transparent;
     color: #0072BC;
+}
+
+.rates-outer-block {
+    width: 100%;
+    max-width: 1140px;
+    margin-top: 80px;
+}
+
+.table-rates {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: HelveticaNeueCyr-Roman, Arial, sans-serif;
+}
+
+.header-row {
+    border-bottom: 1px solid #313844;
+}
+
+.table-rates th,
+.table-rates td {
+    padding: 10px;
+}
+
+.table-rates th {
+    text-align: left;
+    font-size: 26px;
+    color: #313844;
+    font-weight: 400;
+    padding-left: 0;
+}
+
+.header-row > td {
+    color: #0072BC;
+    font-size: 28px;
+    font-weight: 900;
+    font-family: HelveticaNeueCyr-Black, Arial, sans-serif;
+}
+
+.table-rates td {
+    text-align: center;
+}
+
+.prices-row td {
+    padding-top: 20px;
+}
+
+.prices-row td span {
+    display: block;
+}
+
+.price {
+    font-weight: 900;
+    font-size: 20px;
+}
+
+.period {
+    font-size: 14px;
+    color: #828282;
+    margin-top: 10px;
+}
+
+.functions-window {
+    width: 100%;
+
 }
