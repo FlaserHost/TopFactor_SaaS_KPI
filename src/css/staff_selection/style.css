@@ -1597,11 +1597,25 @@ div.social-links {
     color: #0072BC;
 }
 
-.rates-outer-block {
+.rates-outer-block,
+.rates-outer-block-mobile {
     width: 100%;
     max-width: 1140px;
+}
+
+.rates-outer-block {
     margin-top: 80px;
     position: relative;
+}
+
+.rates-outer-block-mobile {
+    display: none;
+    margin-top: 40px;
+}
+
+.mobile-table-place,
+.rates-mobile-table {
+    width: 100%;
 }
 
 .table-rates,
@@ -1643,8 +1657,66 @@ div.social-links {
     padding-top: 20px;
 }
 
-.prices-row td span {
+.prices-row td > span,
+.rates-price-mobile > span {
     display: block;
+}
+
+.rates-mobile-header,
+.rates-prices-mobile-header,
+.rates-price-mobile > span:last-child {
+    font-weight: 100;
+}
+
+.rates-mobile-header {
+    text-align: left;
+}
+
+.rates-prices-mobile-header,
+.rates-price-mobile {
+    text-align: right;
+}
+
+.rates-price-mobile {
+    font-weight: 700;
+    font-size: 18px;
+}
+
+.rates-price-mobile > span:last-child {
+    font-size: 14px;
+    padding-right: 24px;
+    color: #828282;
+    margin-top: 17px;
+}
+
+.rates-mobile-table tr {
+    display: flex;
+    padding: 20px 0;
+    justify-content: space-between;
+}
+
+.mobile-table-header {
+    font-size: 18px;
+    color: #313844;
+}
+
+.rates-name-mobile {
+    font-size: 18px;
+    color: #0072BC;
+    font-weight: 900;
+    font-family: HelveticaNeueCyr-Black, Arial, sans-serif;
+}
+
+.download-table-mobile {
+    width: 100%;
+    padding: 20px 25px;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 20px;
+    background-color: #17A5A3;
+    border: 1px solid #17A5A3;
+    transition-duration: .4s;
+    margin-top: 15px;
 }
 
 .price {

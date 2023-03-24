@@ -13,6 +13,14 @@
         padding: 0 10px;
     }
 
+    .functions-table tr > td:first-child {
+        min-width: 288px;
+    }
+
+    .functions-table tr > td:not(:first-child) {
+        min-width: 222px;
+    }
+
     .examples-slider-wrapper {
         width: 888px;
     }
@@ -135,6 +143,41 @@
         width: 230px;
     }
 
+    .fixed-header-bg-color .table-rates th {
+        padding-left: 46px;
+        font-size: 16px;
+        padding-right: 82px;
+    }
+
+    .fixed-header-bg-color .header-row > td {
+        font-size: 18px;
+    }
+
+    .table-rates th {
+        font-size: 20px;
+    }
+
+    .header-row > td {
+        font-size: 21px;
+    }
+
+    .functions-table tr {
+        padding: 25px 0;
+    }
+
+    .functions-table tr > td:first-child {
+        min-width: 206px;
+    }
+
+    .functions-table tr > td:not(:first-child) {
+        min-width: 164px;
+    }
+
+    .absolute-ruble {
+        top: auto;
+        bottom: calc(100% + 4px);
+    }
+
     .examples-slider-wrapper {
         width: 650px;
     }
@@ -168,10 +211,6 @@
         font-size: 15px;
     }
 
-    .order-call-link {
-        display: none;
-    }
-
     .slide-content > h2 {
         font-size: 20px;
     }
@@ -183,7 +222,6 @@
 
     .slide-content > a {
         font-size: 15px;
-        width: 100%;
     }
 
     .main-content-menu__list > li:not(:last-child) {
@@ -206,20 +244,10 @@
         width: 404px;
     }
 
-    .new-calculator-form__new-form-fields,
-    .new-form-btns {
-        display: block;
-    }
-
-    .field-area {
-        width: 100%;
-    }
-
-    .new-form-btn-1 {
-        display: none;
-    }
-
-    .new-form-btn-2 {
+    .slide-content > a,
+    .field-area,
+    .new-form-btn-2,
+    .footer-row-content > div {
         width: 100%;
     }
 
@@ -227,7 +255,21 @@
         padding-right: 35px;
     }
 
-    .triangle-btn {
+    .order-call-link,
+    .new-form-btn-1,
+    .rates-outer-block,
+    .footer-page__demo-version-link,
+    .contacts,
+    .showed-link,
+    .rates-outer-block {
+        display: none;
+    }
+
+    .new-calculator-form__new-form-fields,
+    .new-form-btns,
+    .triangle-btn,
+    .rates-outer-block-mobile,
+    .hidden-link {
         display: block;
     }
 
@@ -247,21 +289,17 @@
         padding-left: 0;
     }
 
-    .footer-row-content > div {
-        width: 100%;
-    }
-
     .footer-page__describe {
         order: -1;
     }
 
-    .footer-page__demo-version-link,
-    .contacts {
-        display: none;
+    .footer-navigation__list,
+    .footer-navigation__list > li:first-child,
+    .footer-page__info {
+        display: flex;
     }
 
     .footer-navigation__list {
-        display: flex;
         flex-wrap: wrap;
         justify-content: space-around;
     }
@@ -271,7 +309,6 @@
     }
 
     .footer-navigation__list > li:first-child {
-        display: flex;
         align-items: flex-end;
     }
 
@@ -284,7 +321,6 @@
     }
 
     .footer-page__info {
-        display: flex;
         justify-content: space-between;
         align-items: center;
     }
@@ -296,14 +332,6 @@
 
     .footer-page__logo-img {
         width: 160px;
-    }
-
-    .showed-link {
-        display: none;
-    }
-
-    .hidden-link {
-        display: block;
     }
 
     .footer-hidden-row-content > .offer-block:not(:last-child),
@@ -367,6 +395,10 @@
         margin-top: 30px;
     }
 
+    .download-table-mobile {
+        font-size: 17px;
+    }
+
     .examples-slider-wrapper {
         width: 274px;
     }
@@ -412,6 +444,10 @@
 
     .calculate-btn {
         font-size: 16px;
+    }
+
+    .download-table-mobile {
+        font-size: 14px;
     }
 
     .field-description > label {
