@@ -1324,7 +1324,6 @@ div.social-links {
     left: 0;
     top: 100%;
     background-color: #fff;
-    visibility: hidden;
     opacity: 0;
     transition: opacity .4s ease;
     z-index: 2;
@@ -1332,6 +1331,7 @@ div.social-links {
     font-size: 18px;
     text-transform: none;
     padding: 20px 15px 15px;
+    pointer-events: none;
 }
 
 .menu-panel h3 {
@@ -1340,8 +1340,8 @@ div.social-links {
 
 .header-navigation-list > li:hover > .menu-panel,
 .menu-panel:hover {
-    visibility: visible;
     opacity: 1;
+    pointer-events: all;
 }
 
 .menu-panel li:not(:first-child) {
