@@ -1597,6 +1597,10 @@ div.social-links {
     color: #0072BC;
 }
 
+.sticky-rink {
+    width: 100%;
+}
+
 .rates-outer-block,
 .rates-outer-block-mobile {
     width: 100%;
@@ -1651,6 +1655,11 @@ div.social-links {
 
 .table-rates td {
     text-align: center;
+}
+
+.rates-table-link {
+    color: #0072bc;
+    cursor: pointer;
 }
 
 .prices-row td {
@@ -1738,7 +1747,7 @@ div.social-links {
     margin-top: 80px;
     height: 280px;
     transition: height 1s;
-    overflow: hidden;
+    overflow-y: clip;
 }
 
 .functions-table tr {
@@ -1806,6 +1815,12 @@ article.fixed-header-bg-color * {
     left: 0;
 }
 
+.functions-table .question-hint {
+    right: calc(100% + 25px);
+    top: 0;
+    left: auto;
+}
+
 .footnote {
     display: flex;
     justify-content: center;
@@ -1814,4 +1829,48 @@ article.fixed-header-bg-color * {
 
 .footnote > p {
     margin-left: 10px;
+}
+
+.actions-place {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 25px;
+}
+
+.calculator-actions {
+    padding: 24px 60px;
+    outline: none;
+    text-transform: uppercase;
+    color: #fff;
+    transition-duration: .4s;
+    font-size: 20px;
+    cursor: pointer;
+    font-weight: 700;
+}
+
+.calculator-actions:first-child {
+    margin-right: 30px;
+}
+
+.show-functionality-btn {
+    border: 1px solid #17A5A3;
+    background-color: #17A5A3;
+}
+
+.download-comparison-table-link {
+    border: 1px solid #0072BC;
+    background-color: #0072BC;
+}
+
+.calculator-actions:hover {
+    background-color: transparent;
+}
+
+.show-functionality-btn:hover {
+    color: #17A5A3;
+}
+
+.download-comparison-table-link:hover {
+    color: #0072BC;
 }

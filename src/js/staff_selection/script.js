@@ -155,9 +155,23 @@ document.addEventListener('scroll', e => {
 });
 
 // показать все функции
-document.getElementById('test-btn').addEventListener('click', () => {
+document.getElementById('show-functionality-btn').addEventListener('click', btn => {
+    let currentBtnText = btn.target.innerText.toLowerCase();
+    const functionsWindow = document.querySelector('.functions-window').style;
     const fullTableHeight = document.querySelector('.functions-window__table-place').getBoundingClientRect().height + 40;
-    document.querySelector('.functions-window').style.height = `${fullTableHeight}px`;
+    functionsWindow.height = `${fullTableHeight}px`;
+
+    if (currentBtnText === 'показать функционал')
+    {
+        currentBtnText = 'скрыть функционал';
+    }
+    else
+    {
+        functionsWindow.height = '280px';
+        currentBtnText = 'показать функционал';
+    }
+
+    btn.target.innerText = currentBtnText;
 });
 
 // AOS

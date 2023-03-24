@@ -178,6 +178,14 @@
         bottom: calc(100% + 4px);
     }
 
+    .actions-place {
+        justify-content: space-between;
+    }
+
+    .calculator-actions {
+        font-size: 15px;
+    }
+
     .examples-slider-wrapper {
         width: 650px;
     }
