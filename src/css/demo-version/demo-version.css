@@ -93,6 +93,7 @@
     font-size: 14px;
     max-width: 700px;
     color: #000;
+    cursor: pointer;
 }
 
 .checkbox-label:before {
@@ -144,4 +145,14 @@
 
 .example-slide {
     background-color: #fff;
+}
+
+input[type="tel"]::placeholder,
+input[type="tel"]:focus::placeholder {
+    color: transparent;
+    transition: color .3s;
+}
+
+input[type="tel"]:hover::placeholder {
+    color: #757575;
 }

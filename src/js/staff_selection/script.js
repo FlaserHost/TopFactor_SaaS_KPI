@@ -67,7 +67,6 @@ const swiperUnderheader = new Swiper(".swiper", {
 });
 
 // аккордеон
-
 // получение высоты первого элемента аккордеона
 const selectorsOne = '.accordion-row:first-child > .accordion-row__content > .hidden-block';
 const firstAccordionRowHeight = document.querySelector(selectorsOne).getBoundingClientRect().height;
