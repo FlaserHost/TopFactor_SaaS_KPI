@@ -36,7 +36,7 @@ document.onclick = (e) => {
     const langDropExist = langDrop.length; // получение факта существования списка
     const parent = e.target.closest(".language-area"); // получения родительского элемента списка
 
-    if (langDropExist > 0 && parent === null) // если список в текущий момент отрисован на экране, но нажатие произошло на по нему, то удалить список
+    if (langDropExist > 0 && parent === null) // если список в текущий момент отрисован на экране, но нажатие произошло не по нему, то удалить список
     {
         langDrop[0].remove(); // удаление списка из DOM
         language.classList.remove("language-area-active"); // снятие класса активности
@@ -142,26 +142,23 @@ numberFields.forEach(field => {
         }
     })
 });
+
+// события прокрутки
 const rates = document.querySelector('.rates-outer-block').offsetTop * -1;
 document.addEventListener('scroll', e => {
-    const scrollWindow = document.body.getBoundingClientRect().top;
+    const scrollWindow = e.target.body.getBoundingClientRect().top;
     const tableHeader = document.querySelector('.rates-wrapper');
 
-    if (scrollWindow <= rates)
-    {
-        tableHeader.classList.add('fixed-header-bg-color');
-    }
-    else
-    {
-        tableHeader.classList.remove('fixed-header-bg-color');
-    }
-
-
-
-
-
+    scrollWindow <= rates
+        ? tableHeader.classList.add('fixed-header-bg-color')
+        : tableHeader.classList.remove('fixed-header-bg-color');
 });
 
+// показать все функции
+document.getElementById('test-btn').addEventListener('click', () => {
+    const fullTableHeight = document.querySelector('.functions-window__table-place').getBoundingClientRect().height + 40;
+    document.querySelector('.functions-window').style.height = `${fullTableHeight}px`;
+});
 
 // AOS
 AOS.init();

@@ -1663,6 +1663,10 @@ div.social-links {
     background-color: #FBFBFB;
     box-shadow: 0 4px 4px rgba(0, 0, 0, .25);
     padding: 15px;
+    margin-top: 80px;
+    height: 280px;
+    transition: height 1s;
+    overflow: hidden;
 }
 
 .functions-table tr {
@@ -1677,25 +1681,65 @@ div.social-links {
 }
 
 .functions-table tr > td:first-child {
-    min-width: 320px;
+    min-width: 328px;
+    position: relative;
 }
 
 .functions-table tr > td:not(:first-child) {
     justify-content: center;
-    min-width: 263px;
+    min-width: 261px;
 }
 
 .rates-wrapper {
     position: sticky;
-    top: 0;
+    top: -.5px;
     transition-duration: .4s;
+}
+
+.rates-wrapper,
+.table-rates {
+    min-height: 130px;
 }
 
 .fixed-header-bg-color {
     background-color: #0072bc;
-
+    padding: 10px 4px;
+    z-index: 5;
 }
 
 article.fixed-header-bg-color * {
     color: #fff;
+}
+
+.fixed-header-bg-color .header-row {
+    border-bottom-color: #fff;
+}
+
+.fixed-header-bg-color .header-row > td {
+    font-size: 20px;
+}
+
+.fixed-header-bg-color .table-rates th {
+    padding-left: 143px;
+    font-size: 16px;
+}
+
+.fixed-header-bg-color .period {
+    display: none;
+}
+
+.absolute-ruble {
+    position: absolute;
+    top: 2px;
+    left: 0;
+}
+
+.footnote {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.footnote > p {
+    margin-left: 10px;
 }
