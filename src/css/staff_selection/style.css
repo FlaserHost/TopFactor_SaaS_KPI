@@ -517,7 +517,7 @@ input[type="search"]::-webkit-search-results-decoration {
 }
 
 .main-content-review {
-    padding: 100px 20px 160px;
+    padding: 100px 20px;
 }
 
 .main-content-review,
@@ -591,21 +591,22 @@ input[type="search"]::-webkit-search-results-decoration {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-top: 80px;
+    padding-top: 30px;
 }
 
-.main-content__examples {
-    padding: 80px 20px 80px;
+.main-content__examples,
+.main-content__why-solution,
+.main-content__calculator {
+    padding: 30px 20px;
 }
 
 .main-content__why-solution {
-    min-height: 536px;
+    min-height: 430px;
     background-color: #e0e9f2;
-    padding: 80px 20px;
 }
 
 .stages {
-    padding-bottom: 80px;
+    padding-bottom: 30px;
 }
 
 .main-content__why-solution > h2,
@@ -789,7 +790,7 @@ input[type="search"]::-webkit-search-results-decoration {
 .stages__accordion {
     width: 100%;
     max-width: 1140px;
-    margin-top: 110px;
+    margin-top: 60px;
 }
 
 .stages__accordion > h4 {
@@ -920,7 +921,6 @@ input[type="search"]::-webkit-search-results-decoration {
 
 .main-content__calculator {
     min-height: 762px;
-    padding: 80px 20px;
 }
 
 .calculator-form-wrapper {
@@ -933,7 +933,7 @@ input[type="search"]::-webkit-search-results-decoration {
     position: relative;
     width: 100%;
     max-width: 1140px;
-    margin-top: 100px;
+    margin-top: 70px;
     overflow-x: clip;
 }
 
@@ -1018,7 +1018,7 @@ input[type="search"]::-webkit-search-results-decoration {
     max-width: 1140px;
     display: flex;
     justify-content: center;
-    margin-top: 150px;
+    margin-top: 100px;
 }
 
 .read-review-link {
@@ -1744,7 +1744,7 @@ div.social-links {
     background-color: #FBFBFB;
     box-shadow: 0 4px 4px rgba(0, 0, 0, .25);
     padding: 15px;
-    margin-top: 80px;
+    margin-top: 50px;
     height: 280px;
     transition: height 1s;
     overflow-y: clip;
