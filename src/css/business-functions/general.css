@@ -52,7 +52,6 @@
     z-index: 1;
     transition: .4s ease;
     border: 1px solid #0072bb;
-    /*min-height: 34px;*/
 }
 
 .back-link:hover {

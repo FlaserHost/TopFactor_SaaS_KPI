@@ -1748,6 +1748,7 @@ div.social-links {
     height: 280px;
     transition: height 1s;
     overflow-y: clip;
+    position: relative;
 }
 
 .functions-table tr {
@@ -1812,13 +1813,12 @@ article.fixed-header-bg-color * {
 .absolute-ruble {
     position: absolute;
     top: 2px;
-    left: 0;
+    right: 0;
 }
 
 .functions-table .question-hint {
-    right: calc(100% + 25px);
+    left: calc(100% + 25px);
     top: 0;
-    left: auto;
 }
 
 .footnote {
@@ -1873,4 +1873,14 @@ article.fixed-header-bg-color * {
 
 .download-comparison-table-link:hover {
     color: #0072BC;
+}
+
+.shadow:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 100%;
+    min-height: 182px;
+    bottom: 0;
+    background-image: linear-gradient(to top, rgba(255, 255, 255, 1) 10%, rgba(255, 255, 255, 0.2) 135%);;
 }
