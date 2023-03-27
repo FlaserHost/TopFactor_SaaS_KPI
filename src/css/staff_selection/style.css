@@ -1817,7 +1817,7 @@ article.fixed-header-bg-color * {
 }
 
 .functions-table .question-hint {
-    left: calc(100% + 25px);
+    left: calc(100% + 15px);
     top: 0;
 }
 
