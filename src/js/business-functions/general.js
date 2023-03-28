@@ -4,7 +4,7 @@ document.onclick = e => {
     const langDropExist = langDrop.length; // получение факта существования списка
     const parent = e.target.closest(".language-area"); // получения родительского элемента списка
 
-    if (langDropExist > 0 && parent === null) // если список в текущий момент отрисован на экране, но нажатие произошло на по нему, то удалить список
+    if (langDropExist > 0 && parent === null) // если список в текущий момент отрисован на экране, но нажатие произошло по нему, то удалить список
     {
         langDrop[0].remove(); // удаление списка из DOM
         language.classList.remove("language-area-active"); // снятие класса активности
@@ -34,3 +34,10 @@ const swiperUnderheader = new Swiper(".swiper", {
 });
 
 Fancybox.bind('[data-fancybox="image"]', {});
+
+document.addEventListener('click', e => {
+    if (e.target.classList.contains('fancybox-image'))
+    {
+        document.querySelector('button[title="Close"]').click();
+    }
+});
