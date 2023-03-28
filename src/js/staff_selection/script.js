@@ -49,7 +49,7 @@ const accordionRows = Array.from(document.querySelectorAll(".accordion-row__head
 accordionRows.forEach((item, i, arr) => {
     item.addEventListener("click", e => {
         arr.forEach(el => {
-            el.nextElementSibling.style.transition = 'height .6s ease'; // присвоение паратров плавности
+            el.nextElementSibling.style.transition = 'height .6s ease'; // присвоение параметров плавности
             el.nextElementSibling.style.height = '0'; // обнуление высоты
             el.classList.remove("active-accordion-row"); // снятие класса активности
         });

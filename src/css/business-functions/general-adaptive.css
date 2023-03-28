@@ -6,9 +6,14 @@
 
     .page-destination-body {
         justify-content: center;
+        margin-top: 60px;
     }
 
     .page-destination-body__menu-block {
         position: static;
+    }
+
+    .new-form-btns {
+        margin-top: 40px;
     }
 }

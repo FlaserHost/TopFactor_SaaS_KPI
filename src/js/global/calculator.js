@@ -41,20 +41,21 @@ document.addEventListener('scroll', e => {
 document.getElementById('show-functionality-btn').addEventListener('click', btn => {
     let currentBtnText = btn.target.innerText.toLowerCase();
     const functionsWindow = document.querySelector('.functions-window');
+    const mistBlock = document.querySelector('.actions-place')
     const functionsWindowStyle = functionsWindow.style;
     const fullTableHeight = document.querySelector('.functions-window__table-place').getBoundingClientRect().height + 40;
     functionsWindowStyle.height = `${fullTableHeight}px`;
 
     if (currentBtnText === 'показать функционал')
     {
-        functionsWindow.classList.remove('shadow');
+        mistBlock.classList.remove('mist');
         currentBtnText = 'скрыть функционал';
     }
     else
     {
         document.querySelector('html').scroll({top: (rates * -1) - 200, behavior: 'smooth'});
         functionsWindowStyle.height = '280px';
-        functionsWindow.classList.add('shadow');
+        mistBlock.classList.add('mist');
         currentBtnText = 'показать функционал';
     }
 

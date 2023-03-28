@@ -32,3 +32,5 @@ const swiperUnderheader = new Swiper(".swiper", {
         prevEl: ".swiper-button-prev"
     }
 });
+
+Fancybox.bind('[data-fancybox="image"]', {});
