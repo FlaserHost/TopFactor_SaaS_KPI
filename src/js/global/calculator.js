@@ -61,3 +61,26 @@ document.getElementById('show-functionality-btn').addEventListener('click', btn 
 
     btn.target.innerText = currentBtnText;
 });
+
+// логика рассчета
+
+const unepRetail = 560; // B20
+const ukepRetail = 1800;
+const parametrs = {
+    5: 131100,
+    10: 176316,
+    20: 296196,
+    50: 568836,
+    100: 863460
+};
+document.getElementById('calculate-btn').addEventListener('click', e => {
+    e.preventDefault();
+    const calculateForm = document.getElementById('new-calculator-form');
+    const calculateData = [...new FormData(calculateForm)];
+    const retailYearD3 = (calculateData[0][1] * unepRetail) + (calculateData[1][1] * ukepRetail);
+    const retailYearD4 = parametrs[calculateData[2][1]];
+    const summ = retailYearD3 + retailYearD4;
+    const outputResult = summ / calculateData[0][1];
+
+    document.getElementById('fast-start').innerHTML = `${outputResult} руб`;
+});
