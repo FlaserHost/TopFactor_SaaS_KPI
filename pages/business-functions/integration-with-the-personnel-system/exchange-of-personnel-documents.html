@@ -6,11 +6,13 @@
   <title>ОБМЕН КАДРОВЫМИ ДОКУМЕНТАМИ</title>
   <link rel="shortcut icon" href="../../../src/img/favicon.ico">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css">
   <link rel="stylesheet" href="../../../src/css/staff_selection/style.css">
   <link rel="stylesheet" href="../../../src/css/business-functions/general.css">
   <link rel="stylesheet" href="../../../src/css/staff_selection/adaptive.css">
   <link rel="stylesheet" href="../../../src/css/business-functions/general-adaptive.css">
   <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
 </head>
 <body>
 <header class="page-header">
@@ -320,10 +322,10 @@
           <nav>
             <ul class="menu-list">
               <li class="menu-list-item">
-                <a class="menu-item-link active-menu-item" href="">Обмен кадровыми документами</a>
+                <a class="menu-item-link" href="building-organizational-structure.html">Построение оргструктуры</a>
               </li>
               <li class="menu-list-item">
-                <a class="menu-item-link" href="building-organizational-structure.html">Построение оргструктуры</a>
+                <a class="menu-item-link active-menu-item" href="">Обмен кадровыми документами</a>
               </li>
               <li class="menu-list-item">
                 <a class="menu-item-link" href="storing-signed-statements-in-the-employee-card.html">Хранение подписанных заявлений в карточке сотрудников</a>
@@ -334,6 +336,39 @@
             </ul>
           </nav>
         </aside>
+        <div class="page-destination-body__main-body">
+          <div class="page-image">
+            <a href="../../../src/img/business-functions/integration-with-the-personnel-system/9.1.jpg" data-fancybox="image">
+              <figure>
+                <img class="page-img page-img-1" src="../../../src/img/business-functions/integration-with-the-personnel-system/9.1.jpg" alt="">
+              </figure>
+            </a>
+          </div>
+          <div class="page-text">
+            <h3>Обмен кадровыми документами</h3>
+            <p>
+              Интеграция с 1С:ЗУП необходима для получения информации по
+              отпускам, расчетным листам, и другим документам.
+              Туда же могут отправляться кадровые документы от
+              сотрудников (заявки, запросы, заявления).
+            </p>
+            <p>
+              В 1С:ЗУП интегрируется «расширение» в котором отображается:
+              реестр входящих и исходящих кадровых документов, статус их
+              согласования/подписания в «Личном кабинете сотрудника».
+              Расширение не влияет на обновление основной конфигурации «1С:ЗУП»
+              и позволяет оставить основную конфигурацию «на поддержке».
+              Обмен с «Личным кабинетом сотрудника» может происходить по
+              расписанию или по запросу администратора
+            </p>
+            <p>
+              Автоматическое создание кадровых документов в 1С:ЗУП возможно на
+              основании подписанных заявлений/обращений из «Личного кабинета сотрудника».
+              Для этого в конструкторе настраивается шаблон, по которому происходит создание
+              документа в 1С:ЗУП, а также автоматическое заполнение полей реквизитов в создаваемом документе.
+            </p>
+          </div>
+        </div>
       </article>
     </div>
   </section>
@@ -359,7 +394,7 @@
           <div class="new-calculator-form__new-form-fields">
             <div class="field-area field-area-1">
               <div class="input-place">
-                <input class="form-field form-field-1" id="kedo-field" name="kedo-field" type="number" placeholder="5 000">
+                <input class="form-field form-field-1" id="kedo-field" name="kedo-field" type="number" placeholder="1 000">
                 <div class="triangle-btn triangle-up" data-property="up"></div>
                 <div class="triangle-btn triangle-down" data-property="down"></div>
               </div>
@@ -373,7 +408,7 @@
             </div>
             <div class="field-area field-area-2">
               <div class="input-place">
-                <input class="form-field form-field-2" id="vcep-field" name="vcep-field" type="number" placeholder="100">
+                <input class="form-field form-field-2" id="vcep-field" name="vcep-field" type="number" placeholder="5">
                 <div class="triangle-btn triangle-up" data-property="up"></div>
                 <div class="triangle-btn triangle-down" data-property="down"></div>
               </div>
@@ -434,7 +469,7 @@
             </tr>
           </table>
         </article>
-        <div class="functions-window shadow">
+        <div class="functions-window">
           <div class="functions-window__table-place">
             <table class="functions-table">
               <tr>
@@ -1019,7 +1054,7 @@
           </div>
         </div>
       </div>
-      <div class="actions-place">
+      <div class="actions-place mist">
         <button class="calculator-actions show-functionality-btn" id="show-functionality-btn" type="button">Показать функционал</button>
         <a class="calculator-actions download-comparison-table-link" id="download-comparison-table-link" href="#" download>Скачать таблицу сравнения</a>
       </div>
