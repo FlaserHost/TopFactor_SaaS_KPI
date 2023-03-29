@@ -63,10 +63,9 @@ document.getElementById('show-functionality-btn').addEventListener('click', btn 
 });
 
 // логика рассчета
-
 const unepRetail = 560; // B20
-const ukepRetail = 1800;
-const parametrs = {
+const ukepRetail = 1800; // B21
+const parametrs = { // A23 и ниже
     5: 131100,
     10: 176316,
     20: 296196,
@@ -76,11 +75,11 @@ const parametrs = {
 document.getElementById('calculate-btn').addEventListener('click', e => {
     e.preventDefault();
     const calculateForm = document.getElementById('new-calculator-form');
-    const calculateData = [...new FormData(calculateForm)];
+    const calculateData = [...new FormData(calculateForm)]; // like Array.from(new FormData(calculateForm))
     const retailYearD3 = (calculateData[0][1] * unepRetail) + (calculateData[1][1] * ukepRetail);
     const retailYearD4 = parametrs[calculateData[2][1]];
     const summ = retailYearD3 + retailYearD4;
-    const outputResult = summ / calculateData[0][1];
+    const outputResult = Math.round(summ / calculateData[0][1]);
 
-    document.getElementById('fast-start').innerHTML = `${outputResult} руб`;
+    Array.from(document.querySelectorAll('.fast-start')).forEach(item => item.innerHTML = `${outputResult} руб`);
 });
