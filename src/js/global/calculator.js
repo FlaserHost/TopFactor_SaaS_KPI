@@ -13,8 +13,12 @@ triangles.forEach(triangle => {
 });
 
 // ограничение числовых полей
-const numberFields = Array.from(document.querySelectorAll('.new-calculator-form .form-field'));
-numberFields.forEach(field => field.addEventListener('input', e => e.target.value = +e.target.value));
+const numberFields = Array.from(document.querySelectorAll('.new-calculator-form input.form-field'));
+numberFields.forEach(field => field.addEventListener('input', e => {
+    const thisField = e.target.getAttribute('id');
+    const limit = thisField === 'kedo-field' ? 1000 : 5;
+    e.target.value = e.target.value <= limit ? +e.target.value : limit;
+}));
 numberFields.forEach(field => {
     field.addEventListener('blur', e => {
         if (e.target.value === '0')
@@ -61,6 +65,8 @@ document.getElementById('show-functionality-btn').addEventListener('click', btn 
 
     btn.target.innerText = currentBtnText;
 });
+
+
 
 // логика рассчета
 const unepRetail = 560; // B20

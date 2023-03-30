@@ -137,9 +137,14 @@
 }
 
 .page-text a {
+    display: block;
     color: #0072BC;
     text-decoration: underline;
     cursor: pointer;
+}
+
+.page-text > a:first-of-type {
+    margin: 20px 0;
 }
 
 .page-text h3 {
@@ -148,7 +153,7 @@
     padding-bottom: 30px;
 }
 
-.page-text h3:nth-of-type(2) {
+.page-text h3:not(:nth-of-type(1)) {
     padding: 30px 0;
 }
 
@@ -215,4 +220,8 @@
 
 .without-margin {
     margin-top: 0;
+}
+
+.page-text > p.without-padding-bottom {
+    padding-bottom: 0;
 }
