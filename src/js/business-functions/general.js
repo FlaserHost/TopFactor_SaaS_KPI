@@ -32,17 +32,3 @@ const swiperUnderheader = new Swiper(".swiper", {
         prevEl: ".swiper-button-prev"
     }
 });
-
-Fancybox.bind('[data-fancybox="image"]', {});
-
-document.addEventListener('click', e => {
-    if (e.target.classList.contains('fancybox-image'))
-    {
-        document.querySelector('button[title="Close"]').click();
-    }
-});
-
-// перемещение к секции при входе на страницу
-
-const sectionPosition = document.querySelector('.main-content__page-destination').getBoundingClientRect().top;
-document.querySelector('html').scroll({top: sectionPosition, behavior: 'smooth'});

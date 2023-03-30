@@ -62,15 +62,5 @@ accordionRows.forEach((item, i, arr) => {
     });
 });
 
-// стрелки нижнего слайдера
-const arrows = Array.from(document.querySelectorAll('.arrow'));
-
-arrows.forEach(arrowItem => {
-    arrowItem.addEventListener('click', el => {
-        const currentArrow = el.target.getAttribute('id');
-        document.querySelector(`.under-${currentArrow}`).click();
-    })
-});
-
 // AOS
 AOS.init();

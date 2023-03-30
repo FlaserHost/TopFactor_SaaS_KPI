@@ -78,8 +78,10 @@ document.getElementById('calculate-btn').addEventListener('click', e => {
     const calculateData = [...new FormData(calculateForm)]; // like Array.from(new FormData(calculateForm))
     const retailYearD3 = (calculateData[0][1] * unepRetail) + (calculateData[1][1] * ukepRetail);
     const retailYearD4 = parametrs[calculateData[2][1]];
-    const summa = Math.round(retailYearD3 + retailYearD4);
-    const summaFormattedOutput = summa.toLocaleString();
+    const summaFastStart = Math.round(retailYearD3 + retailYearD4);
+    const summaFastStartFormatted = summaFastStart.toLocaleString();
+    const summaExtendedFormatted = (summaFastStart + 164500).toLocaleString();
 
-    Array.from(document.querySelectorAll('.fast-start')).forEach(item => item.innerHTML = `${summaFormattedOutput} руб`);
+    Array.from(document.querySelectorAll('.fast-start')).forEach(item => item.innerHTML = `${summaFastStartFormatted} руб`);
+    Array.from(document.querySelectorAll('.extended')).forEach(item => item.innerHTML = `${summaExtendedFormatted} руб`);
 });

@@ -20,3 +20,18 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 });
+
+// стрелки нижнего слайдера
+const arrows = Array.from(document.querySelectorAll('.arrow'));
+
+arrows.forEach(arrowItem => {
+    arrowItem.addEventListener('click', el => {
+        const currentArrow = el.target.getAttribute('id');
+        document.querySelector(`.under-${currentArrow}`).click();
+    })
+});
+
+// перехват нажатия
+const slides = Array.from(document.querySelectorAll('.example-slide'));
+
+slides.forEach(slide => slide.addEventListener('click', e => e.target.closest('.example-slide').querySelector('a').click()));
