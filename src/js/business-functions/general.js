@@ -32,3 +32,5 @@ const swiperUnderheader = new Swiper(".swiper", {
         prevEl: ".swiper-button-prev"
     }
 });
+
+AOS.init();
