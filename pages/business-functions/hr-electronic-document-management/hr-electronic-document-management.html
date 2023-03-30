@@ -429,9 +429,13 @@
                         </div>
                         <div class="field-area field-area-3">
                             <div class="input-place">
-                                <input class="form-field form-field-3" id="number-of-connections-field" name="number-of-connections-field" type="number" placeholder="100">
-                                <div class="triangle-btn triangle-up" data-property="up"></div>
-                                <div class="triangle-btn triangle-down" data-property="down"></div>
+                                <select class="form-field form-field-3" id="number-of-connections-field" name="number-of-connections-field">
+                                    <option value="5">5</option>
+                                    <option value="10">10</option>
+                                    <option value="20">20</option>
+                                    <option value="50">50</option>
+                                    <option value="100" selected>100</option>
+                                </select>
                             </div>
                             <div class="field-description">
                                 <div class="question-mark"></div>
@@ -462,12 +466,16 @@
                         <tr class="prices-row">
                             <th>Стоимость</th>
                             <td>
-                                <span class="price">20 400 руб</span>
-                                <span class="period">за 1 год</span>
+                <span class="price fast-start">
+                  <img src="../../../src/img/staff_selection/main-content/calculator/question-mark-gray.svg" alt="">
+                </span>
+                                <span class="period">за 1 год на одного сотрудника</span>
                             </td>
                             <td>
-                                <span class="price">54 600 руб</span>
-                                <span class="period">за 1 год</span>
+                <span class="price extended">
+                   <img src="../../../src/img/staff_selection/main-content/calculator/question-mark-gray.svg" alt="">
+                </span>
+                                <span class="period">за 1 год на одного сотрудника</span>
                             </td>
                             <td>
                                 <span class="price">по запросу</span>
@@ -1075,11 +1083,15 @@
                     </tr>
                     <tr>
                         <td class="rates-name-mobile">Быстрый старт</td>
-                        <td class="rates-price-mobile">20 400 руб</td>
+                        <td class="rates-price-mobile fast-start">
+                            <img src="../../../src/img/staff_selection/main-content/calculator/question-mark-gray.svg" alt="">
+                        </td>
                     </tr>
                     <tr>
                         <td class="rates-name-mobile">Расширенный</td>
-                        <td class="rates-price-mobile">54 600 руб</td>
+                        <td class="rates-price-mobile extended">
+                            <img src="../../../src/img/staff_selection/main-content/calculator/question-mark-gray.svg" alt="">
+                        </td>
                     </tr>
                     <tr>
                         <td class="rates-name-mobile">Корпоративный</td>
