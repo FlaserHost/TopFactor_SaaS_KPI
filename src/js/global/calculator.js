@@ -5,10 +5,22 @@ triangles.forEach(triangle => {
     triangle.addEventListener('click', e => {
         const currentProperty = e.target.getAttribute('data-property');
         const closestInput = e.target.closest('.input-place').querySelector('.form-field');
+        const closestInputID = closestInput.getAttribute('id');
         let closestInputValue = +closestInput.value;
+        let limit = closestInputID === 'kedo-field' ? 1000 : 5;
 
         currentProperty === 'up' ? closestInputValue++ : closestInputValue--;
-        closestInput.value = closestInputValue >= 0 ? closestInputValue : 0;
+
+        if (closestInputValue > limit)
+        {
+            closestInputValue = limit;
+        }
+        else if (closestInputValue < 0)
+        {
+            closestInputValue = 0;
+        }
+
+        closestInput.value = closestInputValue;
     });
 });
 
