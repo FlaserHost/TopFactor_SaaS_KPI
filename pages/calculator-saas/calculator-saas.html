@@ -266,7 +266,7 @@
     </section>
     <section class="main-content__page-form">
         <div class="form-wrapper">
-            <form class="contact-form" action="#" method="POST">
+            <form class="contact-form" id="contact-form" action="#" method="POST">
                 <div class="contact-form__field-area">
                     <label class="form-label name-label required" for="name-field">Имя:</label>
                     <input class="contact-form-field name-field" id="name-field" name="name-field" type="text" autocomplete="off" required>
@@ -287,9 +287,9 @@
                     <label class="form-label phone-label required" for="phone-field">Контактный телефон:</label>
                     <input class="contact-form-field phone-field" id="phone-field" name="phone-field" type="tel" autocomplete="off" placeholder="+7 (___) ___-____" required>
                 </div>
-                <div class="contact-form__field-area">
+                <div class="contact-form__field-area required-checkbox-area">
                     <h3 class="required">Согласие на обработку персональных данных</h3>
-                    <input class="contact-form-checkbox personal-data-agreed-checkbox" id="personal-data-agreed-checkbox" name="personal-data-agreed-checkbox" type="checkbox" checked>
+                    <input class="contact-form-checkbox personal-data-agreed-checkbox" id="personal-data-agreed-checkbox" name="personal-data-agreed-checkbox" type="checkbox" checked required>
                     <label class="form-label checkbox-label personal-data-agreed-checkbox-label" for="personal-data-agreed-checkbox">
                         Ставя отметку, я даю своё согласие на обработку моих персональных данных, принимаю <a class="checkbox-label-offer-link" href="#">условия Оферты</a> по использованию сайта и согласен с <a class="checkbox-label-privacy-policy" href="#">Политикой конфиденциальности</a>
                     </label>

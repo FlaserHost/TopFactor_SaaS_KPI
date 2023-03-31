@@ -83,7 +83,19 @@
     box-shadow: 0 0 10px 1px #99C7E4;
 }
 
+.required-checkbox-area {
+    position: relative;
+}
+
 .contact-form-checkbox {
+    position: absolute;
+    bottom: 9px;
+    left: 3.4px;
+    z-index: -1;
+    opacity: 0;
+}
+
+.distribution-checkbox {
     display: none;
 }
 

@@ -7,7 +7,7 @@ triangles.forEach(triangle => {
         const closestInput = e.target.closest('.input-place').querySelector('.form-field');
         const closestInputID = closestInput.getAttribute('id');
         let closestInputValue = +closestInput.value;
-        let limit = closestInputID === 'kedo-field' ? 1000 : 5;
+        let limit = closestInputID === 'kedo-field' ? 30000 : 100;
 
         currentProperty === 'up' ? closestInputValue++ : closestInputValue--;
 
@@ -28,7 +28,7 @@ triangles.forEach(triangle => {
 const numberFields = Array.from(document.querySelectorAll('.new-calculator-form input.form-field'));
 numberFields.forEach(field => field.addEventListener('input', e => {
     const thisField = e.target.getAttribute('id');
-    const limit = thisField === 'kedo-field' ? 1000 : 5;
+    const limit = thisField === 'kedo-field' ? 30000 : 100;
     e.target.value = e.target.value <= limit ? +e.target.value : limit;
 }));
 numberFields.forEach(field => {
@@ -88,17 +88,18 @@ const parametrs = { // A23 и ниже
     10: 176316,
     20: 296196,
     50: 568836,
-    100: 863460
+    100: 863460,
+    500: 4317300
 };
 document.getElementById('calculate-btn').addEventListener('click', e => {
     e.preventDefault();
     const calculateForm = document.getElementById('new-calculator-form');
-    const calculateData = [...new FormData(calculateForm)]; // like Array.from(new FormData(calculateForm))
+    const calculateData = [...new FormData(calculateForm)]; // аналогично как Array.from(new FormData(calculateForm))
     const retailYearD3 = (calculateData[0][1] * unepRetail) + (calculateData[1][1] * ukepRetail);
     const retailYearD4 = parametrs[calculateData[2][1]];
-    const summaFastStart = Math.round(retailYearD3 + retailYearD4);
+    const summaFastStart = Math.round((retailYearD3 + retailYearD4) / 12);
     const summaFastStartFormatted = summaFastStart.toLocaleString();
-    const summaExtendedFormatted = (summaFastStart + 164500).toLocaleString();
+    const summaExtendedFormatted = (summaFastStart + 13708).toLocaleString(); // 164500 / 12 = 13 708.33333333
 
     Array.from(document.querySelectorAll('.fast-start')).forEach(item => item.innerHTML = `${summaFastStartFormatted} руб`);
     Array.from(document.querySelectorAll('.extended')).forEach(item => item.innerHTML = `${summaExtendedFormatted} руб`);
