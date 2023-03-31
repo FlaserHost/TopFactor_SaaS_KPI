@@ -1907,3 +1907,7 @@ article.fixed-header-bg-color * {
 .download-comparison-table-link:hover {
     color: #0072BC;
 }
+
+.rates-table-link:hover {
+    text-decoration: underline;
+}

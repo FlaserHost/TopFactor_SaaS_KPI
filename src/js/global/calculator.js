@@ -70,7 +70,7 @@ document.getElementById('show-functionality-btn').addEventListener('click', btn 
     else
     {
         document.querySelector('html').scroll({top: (rates * -1) - 200, behavior: 'smooth'});
-        functionsWindowStyle.height = '280px';
+        functionsWindowStyle.height = '370px';
         mistBlock.classList.add('mist');
         currentBtnText = 'показать функционал';
     }
