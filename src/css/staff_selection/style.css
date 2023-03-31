@@ -1757,10 +1757,24 @@ div.social-links {
     position: relative;
 }
 
+.pivot-header > th {
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+}
+
 .functions-table tr {
-    border-top: 1px solid #313844;
+    border-bottom: 1px solid rgba(49, 56, 68, .2);
     display: flex;
     min-height: 90px;
+}
+
+.functions-table tr.pivot-header {
+    border-bottom: 1px solid #313844;
+}
+
+.functions-table tr.pivot-header:not(:first-child) {
+    margin-top: 50px;
 }
 
 .functions-table tr > td {
