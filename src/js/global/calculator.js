@@ -89,7 +89,8 @@ const parametrs = { // A23 и ниже
     20: 296196,
     50: 568836,
     100: 863460,
-    500: 4317300
+    200: 1726920,
+    300: 2590380
 };
 document.getElementById('calculate-btn').addEventListener('click', e => {
     e.preventDefault();
