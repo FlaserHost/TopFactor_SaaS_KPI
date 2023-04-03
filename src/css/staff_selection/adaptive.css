@@ -342,6 +342,16 @@
     .footer-row:last-child {
         padding-bottom: 10px;
     }
+
+    .new-form-btn-2:hover {
+        background-color: #0072BC;
+        color: #fff;
+    }
+
+    .new-form-btn-2:active {
+        background-color: transparent;
+        color: #0072BC;
+    }
 }
 
 @media (max-width: 376px) {
