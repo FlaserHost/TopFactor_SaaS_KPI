@@ -386,6 +386,10 @@
     .examples-slider-wrapper {
         width: 274px;
     }
+
+    .demo-link {
+        font-size: 14px;
+    }
 }
 
 @media (max-width: 321px) {
