@@ -993,7 +993,7 @@ section:not(.main-content__slider):not(.main-content-menu):not(.demo-test-blue-b
 }
 
 .footer-page__describe > p,
-.footer-page__describe a,
+.footer-page__describe a:not(.describe-btn),
 .describe-field,
 .footer-privacy-policy-link,
 .offer-block,
@@ -1015,12 +1015,12 @@ section:not(.main-content__slider):not(.main-content-menu):not(.demo-test-blue-b
     margin-top: 8px;
 }
 
-.footer-page__describe a {
+.footer-page__describe a:not(.describe-btn) {
     color: #0072cb;
     position: relative;
 }
 
-.footer-page__describe a:after {
+.footer-page__describe a:not(.describe-btn):after {
     content: '';
     display: block;
     position: absolute;
@@ -1032,7 +1032,7 @@ section:not(.main-content__slider):not(.main-content-menu):not(.demo-test-blue-b
     transition-duration: .4s;
 }
 
-.footer-page__describe a:hover:after {
+.footer-page__describe a:not(.describe-btn):hover:after {
     background-color: #0072cb;
 }
 
@@ -1055,6 +1055,8 @@ section:not(.main-content__slider):not(.main-content-menu):not(.demo-test-blue-b
     margin-top: 5px;
     transition-duration: .4s;
     font-size: 16px;
+    display: block;
+    text-align: center;
 }
 
 .footer-page__navigation {
