@@ -166,10 +166,6 @@
     padding: 15px 0;
 }
 
-/*.page-text > p:last-child {
-    padding: 0;
-}*/
-
 .page-destination-body__main-body > div:nth-child(odd):not(:first-child) {
     margin-top: 60px;
 }

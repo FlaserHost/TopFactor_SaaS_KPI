@@ -512,7 +512,10 @@ input[type="search"]::-webkit-search-results-decoration {
     background: url("../../img/staff_selection/main-content/bg-lines.png") no-repeat center top;
 }
 
-section:not(.main-content__slider):not(.main-content-menu):not(.demo-test-blue-block) {
+.main-content-review,
+.main-content__why-solution,
+.main-content__calculator,
+.main-content__examples {
     padding: 50px 20px;
 }
 

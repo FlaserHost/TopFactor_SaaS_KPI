@@ -339,7 +339,7 @@
         margin-top: 0;
     }
 
-    .footer-row:last-child {
+    .main-content > footer .footer-row:last-child {
         padding-bottom: 10px;
     }
 

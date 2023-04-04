@@ -17,7 +17,9 @@
 }
 
 @media (max-width: 376px) {
-    section:not(.main-content__banner):not(.main-content-menu):not(.main-content__examples) {
+    .main-content-review,
+    .main-content__why-solution,
+    .main-content__calculator {
         padding: 50px 0;
     }
 
