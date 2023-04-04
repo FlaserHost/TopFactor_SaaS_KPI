@@ -30,10 +30,6 @@ body {
     min-height: 100vh;
 }
 
-html {
-    scroll-behavior: smooth;
-}
-
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
     -webkit-appearance: none;

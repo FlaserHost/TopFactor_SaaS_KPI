@@ -3,6 +3,10 @@
         background-position: center right 25%;
     }
 
+    .content > h1 {
+        font-size: 27px;
+    }
+
     .contact-form-checkbox {
         bottom: 33px;
     }
@@ -12,7 +16,21 @@
     }
 }
 
+@media (max-width: 376px) {
+    section:not(.main-content__banner):not(.main-content-menu):not(.main-content__examples) {
+        padding: 50px 0;
+    }
+
+    .form-wrapper {
+        padding: 33px 9px;
+    }
+}
+
 @media (max-width: 321px) {
+    .content > h1 {
+        font-size: 22px;
+    }
+
     .main-content__page-form {
         padding: 16px 0;
     }
