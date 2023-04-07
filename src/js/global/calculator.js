@@ -78,8 +78,6 @@ document.getElementById('show-functionality-btn').addEventListener('click', btn 
     btn.target.innerText = currentBtnText;
 });
 
-
-
 // логика рассчета
 const unepRetail = 560; // B20
 const ukepRetail = 1800; // B21
