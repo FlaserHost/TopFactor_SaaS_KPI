@@ -352,6 +352,18 @@
         background-color: transparent;
         color: #0072BC;
     }
+
+    .new-form-btns {
+        margin-top: 42px;
+    }
+
+    .question-hint {
+        width: 260px;
+    }
+
+    .rates-outer-block-mobile {
+        margin-top: 20px;
+    }
 }
 
 @media (max-width: 376px) {
@@ -376,7 +388,7 @@
     }
 
     .new-calculator-form {
-        margin-top: 30px;
+        margin-top: 10px;
     }
 
     .download-table-mobile {

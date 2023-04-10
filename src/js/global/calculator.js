@@ -31,6 +31,7 @@ numberFields.forEach(field => field.addEventListener('input', e => {
     const limit = thisField === 'kedo-field' ? 30000 : 100;
     e.target.value = e.target.value <= limit ? +e.target.value : limit;
 }));
+
 numberFields.forEach(field => {
     field.addEventListener('blur', e => {
         if (e.target.value === '0')
@@ -79,27 +80,27 @@ document.getElementById('show-functionality-btn').addEventListener('click', btn 
 });
 
 // логика рассчета
-const unepRetail = 560; // B20
-const ukepRetail = 1800; // B21
-const parametrs = { // A23 и ниже
-    5: 131100,
-    10: 176316,
-    20: 296196,
-    50: 568836,
-    100: 863460,
-    200: 1726920,
-    300: 2590380
+const priceList = {
+    one_recruiter: 4000,
+    additional_recruiter: 1900,
+    additional_connection: 950,
+    allowance: 2000
 };
+
 document.getElementById('calculate-btn').addEventListener('click', e => {
     e.preventDefault();
     const calculateForm = document.getElementById('new-calculator-form');
     const calculateData = [...new FormData(calculateForm)]; // аналогично как Array.from(new FormData(calculateForm))
-    const retailYearD3 = (calculateData[0][1] * unepRetail) + (calculateData[1][1] * ukepRetail);
-    const retailYearD4 = parametrs[calculateData[2][1]];
-    const summaFastStart = Math.round((retailYearD3 + retailYearD4) / 12);
-    const summaFastStartFormatted = summaFastStart.toLocaleString();
-    const summaExtendedFormatted = (summaFastStart + 13708).toLocaleString(); // 164500 / 12 = 13 708.33333333
 
-    Array.from(document.querySelectorAll('.fast-start')).forEach(item => item.innerHTML = `${summaFastStartFormatted} руб`);
-    Array.from(document.querySelectorAll('.extended')).forEach(item => item.innerHTML = `${summaExtendedFormatted} руб`);
+    const tmpSumm = calculateData[0][1] > 1
+        ? (--calculateData[0][1]) * priceList.additional_recruiter + priceList.one_recruiter
+        : calculateData[0][1] * priceList.one_recruiter;
+
+    const fastStart = tmpSumm + calculateData[1][1] * priceList.additional_connection;
+
+    const fastStartFormatted = fastStart.toLocaleString();
+    const extendedFormatted = (fastStart + priceList.allowance).toLocaleString();
+
+    Array.from(document.querySelectorAll('.fast-start')).forEach(item => item.innerHTML = `${fastStartFormatted} руб`);
+    Array.from(document.querySelectorAll('.extended')).forEach(item => item.innerHTML = `${extendedFormatted} руб`);
 });

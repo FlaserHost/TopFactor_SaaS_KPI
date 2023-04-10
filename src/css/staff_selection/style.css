@@ -1324,11 +1324,15 @@ div.social-links {
 .new-calculator-form__new-form-fields {
     width: 100%;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
 }
 
 .field-area {
     width: 362px;
+}
+
+.field-area-1 {
+    margin-right: 24px;
 }
 
 .field-description {
@@ -1341,7 +1345,7 @@ div.social-links {
     position: absolute;
     left: 0;
     top: calc(100% + 10px);
-    width: 230px;
+    width: 430px;
     box-shadow: 0 6px 10px -1px #888;
     padding: 30px 30px;
     background-color: #fff;
@@ -1551,7 +1555,7 @@ div.social-links {
 
 .rates-price-mobile > span:last-child {
     font-size: 14px;
-    padding-right: 24px;
+    text-align: center;
     color: #828282;
     margin-top: 17px;
 }

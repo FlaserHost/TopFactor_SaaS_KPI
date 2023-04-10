@@ -1,468 +1,606 @@
 <!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
-    <title>Программный продукт ТопФактор: Управление подбором персонала на базе 1С</title>
-    <link rel="shortcut icon" href="src/img/favicon.ico">
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css">
-    <link rel="stylesheet" href="src/css/staff_selection/scroll-behavior.css">
-    <link rel="stylesheet" href="src/css/staff_selection/style.css">
-    <link rel="stylesheet" href="src/css/staff_selection/adaptive.css">
-    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
-</head>
-<body>
-<header class="page-header">
-    <div class="header-top">
-        <div class="page_header__wrapper">
-            <div class="hidden-search-area">
-                <div class="hidden-field-keeper" id="hidden-field-keeper">
-                    <input class="header-search-field" id="hidden-header-search-field" type="search" placeholder="Поиск по сайту">
-                    <button class="hidden-field-launch-search-btn" id="hidden-field-launch-search-btn" type="submit">Найти</button>
+<html lang="ru" class="bx-core bx-no-touch bx-no-retina bx-chrome"><head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="keywords" content="CRM для рекрутера, массовый подбор, интеграция с работными сайтами, 1С, мобильное приложение для рекрутера, автоматизация подбора персонала, размещение заявки на подбор, согласование кандидата, интеграция с календарями">
+    <meta name="description" content="CRM система для работы с кандидатами и стажерами: омниканальное взаимодействие (мессенджеры, соцсети, звонки, смс). Интеграция с работными сайтами и единая база кандидатов. Чат боты и мобильно приложение. Календарь рекрутера">
+    <link href="https://topfactor.pro/bitrix/js/main/core/css/core.min.css?15284822522854" type="text/css" rel="stylesheet">
+    <link href="https://topfactor.pro/bitrix/cache/css/s1/topfactor/page_788effd198ace465a8232c6c3aa62266/page_788effd198ace465a8232c6c3aa62266_v1.css?16775783861513" type="text/css" rel="stylesheet">
+    <link href="https://topfactor.pro/bitrix/panel/main/popup.min.css?152848225820704" type="text/css" rel="stylesheet">
+    <script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script><script type="text/javascript" async="" src="https://www.googletagmanager.com/gtag/js?id=G-KGS4DELL1X&amp;l=dataLayer&amp;cx=c"></script><script type="text/javascript" async="" src="https://www.gstatic.com/recaptcha/releases/6MY32oPwFCn9SUKWt8czDsDw/recaptcha__ru.js" crossorigin="anonymous" integrity="sha384-Awkkj9UX5URkREXDQ+njy4Q+5rU7gW0/mPlvMIDPpGItrxVNUHgx5zLfWPB1p4Bp"></script><script async="" src="https://connect.facebook.net/en_US/fbevents.js"></script><script charset="UTF-8" async="" src="https://cloud.roistat.com/api/site/1.0/5e304b5e9ef62031d301556a9b520253/init"></script><script async="" src="https://mc.yandex.ru/metrika/tag.js"></script><script type="text/javascript" async="" src="https://bitrix.info/ba.js"></script><script type="text/javascript" async="" src="https://www.gstatic.com/recaptcha/releases/6MY32oPwFCn9SUKWt8czDsDw/recaptcha__ru.js" crossorigin="anonymous" integrity="sha384-Awkkj9UX5URkREXDQ+njy4Q+5rU7gW0/mPlvMIDPpGItrxVNUHgx5zLfWPB1p4Bp"></script><script type="text/javascript">if(!window.BX)window.BX={};if(!window.BX.message)window.BX.message=function(mess){if(typeof mess==='object'){for(let i in mess) {BX.message[i]=mess[i];} return true;}};</script>
+    <script type="text/javascript">(window.BX||top.BX).message({'JS_CORE_LOADING':'Загрузка...','JS_CORE_NO_DATA':'- Нет данных -','JS_CORE_WINDOW_CLOSE':'Закрыть','JS_CORE_WINDOW_EXPAND':'Развернуть','JS_CORE_WINDOW_NARROW':'Свернуть в окно','JS_CORE_WINDOW_SAVE':'Сохранить','JS_CORE_WINDOW_CANCEL':'Отменить','JS_CORE_WINDOW_CONTINUE':'Продолжить','JS_CORE_H':'ч','JS_CORE_M':'м','JS_CORE_S':'с','JSADM_AI_HIDE_EXTRA':'Скрыть лишние','JSADM_AI_ALL_NOTIF':'Показать все','JSADM_AUTH_REQ':'Требуется авторизация!','JS_CORE_WINDOW_AUTH':'Войти','JS_CORE_IMAGE_FULL':'Полный размер'});</script>
+    <script type="text/javascript" src="https://topfactor.pro/bitrix/js/main/core/core.min.js?1598309127249634"></script>
+    <script>BX.setJSList(['https://topfactor.pro/bitrix/js/main/core/core_ajax.js','https://topfactor.pro/bitrix/js/main/core/core_promise.js','https://topfactor.pro/bitrix/js/main/polyfill/promise/js/promise.js','https://topfactor.pro/bitrix/js/main/loadext/loadext.js','https://topfactor.pro/bitrix/js/main/loadext/extension.js','https://topfactor.pro/bitrix/js/main/polyfill/promise/js/promise.js','https://topfactor.pro/bitrix/js/main/polyfill/find/js/find.js','https://topfactor.pro/bitrix/js/main/polyfill/includes/js/includes.js','https://topfactor.pro/bitrix/js/main/polyfill/matches/js/matches.js','https://topfactor.pro/bitrix/js/ui/polyfill/closest/js/closest.js','https://topfactor.pro/bitrix/js/main/polyfill/fill/main.polyfill.fill.js','https://topfactor.pro/bitrix/js/main/polyfill/find/js/find.js','https://topfactor.pro/bitrix/js/main/polyfill/matches/js/matches.js','https://topfactor.pro/bitrix/js/main/polyfill/core/dist/polyfill.bundle.js','https://topfactor.pro/bitrix/js/main/core/core.js','https://topfactor.pro/bitrix/js/main/polyfill/intersectionobserver/js/intersectionobserver.js','https://topfactor.pro/bitrix/js/main/lazyload/dist/lazyload.bundle.js','https://topfactor.pro/bitrix/js/main/polyfill/core/dist/polyfill.bundle.js','https://topfactor.pro/bitrix/js/main/parambag/dist/parambag.bundle.js']);
+    BX.setCSSList(['https://topfactor.pro/bitrix/js/main/core/css/core.css','https://topfactor.pro/bitrix/js/main/lazyload/dist/lazyload.bundle.css','https://topfactor.pro/bitrix/js/main/parambag/dist/parambag.bundle.css']);</script>
+    <script type="text/javascript">(window.BX||top.BX).message({'LANGUAGE_ID':'ru','FORMAT_DATE':'DD.MM.YYYY','FORMAT_DATETIME':'DD.MM.YYYY HH:MI:SS','COOKIE_PREFIX':'BITRIX_SM','SERVER_TZ_OFFSET':'10800','SITE_ID':'s1','SITE_DIR':'/','USER_ID':'','SERVER_TIME':'1680972969','USER_TZ_OFFSET':'0','USER_TZ_AUTO':'Y','bitrix_sessid':'b3c7cb6d08b0cbc6a37ccfbee8f67956'});</script>
+    <script type="text/javascript" src="https://topfactor.pro/bitrix/cache/js/s1/topfactor/kernel_main/kernel_main_v1.js?1677578745151609"></script>
+    <script type="text/javascript" src="https://topfactor.pro/bitrix/js/twim.recaptchafree/script.js?15810805864421"></script>
+    <script type="text/javascript" src="https://www.google.com/recaptcha/api.js?onload=onloadRecaptchafree&amp;render=explicit&amp;hl=ru"></script>
+    <script type="text/javascript" src="https://topfactor.pro/bitrix/cache/js/s1/topfactor/kernel_main_polyfill_customevent/kernel_main_polyfill_customevent_v1.js?16775783531051"></script>
+    <script type="text/javascript" src="https://topfactor.pro/bitrix/js/ui/dexie/dist/dexie.bitrix.bundle.min.js?159830918160291"></script>
+    <script type="text/javascript" src="https://topfactor.pro/bitrix/js/main/core/core_ls.min.js?15284822527365"></script>
+    <script type="text/javascript" src="https://topfactor.pro/bitrix/js/main/core/core_frame_cache.min.js?159830909310422"></script>
+    <script type="text/javascript">BX.setJSList(['https://topfactor.pro/bitrix/js/main/core/core_fx.js','https://topfactor.pro/bitrix/js/main/pageobject/pageobject.js','https://topfactor.pro/bitrix/js/main/core/core_window.js','https://topfactor.pro/bitrix/js/main/session.js','https://topfactor.pro/bitrix/js/main/date/main.date.js','https://topfactor.pro/bitrix/js/main/core/core_date.js','https://topfactor.pro/bitrix/js/main/utils.js','https://topfactor.pro/bitrix/js/main/polyfill/customevent/main.polyfill.customevent.js','https://topfactor.pro/bitrix/templates/topfactor/js/inputmask.min.js']);</script>
+    <script type="text/javascript">BX.setCSSList(['https://topfactor.pro/bitrix/templates/topfactor/componentshttps://topfactor.pro/bitrix/catalog/personals/style.css']);</script>
+    <meta property="og:url" content="https://topfactor.pro/podbor-personala/">
+    <meta property="og:title" content="Программный продукт ТопФактор:Управление подбором персонала на базе 1С">
+    <meta property="og:description" content="CRM система для работы с кандидатами и стажерами: омниканальное взаимодействие (мессенджеры, соцсети, звонки, смс). Интеграция с работными сайтами и единая база кандидатов. Чат боты и мобильно приложение. Календарь рекрутера.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://topfactor.pro/logo.jpg">
+    <!-- dev2fun module opengraph -->
+    <meta property="og:title" content="Программный продукт ТопФактор:Управление подбором персонала на базе 1С">
+    <meta property="og:description" content="CRM система для работы с кандидатами и стажерами: омниканальное взаимодействие (мессенджеры, соцсети, звонки, смс). Интеграция с работными сайтами и единая база...">
+    <meta property="og:url" content="https://topfactor.pro/podbor-personala/">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="ТопФактор">
+    <!-- /dev2fun module opengraph -->
+    <script type="text/javascript" src="https://topfactor.pro/bitrix/cache/js/s1/topfactor/page_9499e654a4df1b1885a1f11dbfbe361b/page_9499e654a4df1b1885a1f11dbfbe361b_v1.js?1677578386103814"></script>
+    <script type="text/javascript">var _ba = _ba || []; _ba.push(["aid", "dcc3777dd91e5dd2e628716074ca0b82"]); _ba.push(["host", "topfactor.pro"]); (function() {var ba = document.createElement("script"); ba.type = "text/javascript"; ba.async = true;ba.src = (document.location.protocol == "https:" ? "https://" : "http://") + "bitrix.info/ba.js";var s = document.getElementsByTagName("script")[0];s.parentNode.insertBefore(ba, s);})();</script>
+    <title>Программный продукт ТопФактор:Управление подбором персонала на базе 1С</title>
+    <link rel="stylesheet" href="https://topfactor.pro/bitrix/templates/topfactor/dist/main.css?v2">
+
+
+    <link rel="stylesheet" href="src/css/staff_selection/calculator.css"> <!-- подключить для стилизации калькулятора -->
+    <link rel="stylesheet" href="src/css/staff_selection/calculator_adaptive.css"> <!-- подключить для адаптивной стилизации калькулятора -->
+
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <!-- Yandex.Metrika counter --> <script type="text/javascript"> (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)}; m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)}) (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym"); ym(32913315, "init", { clickmap:true, trackLinks:true, accurateTrackBounce:true, webvisor:true, trackHash:true }); </script> <noscript><div><img src="https://mc.yandex.ru/watch/32913315" style="position:absolute; left:-9999px;" alt="" /></div></noscript> <!-- /Yandex.Metrika counter -->
+    <script src="//code.jivosite.com/widget/et9GJMoaiG" async=""></script>
+    <meta name="yandex-verification" content="13a3df8748f1d8ec">
+    <meta name="facebook-domain-verification" content="587no9mgzoc0a7k69mi4ivmfznyc72">
+    <script type="text/javascript" async="" src="https://vk.com/js/api/openapi.js?168"></script><link rel="stylesheet" href="https://code.jivosite.com/css/c0dd301/widget.css" class="jv-css"><link rel="stylesheet" type="text/css" href="https://code.jivosite.com/css/c0dd301/omnichannelMenu.widget.css"></head>
+<body data-aos-easing="ease" data-aos-duration="400" data-aos-delay="0">
+<div id="panel">
+</div>
+<div class="b-prehead">
+    <div class="wrapper">
+        <div class="b-prehead__row">
+            <div class="b-prehead__search">
+                <form class="b-search" action="/search/index.php">
+                    <div class="b-search__trigger"></div>
+                    <div class="b-search__inner">
+                        <input name="q" type="text" class="b-search__input" placeholder="Поиск по сайту">
+                        <input type="submit" class="b-search__submit" value="Найти">
+                    </div>
+                </form>
+            </div>
+            <div class="b-prehead__phone">
+                <div class="b-prehead-phone">
+                    <div class="b-prehead-phone__number">+7 495-508-56-27</div>
+                    <a class="b-prehead-phone__callback" href="http://topfactor.pro/others/contact_us.php">Заказать звонок</a>
                 </div>
-                <button class="header-search-btn" id="hidden-header-search-btn" type="button"></button>
             </div>
-            <div class="search-area">
-                <input class="header-search-field" id="header-search-field" type="search" placeholder="Поиск по сайту">
-                <button class="header-search-btn" id="header-search-btn" type="submit"></button>
+            <!--			<div class="b-prehead__back">-->
+            <!--				<a href="?old=y" onclick="yaCounter32913315.reachGoal('oldmainpage'); return true;" class="b-prehead__old-version">Вернуться на<br/>старую версию</a>-->
+            <!--			</div>-->
+            <div class="b-prehead__language">
+                <div class="b-language">
+                    <div class="b-language__label">
+                        <div class="b-language__flag b-language__flag_ru"></div>
+                    </div>
+                    <div class="b-language__dropdown">
+                        <div class="b-language__item">
+                            <a class="b-language__link" href="?lang=ru">
+                                <div class="b-language__flag b-language__flag_small b-language__flag_ru"></div>
+                                <div class="b-language__value">Русский</div>
+                            </a>
+                        </div>
+                        <div class="b-language__item">
+                            <a class="b-language__link" href="?lang=en">
+                                <div class="b-language__flag b-language__flag_small b-language__flag_en"></div>
+                                <div class="b-language__value">Английский</div>
+                            </a>
+                        </div>
+                        <div class="b-language__item">
+                            <a class="b-language__link" href="?lang=de">
+                                <div class="b-language__flag b-language__flag_small b-language__flag_de"></div>
+                                <div class="b-language__value">Немецкий</div>
+                            </a>
+                        </div>
+                    </div>
+                    <select class="b-language__select" onchange="document.cookie='lang='+this.selectedOptions[0].value+';path=/';window.location.reload(true);">
+                        <option value="RU">Русский</option>
+                        <option value="EN">Английский</option>
+                        <option value="DE">Немецкий</option>
+                    </select>
+                </div>
             </div>
-            <div class="order-call-area">
-                <a class="phone-number" href="tel:+74955085627">+7 495-508-56-27</a>
-                <a class="order-call-link" href="https://topfactor.pro/others/contact_us.php">Заказать звонок</a>
-            </div>
-            <div class="language-area" id="language"></div>
         </div>
     </div>
-    <div class="header-bottom">
-        <div class="header-bottom__wrapper">
-            <div class="logo">
-                <button class="burger_btn" id="burger_btn" type="button"></button>
-                <figure>
-                    <img class="logo-img" src="src/img/staff_selection/header/logo.png" alt="top-factor-logo">
-                </figure>
+</div>
+<div class="b-header">
+    <div class="wrapper">
+        <div class="b-header__row">
+            <div class="b-header__logo">
+                <a class="b-logo b-logo_header" href="/"></a>
             </div>
-            <nav class="header-navigation-menu">
-                <ul class="header-navigation-list">
-                    <li class="header-navigation-item">
-                        <a class="header-menu-link" href="#">Решения</a>
-                        <div class="menu-panel">
-                            <ul>
-                                <li>
-                                    <a class="sub-menu-link" href="https://topfactor.pro/solutions/">Управление по целям и KPI</a>
-                                </li>
-                                <li>
-                                    <a class="sub-menu-link" href="#">Личный кабинет сотрудника</a>
-                                </li>
-                                <li>
-                                    <a class="sub-menu-link" href="https://topfactor.pro/podbor-personala/">Подбор персонала</a>
-                                </li>
-                                <li>
-                                    <a class="sub-menu-link" href="https://topfactor.pro/talents/">Управление талантами</a>
-                                </li>
-                                <li>
-                                    <a class="sub-menu-link" href="https://topfactor.pro/others/employee-engagement/">Диагностика вовлеченности</a>
-                                </li>
-                                <li>
-                                    <a class="sub-menu-link" href="https://topfactor.pro/others/kafeterij_lgot_i_magazin_benefitov/">Кафетерий льгот</a>
-                                </li>
-                                <li>
-                                    <a class="sub-menu-link" href="https://topfactor.pro/product/relizy/">Релизы</a>
-                                </li>
-                            </ul>
+            <div class="b-header__menu">
+                <div class="b-menu">
+                    <div class="b-menu__trigger"></div>
+                    <div class="b-menu__list">
+
+                        <div class="b-menu__item">
+                            <a class="b-menu__link" href="javascript:void(0)">Решения</a>
+                            <div class="b-menu__dropdown">
+                                <div class="b-menu__group">
+                                    <div class="b-menu__sub-list">
+                                        <div class="b-menu__sub-item">
+                                            <a class="b-menu__sub-link" href="/product/management-by-objectives-and-kpi.php">
+                                                Управление по целям и KPI
+                                            </a>
+                                        </div>
+                                        <div class="b-menu__sub-item">
+                                            <a class="b-menu__sub-link" href="/others/lichnyy-kabinet-sotrudnika/">
+                                                Личный кабинет сотрудника
+                                            </a>
+                                        </div>
+                                        <div class="b-menu__sub-item">
+                                            <a class="b-menu__sub-link" href="/podbor-personala/">
+                                                Подбор персонала
+                                            </a>
+                                        </div>
+                                        <div class="b-menu__sub-item">
+                                            <a class="b-menu__sub-link" href="/talents/">
+                                                Управление талантами
+                                            </a>
+                                        </div>
+                                        <div class="b-menu__sub-item">
+                                            <a class="b-menu__sub-link" href="/others/employee-engagement/">
+                                                Диагностика вовлеченности
+                                            </a>
+                                        </div>
+                                        <div class="b-menu__sub-item">
+                                            <a class="b-menu__sub-link" href="/others/kafeterij_lgot_i_magazin_benefitov/">
+                                                Кафетерий льгот
+                                            </a>
+                                        </div>
+                                        <div class="b-menu__sub-item">
+                                            <a class="b-menu__sub-link" href="/product/relizy/">
+                                                Релизы
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                    </li>
-                    <li class="header-navigation-item">
-                        <a class="header-menu-link" href="https://topfactor.pro/blog/">Блог</a>
-                        <div class="menu-panel">
-                            <ul>
-                                <li>
-                                    <a class="sub-menu-link" href="https://topfactor.pro/blog/?group=528">Новости</a>
-                                </li>
-                                <li>
-                                    <a class="sub-menu-link" href="https://topfactor.pro/blog/?group=525">Кейсы</a>
-                                </li>
-                                <li>
-                                    <a class="sub-menu-link" href="https://topfactor.pro/blog/?group=526">Методики</a>
-                                </li>
-                                <li>
-                                    <a class="sub-menu-link" href="https://topfactor.pro/blog/?group=524">Статьи</a>
-                                </li>
-                                <li>
-                                    <a class="sub-menu-link" href="https://topfactor.pro/blog/?group=527">Видео</a>
-                                </li>
-                            </ul>
+                        <div class="b-menu__item">
+                            <a class="b-menu__link" href="http://topfactor.pro/blog/">Блог</a>
+                            <div class="b-menu__dropdown">
+                                <div class="b-menu__group">
+                                    <div class="b-menu__sub-list">
+                                        <div class="b-menu__sub-item">
+                                            <a class="b-menu__sub-link" href="http://topfactor.pro/blog/?group=528">
+                                                Новости
+                                            </a>
+                                        </div>
+                                        <div class="b-menu__sub-item">
+                                            <a class="b-menu__sub-link" href="http://topfactor.pro/blog/?group=525">
+                                                Кейсы
+                                            </a>
+                                        </div>
+                                        <div class="b-menu__sub-item">
+                                            <a class="b-menu__sub-link" href="http://topfactor.pro/blog/?group=526">
+                                                Методики
+                                            </a>
+                                        </div>
+                                        <div class="b-menu__sub-item">
+                                            <a class="b-menu__sub-link" href="http://topfactor.pro/blog/?group=524">
+                                                Статьи
+                                            </a>
+                                        </div>
+                                        <div class="b-menu__sub-item">
+                                            <a class="b-menu__sub-link" href="http://topfactor.pro/blog/?group=527">
+                                                Видео
+                                            </a>
+                                        </div>
+                                        <!--                                        <div class="b-menu__sub-item">-->
+                                        <!--                                            <a class="b-menu__sub-link" href="http://topfactor.pro/others/avtomatizaciya-ocenki-personala-i-upravleniya-talantami/">-->
+                                        <!--                                                Управление талантами-->
+                                        <!--                                            </a>-->
+                                        <!--                                        </div>-->
+                                        <!--                                        <div class="b-menu__sub-item">-->
+                                        <!--                                            <a class="b-menu__sub-link" href="/others/ehffektivnost-roznichnoj-torgovli-i-kpi/">-->
+                                        <!--                                                KPI-управление в ритейле-->
+                                        <!--                                            </a>-->
+                                        <!--                                        </div>-->
+
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                    </li>
-                    <li class="header-navigation-item">
-                        <a class="header-menu-link" href="#">Услуги</a>
-                        <div class="menu-panel">
-                            <ul class="menu-outer-list">
-                                <li>
-                                    <h3>Консатлинговые услуги</h3>
-                                    <ul class="menu-inner-list">
-                                        <li>
-                                            <a class="sub-menu-link" href="https://topfactor.pro/services/services-technology/development-of-kpi.php">Рабочая сессия по разработке KPI</a>
-                                        </li>
-                                        <li>
-                                            <a class="sub-menu-link" href="https://1c-kpi.ru/motivacia/">Видео-методика, «разработка KPI за 5 дней»</a>
-                                        </li>
-                                        <li>
-                                            <a class="sub-menu-link" href="https://topfactor.pro/product/razrabotka-modeli-kompetencij-v-kompanii.php">Разработка модели компетенций в компании</a>
-                                        </li>
-                                        <li>
-                                            <a class="sub-menu-link" href="https://topfactor.pro/product/stages-of-implementation.php">Разработка и внедрение гибкого пакета льгот</a>
-                                        </li>
-                                        <li>
-                                            <a class="sub-menu-link" href="https://topfactor.pro/services/services-technology/ocenka360/">Оценка 360</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <h3 class="inner-shift">Услуги по внедрению</h3>
-                                    <ul class="menu-inner-list">
-                                        <li>
-                                            <a class="sub-menu-link" href="https://topfactor.pro/product/predproektnoe-obsledovanie.php">Предпроектное обследование</a>
-                                        </li>
-                                        <li>
-                                            <a class="sub-menu-link" href="https://topfactor.pro/services/services-kpi/integration.php">Интеграция с конфигурацией 1С:Предприятие</a>
-                                        </li>
-                                        <li>
-                                            <a class="sub-menu-link" href="https://topfactor.pro/services/services-kpi/customize.php">Настройка ПП</a>
-                                        </li>
-                                        <li>
-                                            <a class="sub-menu-link" href="https://topfactor.pro/services/services-kpi/setting-broadcast.php">Настройка трансляции данных из 1С:Предприятия</a>
-                                        </li>
-                                        <li>
-                                            <a class="sub-menu-link" href="https://topfactor.pro/services/services-kpi/testing.php">Тестирование</a>
-                                        </li>
-                                        <li>
-                                            <a class="sub-menu-link" href="https://topfactor.pro/services/services-kpi/education.php">Обучение</a>
-                                        </li>
-                                        <li>
-                                            <a class="sub-menu-link" href="https://topfactor.pro/services/services-kpi/exploitation.php">Опытная эксплуатация</a>
-                                        </li>
-                                        <li>
-                                            <a class="sub-menu-link" href="https://topfactor.pro/services/services-kpi/supports.php">Поддержка</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                            </ul>
+                        <div class="b-menu__item">
+                            <a class="b-menu__link" href="#">Услуги</a>
+                            <div class="b-menu__dropdown">
+                                <div class="b-menu__group">
+                                    <div class="b-menu__sub-title">
+                                        Консалтинговые услуги
+                                    </div>
+                                    <div class="b-menu__sub-list">
+                                        <div class="b-menu__sub-item b-menu__sub-item_bullit b-menu__sub-item_small">
+                                            <a class="b-menu__sub-link" href="http://topfactor.pro/services/services-technology/development-of-kpi.php">
+                                                Рабочая сессия по разработке KPI
+                                            </a>
+                                        </div>
+                                        <div class="b-menu__sub-item b-menu__sub-item_bullit b-menu__sub-item_small">
+                                            <a class="b-menu__sub-link" href="http://1c-kpi.ru/motivacia/">
+                                                Видео-методика, «разработка KPI за 5 дней»
+                                            </a>
+                                        </div>
+                                        <div class="b-menu__sub-item b-menu__sub-item_bullit b-menu__sub-item_small">
+                                            <a class="b-menu__sub-link" href="/product/razrabotka-modeli-kompetencij-v-kompanii.php">
+                                                Разработка модели компетенций в компании
+                                            </a>
+                                        </div>
+                                        <!--										<div class="b-menu__sub-item b-menu__sub-item_bullit b-menu__sub-item_small">-->
+                                        <!--											<a class="b-menu__sub-link" href="http://topfactor.pro/product/stages-of-implementation.php">-->
+                                        <!--												Разработка модели компетенций и проведение оценочной сессии-->
+                                        <!--											</a>-->
+                                        <!--										</div>-->
+                                        <div class="b-menu__sub-item b-menu__sub-item_bullit b-menu__sub-item_small">
+                                            <a class="b-menu__sub-link" href="/product/stages-of-implementation.php">
+                                                Разработка и внедрение гибкого пакета льгот
+                                            </a>
+                                        </div>
+                                        <div class="b-menu__sub-item b-menu__sub-item_bullit b-menu__sub-item_small">
+                                            <a class="b-menu__sub-link" href="/services/services-technology/ocenka360/">
+                                                Оценка 360
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="b-menu__group">
+                                    <div class="b-menu__sub-title">
+                                        Услуги по внедрению
+                                    </div>
+                                    <div class="b-menu__sub-list">
+                                        <div class="b-menu__sub-item b-menu__sub-item_bullit b-menu__sub-item_small">
+                                            <a class="b-menu__sub-link" href="/product/predproektnoe-obsledovanie.php">
+                                                Предпроектное обследование
+                                            </a>
+                                        </div>
+                                        <!--										<div class="b-menu__sub-item b-menu__sub-item_bullit b-menu__sub-item_small">-->
+                                        <!--											<a class="b-menu__sub-link" href="http://topfactor.pro/product/management-by-objectives-and-kpi.php">-->
+                                        <!--												Управление по целям и KPI-->
+                                        <!--											</a>-->
+                                        <!--										</div>-->
+                                        <!--										<div class="b-menu__sub-item b-menu__sub-item_bullit b-menu__sub-item_small">-->
+                                        <!--											Управление талантами:<br/>-->
+                                        <!--											<a class="b-menu__sub-link b-menu__sub-link_underlined" href="http://topfactor.pro/product/upravlenie-talantami.php">оценка персонала</a>-->
+                                        <!--											и-->
+                                        <!--											<a class="b-menu__sub-link b-menu__sub-link_underlined" href="http://topfactor.pro/others/avtomatizaciya-ocenki-personala-i-upravleniya-talantami/">управление развитием</a>-->
+                                        <!--										</div>-->
+                                        <div class="b-menu__sub-item b-menu__sub-item_bullit b-menu__sub-item_small">
+                                            <a class="b-menu__sub-link" href="/services/services-kpi/integration.php">
+                                                Интеграция с конфигурацией 1С:Предприятие
+                                            </a>
+                                        </div>
+                                        <div class="b-menu__sub-item b-menu__sub-item_bullit b-menu__sub-item_small">
+                                            <a class="b-menu__sub-link" href="/services/services-kpi/customize.php">
+                                                Настройка ПП
+                                            </a>
+                                        </div>
+                                        <div class="b-menu__sub-item b-menu__sub-item_bullit b-menu__sub-item_small">
+                                            <a class="b-menu__sub-link" href="/services/services-kpi/setting-broadcast.php">
+                                                Настройка трансляции данных из 1С:Предприятия
+                                            </a>
+                                        </div>
+                                        <div class="b-menu__sub-item b-menu__sub-item_bullit b-menu__sub-item_small">
+                                            <a class="b-menu__sub-link" href="/services/services-kpi/testing.php">
+                                                Тестирование
+                                            </a>
+                                        </div>
+                                        <div class="b-menu__sub-item b-menu__sub-item_bullit b-menu__sub-item_small">
+                                            <a class="b-menu__sub-link" href="/services/services-kpi/education.php">
+                                                Обучение
+                                            </a>
+                                        </div>
+                                        <div class="b-menu__sub-item b-menu__sub-item_bullit b-menu__sub-item_small">
+                                            <a class="b-menu__sub-link" href="/services/services-kpi/exploitation.php">
+                                                Опытная эксплуатация
+                                            </a>
+                                        </div>
+                                        <div class="b-menu__sub-item b-menu__sub-item_bullit b-menu__sub-item_small">
+                                            <a class="b-menu__sub-link" href="/services/services-kpi/supports.php">
+                                                Поддержка
+                                            </a>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                    </li>
-                    <li class="header-navigation-item">
-                        <a class="header-menu-link" href="https://topfactor.pro/calendar-of-events/">Мероприятия</a>
-                    </li>
-                    <li class="header-navigation-item">
-                        <a class="header-menu-link" href="#">О компании</a>
-                        <div class="menu-panel">
-                            <ul>
-                                <li>
-                                    <a class="sub-menu-link" href="https://topfactor.pro/about/">ТопФактор</a>
-                                </li>
-                                <li>
-                                    <a class="sub-menu-link" href="https://topfactor.pro/others/ourteam.php">Наша команда</a>
-                                </li>
-                                <li>
-                                    <a class="sub-menu-link" href="https://topfactor.pro/others/contact_us.php">Контакты</a>
-                                </li>
-                                <li>
-                                    <a class="sub-menu-link" href="https://topfactor.pro/vakansii/">Вакансии</a>
-                                </li>
-                                <li>
-                                    <a class="sub-menu-link" href="https://topfactor.pro/about/partners.php">Партнерам</a>
-                                </li>
-                            </ul>
+                        <div class="b-menu__item">
+                            <a class="b-menu__link" href="/calendar-of-events/">Мероприятия</a>
                         </div>
-                    </li>
-                </ul>
-            </nav>
-            <a class="header-demo-btn" id="header-demo-btn" href="pages/demo-version/demo-version.html" target="_Blank">Демо-версия</a>
+                        <!--						<div class="b-menu__item">-->
+                        <!--							<a class="b-menu__link" href="#">Партнеры</a>-->
+                        <!--							<div class="b-menu__dropdown">-->
+                        <!--								<div class="b-menu__group">-->
+                        <!--									<div class="b-menu__sub-list">-->
+                        <!--										<div class="b-menu__sub-item">-->
+                        <!--											<a class="b-menu__sub-link" href="http://topfactor.pro/partners/select-partners/">-->
+                        <!--												Выбрать партнера-->
+                        <!--											</a>-->
+                        <!--										</div>-->
+                        <!--										<div class="b-menu__sub-item">-->
+                        <!--											<a class="b-menu__sub-link" href="http://topfactor.pro/partners/become-a-partner.php">-->
+                        <!--												Стать партнером-->
+                        <!--											</a>-->
+                        <!--										</div>-->
+                        <!--									</div>-->
+                        <!--								</div>-->
+                        <!--							</div>-->
+                        <!--						</div>-->
+                        <div class="b-menu__item">
+                            <a class="b-menu__link" href="#">О компании</a>
+                            <div class="b-menu__dropdown">
+                                <div class="b-menu__group">
+                                    <div class="b-menu__sub-list">
+                                        <div class="b-menu__sub-item">
+                                            <a class="b-menu__sub-link" href="/about/">
+                                                ТопФактор
+                                            </a>
+                                        </div>
+                                        <div class="b-menu__sub-item">
+                                            <a class="b-menu__sub-link" href="/others/ourteam.php">
+                                                Наша команда
+                                            </a>
+                                        </div>
+                                        <div class="b-menu__sub-item">
+                                            <a class="b-menu__sub-link" href="/others/contact_us.php">
+                                                Контакты
+                                            </a>
+                                        </div>
+                                        <div class="b-menu__sub-item">
+                                            <a class="b-menu__sub-link" href="/vakansii/">
+                                                Вакансии
+                                            </a>
+                                        </div>
+                                        <div class="b-menu__sub-item">
+                                            <a class="b-menu__sub-link" href="/about/partners.php">
+                                                Партнерам
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="b-header__aside">
+                <a class="b-header__button-link" href="/others/demoversion.php">Демо-версия</a>
+            </div>
         </div>
     </div>
-    <div class="hide-burger-menu" id="hide-burger-menu">
-        <nav>
-            <ul class="burger-outer-list">
-                <li>
-                    <h3>Решения</h3>
-                    <ul class="burger-inner-list">
-                        <li><a class="burger-sub-menu-link" href="https://topfactor.pro/solutions/">Управление по целям и KPI</a></li>
-                        <li><a class="burger-sub-menu-link" href="#">Личный кабинет сотрудника</a></li>
-                        <li><a class="burger-sub-menu-link" href="https://topfactor.pro/podbor-personala/">Подбор персонала</a></li>
-                        <li><a class="burger-sub-menu-link" href="https://topfactor.pro/talents/">Управление талантами</a></li>
-                        <li><a class="burger-sub-menu-link" href="https://topfactor.pro/others/employee-engagement/">Диагностика вовлеченности</a></li>
-                        <li><a class="burger-sub-menu-link" href="https://topfactor.pro/others/kafeterij_lgot_i_magazin_benefitov/">Кафетерий льгот</a></li>
-                        <li><a class="burger-sub-menu-link" href="https://topfactor.pro/product/relizy/">Релизы</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="https://topfactor.pro/blog/">
-                        <h3>Блог</h3>
+</div>
+<div class="podbor_personala">
+    <div class="b-promo b-promo_talents swiper-container swiper-container-horizontal">
+        <div class="b-promo__inner swiper-wrapper" style="transition-duration: 0ms; transform: translate3d(-865px, 0px, 0px);"><div class="b-promo__slide b-promo__slide_bg-higher swiper-slide swiper-slide-duplicate swiper-slide-prev" style="background-image: url(&quot;https://topfactor.pro/bitrix/templates/topfactor/componentshttps://topfactor.pro/bitrix/catalog/personals/img/banner-7.jpg&quot;); background-position-y: 15%; width: 865px;" data-swiper-slide-index="2">
+            <div class="b-promo__wrapper wrapper">
+                <div class="b-promo__content b-promo__content_left-bottom">
+                    <div class="b-promo__title b-promo__title_smaller">
+                        Управление подбором «под ключ»
+                    </div>
+                    <div class="b-promo__subtitle b-promo__subtitle_smaller b-promo__subtitle_wide">
+                        Онлайн трудоустройство с помощью КЭДО, <br>
+                        адаптация и развитие новых сотрудников
+                    </div>
+                    <a class="b-promo__button b-promo__button_smaller-on-mobile" href="/others/form-podbor-personala.php" target="_blank">Заказать
+                        презентацию</a>
+                </div>
+            </div>
+        </div>
+            <div class="b-promo__slide swiper-slide swiper-slide-active" style="background-image: url(&quot;https://topfactor.pro/bitrix/templates/topfactor/componentshttps://topfactor.pro/bitrix/catalog/personals/img/banner-6.jpg&quot;); width: 865px;" data-swiper-slide-index="0">
+                <div class="b-promo__wrapper wrapper">
+                    <div class="b-promo__content b-promo__content_left-bottom">
+                        <div class="b-promo__title b-promo__title_smaller">
+                            CRM для работы с кандидатами
+                        </div>
+                        <div class="b-promo__subtitle b-promo__subtitle_smaller b-promo__subtitle_wide">
+                            Омниканальное взаимодействие с кандидатами:<br>
+                            мессенджеры, соцсети, звонки, смс
+                        </div>
+                        <a class="b-promo__button b-promo__button_smaller-on-mobile" href="/others/form-podbor-personala.php" target="_blank">Заказать
+                            презентацию</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TODO: bg to styles -->
+            <div class="b-promo__slide b-promo__slide_bg-higher swiper-slide swiper-slide-next" style="background-image: url(&quot;https://topfactor.pro/bitrix/templates/topfactor/componentshttps://topfactor.pro/bitrix/catalog/personals/img/banner-5.png&quot;); width: 865px;" data-swiper-slide-index="1">
+                <div class="b-promo__wrapper wrapper">
+                    <div class="b-promo__content b-promo__content_left-bottom">
+                        <div class="b-promo__title b-promo__title_smaller">
+                            Виртуальный рекрутинг
+                        </div>
+                        <div class="b-promo__subtitle b-promo__subtitle_smaller b-promo__subtitle_wide">
+                            Видеоинтервью с роботом. Чат-боты для скоринга.<br>
+                            Оценка кандидатов с применением ИИ<br>
+                        </div>
+                        <a class="b-promo__button b-promo__button_smaller-on-mobile" href="/others/form-podbor-personala.php" target="_blank">Заказать
+                            презентацию</a>
+                    </div>
+                </div>
+            </div>
+            <div class="b-promo__slide b-promo__slide_bg-higher swiper-slide swiper-slide-duplicate-prev" style="background-image: url(&quot;https://topfactor.pro/bitrix/templates/topfactor/componentshttps://topfactor.pro/bitrix/catalog/personals/img/banner-7.jpg&quot;); background-position-y: 15%; width: 865px;" data-swiper-slide-index="2">
+                <div class="b-promo__wrapper wrapper">
+                    <div class="b-promo__content b-promo__content_left-bottom">
+                        <div class="b-promo__title b-promo__title_smaller">
+                            Управление подбором «под ключ»
+                        </div>
+                        <div class="b-promo__subtitle b-promo__subtitle_smaller b-promo__subtitle_wide">
+                            Онлайн трудоустройство с помощью КЭДО, <br>
+                            адаптация и развитие новых сотрудников
+                        </div>
+                        <a class="b-promo__button b-promo__button_smaller-on-mobile" href="/others/form-podbor-personala.php" target="_blank">Заказать
+                            презентацию</a>
+                    </div>
+                </div>
+            </div>
+            <div class="b-promo__slide swiper-slide swiper-slide-duplicate swiper-slide-duplicate-active" style="background-image: url(&quot;https://topfactor.pro/bitrix/templates/topfactor/componentshttps://topfactor.pro/bitrix/catalog/personals/img/banner-6.jpg&quot;); width: 865px;" data-swiper-slide-index="0">
+                <div class="b-promo__wrapper wrapper">
+                    <div class="b-promo__content b-promo__content_left-bottom">
+                        <div class="b-promo__title b-promo__title_smaller">
+                            CRM для работы с кандидатами
+                        </div>
+                        <div class="b-promo__subtitle b-promo__subtitle_smaller b-promo__subtitle_wide">
+                            Омниканальное взаимодействие с кандидатами:<br>
+                            мессенджеры, соцсети, звонки, смс
+                        </div>
+                        <a class="b-promo__button b-promo__button_smaller-on-mobile" href="/others/form-podbor-personala.php" target="_blank">Заказать
+                            презентацию</a>
+                    </div>
+                </div>
+            </div></div>
+        <div class="b-promo__pagination swiper-pagination swiper-pagination-bullets"><span class="swiper-pagination-bullet swiper-pagination-bullet-active"></span><span class="swiper-pagination-bullet"></span><span class="swiper-pagination-bullet"></span></div>
+        <div class="b-promo__hands-pad"></div>
+        <div class="b-promo__pagination swiper-pagination swiper-pagination-bullets"><span class="swiper-pagination-bullet swiper-pagination-bullet-active"></span><span class="swiper-pagination-bullet"></span><span class="swiper-pagination-bullet"></span></div><div class="b-promo__hands-pad"><div class="b-promo__hands-pad-wrapper wrapper"><div class="b-promo__hand b-promo__hand_backward swiper-button-prev"></div><div class="b-promo__hand b-promo__hand_forward swiper-button-next"></div></div></div></div>
+
+
+
+
+
+    <div class="b-sticky-menu">
+        <div class="wrapper">
+            <div class="b-sticky-menu__inner">
+                <div class="b-sticky-menu__list">
+                    <div class="b-sticky-menu__item">
+                        <a class="b-sticky-menu__link" href="#review">
+								<span class="b-sticky-menu__title">
+									Обзор
+								</span>
+                        </a>
+                    </div>
+                    <div class="b-sticky-menu__item">
+                        <a class="b-sticky-menu__link" href="#pricing">
+								<span class="b-sticky-menu__title">
+									Рассчитать стоимость
+								</span>
+                        </a>
+                    </div>
+                    <div class="b-sticky-menu__item">
+                        <a class="b-sticky-menu__link" href="#cases">
+								<span class="b-sticky-menu__title">
+									Кейсы
+								</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> <!-- Убрана кнопка (заменить) -->
+
+
+
+
+
+    <a id="review"></a>
+    <a id="content"></a>
+    <div class="b-business-functions">
+        <div class="wrapper">
+            <div class="b-business-functions__list">
+                <div class="b-business-functions__item aos-init aos-animate" data-aos="fade-up" data-aos-duration="600" data-aos-delay="0" data-aos-once="true">
+                    <div class="b-business-functions__icon b-business-functions__icon_kpi-efficiency" style="background-image: url(/upload/iblock/c2b/c2b2f2532595f5b5549f050212411397.png);"></div>
+                    <div class="b-business-functions__title">CRM ДЛЯ РАБОТЫ С КАНДИДАТАМИ</div>
+                    <div class="b-business-functions__description" title="Организация работы рекрутеров, ведение кандидата по «воронке подбора». Контроль сроков нахождения кандидата на каждом из этапов">
+                        Организация работы рекрутеров, ведение кандидата по «воронке подбора». Контроль сроков нахождения кандидата на каждом из этапов					</div>
+                    <a class="b-business-functions__button" href="/podbor-personala/crm-dlya-raboty-s-kandidatami/#content">Подробнее</a>
+                </div>
+                <div class="b-business-functions__item aos-init aos-animate" data-aos="fade-up" data-aos-duration="600" data-aos-delay="0" data-aos-once="true">
+                    <div class="b-business-functions__icon b-business-functions__icon_kpi-efficiency" style="background-image: url(/upload/iblock/e2d/e2df92b93749dad836943807bd9e517c.png);"></div>
+                    <div class="b-business-functions__title">ОМНИКАНАЛЬНОЕ ВЗАИМОДЕЙСТВИЕ</div>
+                    <div class="b-business-functions__description" title="Интерактивное взаимодействие с кандидатами с помощью соцсетей, звонков, смс. Доступ к ленте событий внутренних заказчиков">
+                        Интерактивное взаимодействие с кандидатами с помощью соцсетей, звонков, смс. Доступ к ленте событий внутренних заказчиков					</div>
+                    <a class="b-business-functions__button" href="/podbor-personala/omnikanalnoe-vzaimodeystvie/#content">Подробнее</a>
+                </div>
+                <div class="b-business-functions__item aos-init aos-animate" data-aos="fade-up" data-aos-duration="600" data-aos-delay="0" data-aos-once="true">
+                    <div class="b-business-functions__icon b-business-functions__icon_kpi-efficiency" style="background-image: url(/upload/iblock/f3a/f3a5c3a8df0db60fb55e16123999ac2e.png);"></div>
+                    <div class="b-business-functions__title">ВИРТУАЛЬНЫЙ РЕКРУТИНГ ДЛЯ МАСС-ПОДБОРА</div>
+                    <div class="b-business-functions__description" title="Прохождение кандидатами асинхронного видеоинтервью (без участия рекрутера). Оценка кандидатов искусственным интеллектом">
+                        Прохождение кандидатами асинхронного видеоинтервью (без участия рекрутера). Оценка кандидатов искусственным интеллектом					</div>
+                    <a class="b-business-functions__button" href="/podbor-personala/virtualnyy-rekruting-dlya-mass-podbora/#content">Подробнее</a>
+                </div>
+                <div class="b-business-functions__item aos-init" data-aos="fade-up" data-aos-duration="600" data-aos-delay="0" data-aos-once="true">
+                    <div class="b-business-functions__icon b-business-functions__icon_kpi-efficiency" style="background-image: url(/upload/iblock/35b/35bd107cebb8b89d5b67fc8532fab181.png);"></div>
+                    <div class="b-business-functions__title">ГИБКОЕ СОГЛАСОВАНИЕ ВАКАНСИИ НА ПОДБОР</div>
+                    <div class="b-business-functions__description" title="Конструктор, позволяющий гибко настраивать процессы подбора. Согласование вакансий и оффера с участием разных служб предприятия">
+                        Конструктор, позволяющий гибко настраивать процессы подбора. Согласование вакансий и оффера с участием разных служб предприятия					</div>
+                    <a class="b-business-functions__button" href="/podbor-personala/gibkoe-soglasovanie-vakansii-na-podbor/#content">Подробнее</a>
+                </div>
+                <div class="b-business-functions__item aos-init" data-aos="fade-up" data-aos-duration="600" data-aos-delay="0" data-aos-once="true">
+                    <div class="b-business-functions__icon b-business-functions__icon_kpi-efficiency" style="background-image: url(/upload/iblock/2dc/2dcedcef0032251cf999472cf093e037.png);"></div>
+                    <div class="b-business-functions__title">ВЗАИМОДЕЙСТВИЕ С НАНИМАЮЩИМИ МЕНЕДЖЕРАМИ И СЛУЖБАМИ</div>
+                    <div class="b-business-functions__description" title="Рабочий стол рекрутера. Интеграция с календарями для планирования собеседований (Microsoft Outlook, Google Календарь)">
+                        Рабочий стол рекрутера. Интеграция с календарями для планирования собеседований (Microsoft Outlook, Google Календарь)					</div>
+                    <a class="b-business-functions__button" href="/podbor-personala/vzaimodeystvie-s-nanimayushchimi-menedzherami-i-sluzhbami/#content">Подробнее</a>
+                </div>
+                <div class="b-business-functions__item aos-init" data-aos="fade-up" data-aos-duration="600" data-aos-delay="0" data-aos-once="true">
+                    <div class="b-business-functions__icon b-business-functions__icon_kpi-efficiency" style="background-image: url(/upload/iblock/a21/a214d059086d711c6a1db9e544ad9723.png);"></div>
+                    <div class="b-business-functions__title">ДИСТАНЦИОННОЕ ТРУДОУСТРОЙСТВО: ПЕРЕХОД НА КЭДО</div>
+                    <div class="b-business-functions__description" title="Прием кандидатов на работу онлайн (а также справки, заявления и т.д.) с помощью кадрового электронного документооборота (КЭДО)">
+                        Прием кандидатов на работу онлайн (а также справки, заявления и т.д.) с помощью <a href="/others/lichnyy-kabinet-sotrudnika/" target="_blank">кадрового электронного документооборота (КЭДО)</a>					</div>
+                    <a class="b-business-functions__button" href="/podbor-personala/distantsionnoe-trudoustroystvo-perekhod-na-kedo/#content">Подробнее</a>
+                </div>
+                <div class="b-business-functions__item aos-init" data-aos="fade-up" data-aos-duration="600" data-aos-delay="0" data-aos-once="true">
+                    <div class="b-business-functions__icon b-business-functions__icon_kpi-efficiency" style="background-image: url(/upload/iblock/1ac/1ac62895d96c8123b271de2d327b881a.png);"></div>
+                    <div class="b-business-functions__title">ПЕРВИЧНАЯ ОЦЕНКА КАНДИДАТОВ И ОНБОРДИНГ</div>
+                    <div class="b-business-functions__description" title="Входное тестирование соискателей. Использование чат-ботов в процессе подбора и адаптации (WhatsApp, Telegram, Viber, Вконтакте)">
+                        Входное тестирование соискателей. Использование чат-ботов в процессе подбора и адаптации (WhatsApp, Telegram, Viber, Вконтакте)					</div>
+                    <a class="b-business-functions__button" href="/podbor-personala/pervichnaya-otsenka-kandidatov-i-onbording/#content">Подробнее</a>
+                </div>
+                <div class="b-business-functions__item aos-init" data-aos="fade-up" data-aos-duration="600" data-aos-delay="0" data-aos-once="true">
+                    <div class="b-business-functions__icon b-business-functions__icon_kpi-efficiency" style="background-image: url(/upload/iblock/594/5944d7ddd9776720dfd9252550b99bf2.png);"></div>
+                    <div class="b-business-functions__title">ИНТЕГРАЦИЯ С РАБОТНЫМИ САЙТАМИ</div>
+                    <div class="b-business-functions__description" title="Публикация вакансий, просмотр новых откликов, загрузка резюме с работных сайтов автоматически. Роботы сорсинга и обработки запросов">
+                        Публикация вакансий, просмотр новых откликов, загрузка резюме с работных сайтов автоматически. Роботы сорсинга и обработки запросов					</div>
+                    <a class="b-business-functions__button" href="/podbor-personala/integratsiya-s-rabotnymi-saytami/#content">Подробнее</a>
+                </div>
+                <div class="b-business-functions__item aos-init" data-aos="fade-up" data-aos-duration="600" data-aos-delay="0" data-aos-once="true">
+                    <div class="b-business-functions__icon b-business-functions__icon_kpi-efficiency" style="background-image: url(/upload/iblock/76a/76a2bdcf5115957874c889efa69948b4.png);"></div>
+                    <div class="b-business-functions__title">АНАЛИТИКА ПОДБОРА И KPI РЕКРУТЕРА</div>
+                    <div class="b-business-functions__description" title="Оценка ключевых показателей эффективности работы рекрутеров, стоимость закрытия вакансии в разрезе юридических лиц или отделов">
+                        Оценка ключевых показателей эффективности работы рекрутеров, стоимость закрытия вакансии в разрезе юридических лиц или отделов					</div>
+                    <a class="b-business-functions__button" href="/podbor-personala/analitika-podbora-i-kpi-rekrutera/#content">Подробнее</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <a id="stages2"></a>
+
+    <div class="b-blue-demo">
+        <div class="wrapper">
+            <div class="b-blue-demo__content">
+                <div class="b-blue-demo__description">
+                    <div class="b-blue-demo__title aos-init" data-aos="fade-up" data-aos-duration="600" data-aos-delay="100" data-aos-once="true">
+                        ПРОТЕСТИРУЙТЕ
+                        <span class="nowrap">ДЕМО-ВЕРСИЮ</span>
+                        ТОПФАКТОР: УПРАВЛЕНИЕ ПОДБОРОМ ПЕРСОНАЛА
+                    </div>
+                    <a href="/others/demopersonal.php" class="b-blue-demo__button aos-init" data-aos="fade-up" data-aos-duration="600" data-aos-delay="150" data-aos-once="true" target="_blank">Хочу протестировать
+                        <span>демо-версию</span>
                     </a>
-                    <ul class="burger-inner-list">
-                        <li><a class="burger-sub-menu-link" href="https://topfactor.pro/blog/?group=528">Новости</a></li>
-                        <li><a class="burger-sub-menu-link" href="https://topfactor.pro/blog/?group=525">Кейсы</a></li>
-                        <li><a class="burger-sub-menu-link" href="https://topfactor.pro/blog/?group=526">Методики</a></li>
-                        <li><a class="burger-sub-menu-link" href="https://topfactor.pro/blog/?group=524">Статьи</a></li>
-                        <li><a class="burger-sub-menu-link" href="https://topfactor.pro/blog/?group=527">Видео</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <h3>Услуги</h3>
-                    <ul class="burger-inner-list">
-                        <li>
-                            <h4>Консалтинговые услуги</h4>
-                            <ul class="burger-inner-list services">
-                                <li><a class="burger-sub-menu-link" href="https://topfactor.pro/services/services-technology/development-of-kpi.php">Рабочая сессия по разработке KPI</a></li>
-                                <li><a class="burger-sub-menu-link" href="https://1c-kpi.ru/motivacia/">Видео-методика, «разработка KPI за 5 дней»</a></li>
-                                <li><a class="burger-sub-menu-link" href="https://topfactor.pro/product/razrabotka-modeli-kompetencij-v-kompanii.php">Разработка модели компетенций в компании</a></li>
-                                <li><a class="burger-sub-menu-link" href="https://topfactor.pro/product/stages-of-implementation.php">Разработка и внедрение гибкого пакета льгот</a></li>
-                                <li><a class="burger-sub-menu-link" href="https://topfactor.pro/services/services-technology/ocenka360/">Оценка 360</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <h4>Услуги по внедрению</h4>
-                            <ul class="burger-inner-list services">
-                                <li><a class="burger-sub-menu-link" href="https://topfactor.pro/product/predproektnoe-obsledovanie.php">Предпроектное обследование</a></li>
-                                <li><a class="burger-sub-menu-link" href="https://topfactor.pro/services/services-kpi/integration.php">Интеграция с конфигурацией 1С:Предприятие</a></li>
-                                <li><a class="burger-sub-menu-link" href="https://topfactor.pro/services/services-kpi/customize.php">Настройка ПП</a></li>
-                                <li><a class="burger-sub-menu-link" href="https://topfactor.pro/services/services-kpi/setting-broadcast.php">Настройка трансляции данных из 1С:Предприятия</a></li>
-                                <li><a class="burger-sub-menu-link" href="https://topfactor.pro/services/services-kpi/testing.php">Тестирование</a></li>
-                                <li><a class="burger-sub-menu-link" href="https://topfactor.pro/services/services-kpi/education.php">Обучение</a></li>
-                                <li><a class="burger-sub-menu-link" href="https://topfactor.pro/services/services-kpi/exploitation.php">Опытная эксплуатация</a></li>
-                                <li><a class="burger-sub-menu-link" href="https://topfactor.pro/services/services-kpi/supports.php">Поддержка</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="https://topfactor.pro/calendar-of-events/">
-                        <h3>Мероприятия</h3>
-                    </a>
-                </li>
-                <li>
-                    <h3>О компании</h3>
-                    <ul class="burger-inner-list">
-                        <li><a class="burger-sub-menu-link" href="https://topfactor.pro/about/">ТопФактор</a></li>
-                        <li><a class="burger-sub-menu-link" href="https://topfactor.pro/others/ourteam.php">Наша команда</a></li>
-                        <li><a class="burger-sub-menu-link" href="https://topfactor.pro/others/contact_us.php">Контакты</a></li>
-                        <li><a class="burger-sub-menu-link" href="https://topfactor.pro/vakansii/">Вакансии</a></li>
-                        <li><a class="burger-sub-menu-link" href="https://topfactor.pro/about/partners.php">Партнерам</a></li>
-                    </ul>
-                </li>
-            </ul>
-        </nav>
+                </div>
+                <div class="b-blue-demo__image_talents aos-init" data-aos="fade-up" data-aos-duration="600" data-aos-delay="0" data-aos-once="true"></div>
+            </div>
+        </div>
     </div>
-</header>
-<main class="main-content">
-    <section class="main-content__slider">
-        <div class="slider swiper">
-            <div class="swiper-wrapper">
-                <div class="swiper-slide first-slide">
-                    <div class="black-glass">
-                        <div class="slide-content-wrapper">
-                            <div class="slide-content">
-                                <h2>Кадровый электронный документооборот с Госключом</h2>
-                                <p>
-                                    Подписать документ КЭДО быстрее, чем сварить кофе
-                                </p>
-                                <a href="pages/order-a-presentation/order-a-presentation.html" target="_Blank">Заказать презентацию</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="swiper-slide second-slide">
-                    <div class="black-glass">
-                        <div class="slide-content-wrapper">
-                            <div class="slide-content">
-                                <h2>Управление рабочим временем онлайн</h2>
-                                <p>
-                                    График отпусков<br>
-                                    Рабочий график дежурств для вахтовых, сменных и штабных
-                                    сотрудников<br>
-                                    Учет рабочего времени
-                                </p>
-                                <a href="pages/order-a-presentation/order-a-presentation.html" target="_Blank">Заказать презентацию</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="swiper-slide third-slide">
-                    <div class="black-glass">
-                        <div class="slide-content-wrapper">
-                            <div class="slide-content">
-                                <h2>Личный кабинет сотрудника: Все HR-сервисы в одном окне</h2>
-                                <p>
-                                    Постановка и согласование KPI/OKR, онбординг, оценка и
-                                    планы развития (ИПР)
-                                </p>
-                                <a href="pages/order-a-presentation/order-a-presentation.html" target="_Blank">Заказать презентацию</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="arrows-closer">
-                <div class="swiper-button-prev prev-slide-btn"></div>
-                <div class="swiper-button-next next-slide-btn"></div>
-                <div class="swiper-pagination"></div>
-            </div>
-        </div>
-    </section>
-    <section class="main-content-menu">
-        <nav class="main-content-menu__navigation">
-            <ul class="main-content-menu__list">
-                <li>
-                    <a class="anchor-link" href="#review-section">Обзор</a>
-                </li>
-                <li>
-                    <a class="anchor-link" href="#calculator-section">Рассчитать стоимость</a>
-                </li>
-                <li>
-                    <a class="anchor-link" href="#examples-section">Кейсы</a>
-                </li>
-            </ul>
-        </nav>
-    </section>
-    <section class="main-content-review" id="review-section">
-        <div class="grid-block" >
-            <article class="grid-item" data-aos="fade-up" data-aos-once="true" data-aos-duration="400">
-                <div class="grid-item-header">
-                    <figure>
-                        <img class="grid-item-logo" src="src/img/staff_selection/main-content/grid-items/1.resume.svg" alt="">
-                    </figure>
-                    <h3>Кадровый электронный документооборот</h3>
-                </div>
-                <p class="grid-item-text">
-                    Оформление запросов и заявлений, обращений с использованием ЭП.
-                    Подписание электронных кадровых документов
-                </p>
-                <a class="grid-item-link" href="pages/business-functions/hr-electronic-document-management/hr-electronic-document-management.html">Подробнее</a>
-            </article>
-            <article class="grid-item" data-aos="fade-up" data-aos-once="true" data-aos-duration="400">
-                <div class="grid-item-header">
-                    <figure>
-                        <img class="grid-item-logo" src="src/img/staff_selection/main-content/grid-items/2.tablet.svg" alt="">
-                    </figure>
-                    <h3>Управление рабочим временем сотрудников</h3>
-                </div>
-                <p class="grid-item-text">
-                    Согласование графика отпусков, командировок, удаленной работы и
-                    изменение графиков онлайн. Контроль загруженности работников
-                </p>
-                <a class="grid-item-link" href="pages/business-functions/managing-working-time/managing-working-time.html">Подробнее</a>
-            </article>
-            <article class="grid-item" data-aos="fade-up" data-aos-once="true" data-aos-duration="400">
-                <div class="grid-item-header">
-                    <figure>
-                        <img class="grid-item-logo" src="src/img/staff_selection/main-content/grid-items/3.key.svg" alt="">
-                    </figure>
-                    <h3>Интеграция с приложением Госключ</h3>
-                </div>
-                <p class="grid-item-text">
-                    Выпуск ЭП Госключ бесплатно в режиме онлайн. Юридически значимое
-                    подписание кадровых документов. Применение для задач охраны труда
-                </p>
-                <a class="grid-item-link" href="pages/business-functions/integration-with-goskey/integration-with-goskey.html">Подробнее</a>
-            </article>
-            <article class="grid-item" data-aos="fade-up" data-aos-once="true" data-aos-duration="400">
-                <div class="grid-item-header">
-                    <figure>
-                        <img class="grid-item-logo" src="src/img/staff_selection/main-content/grid-items/4.graph.png" alt="">
-                    </figure>
-                    <h3>Трудоустройство сотрудников онлайн</h3>
-                </div>
-                <p class="grid-item-text">
-                    Прием кандидатов на работу онлайн. Личный кабинет кандидата:
-                    выпуска электронной подписи и подписания трудового соглашения
-                </p>
-                <a class="grid-item-link" href="pages/business-functions/online-employment/online-employment.html">Подробнее</a>
-            </article>
-            <article class="grid-item" data-aos="fade-up" data-aos-once="true" data-aos-duration="400">
-                <div class="grid-item-header">
-                    <figure>
-                        <img class="grid-item-logo" src="src/img/staff_selection/main-content/grid-items/5.clock.svg" alt="">
-                    </figure>
-                    <h3>Рабочее расписание для вахт, смен и дежурств</h3>
-                </div>
-                <p class="grid-item-text">
-                    Формирование плановых графиков, контроль нормативов. Формирование
-                    личного расписания с учетом плановых отсутствий. Формирование
-                    табеля учета рабочего времени
-                </p>
-                <a class="grid-item-link" href="pages/business-functions/work-schedule-for-shifts/work-schedule-for-shifts.html">Подробнее</a>
-            </article>
-            <article class="grid-item" data-aos="fade-up" data-aos-once="true" data-aos-duration="400">
-                <div class="grid-item-header">
-                    <figure>
-                        <img class="grid-item-logo" src="src/img/staff_selection/main-content/grid-items/6.puzzle.png" alt="">
-                    </figure>
-                    <h3>Единая точка доступа<br>к HR-сервисам</h3>
-                </div>
-                <p class="grid-item-text">
-                    Постановка и согласование KPI/OKR, оценка результативности и
-                    расчет премии, онбординг, оценка и планы развития (ИПР),
-                    диагностика вовлеченности и выгорания
-                </p>
-                <a class="grid-item-link" href="pages/business-functions/single-point-of-access-to-hr-services/single-point-of-access-to-hr-services.html">Подробнее</a>
-            </article>
-            <article class="grid-item" data-aos="fade-up" data-aos-once="true" data-aos-duration="400">
-                <div class="grid-item-header">
-                    <figure>
-                        <img class="grid-item-logo" src="src/img/staff_selection/main-content/grid-items/7.block-scheme.png" alt="">
-                    </figure>
-                    <h3>Конструктор процессов<br>и документов</h3>
-                </div>
-                <p class="grid-item-text">
-                    Конструктор бизнес-процессов для кастомизации маршрутов КЭДО.
-                    Настройка форм документов. Уведомления о новых сообщениях,
-                    задачах, событиях, статусах бизнес-процессов
-                </p>
-                <a class="grid-item-link" href="pages/business-functions/process-designer-and-documents/process-designer-and-documents.html">Подробнее</a>
-            </article>
-            <article class="grid-item" data-aos="fade-up" data-aos-once="true" data-aos-duration="400">
-                <div class="grid-item-header">
-                    <figure>
-                        <img class="grid-item-logo" src="src/img/staff_selection/main-content/grid-items/8.mobile.svg" alt="">
-                    </figure>
-                    <h3>Мобильное приложение<br>для КЭДО</h3>
-                </div>
-                <p class="grid-item-text">
-                    Доступ к личному кабинету сотруднику. Оформление заявлений,
-                    согласование и подписание электронных документов онлайн. Доступ к
-                    личному графику и рабочему расписанию
-                </p>
-                <a class="grid-item-link" href="pages/business-functions/mobile-app-for-cedo/mobile-app-for-cedo.html">Подробнее</a>
-            </article>
-            <article class="grid-item" data-aos="fade-up" data-aos-once="true" data-aos-duration="400">
-                <div class="grid-item-header">
-                    <figure>
-                        <img class="grid-item-logo" src="src/img/staff_selection/main-content/grid-items/9.file_to_file.png" alt="">
-                    </figure>
-                    <h3>Интеграция с кадровой системой (1С:ЗУП)</h3>
-                </div>
-                <p class="grid-item-text">
-                    Автоматическое создание личного кабинета сотрудника на основании
-                    данных из кадровой системы. Двусторонняя синхронизация кадровой
-                    информации
-                </p>
-                <a class="grid-item-link" href="pages/business-functions/integration-with-the-personnel-system/integration-with-the-personnel-system.html">Подробнее</a>
-            </article>
-        </div>
-    </section>
-    <section class="demo-test-blue-block">
-        <div class="demo-test__container">
-            <figure data-aos="fade-up" data-aos-once="true" data-aos-duration="400">
-                <img class="ipad" src="src/img/staff_selection/main-content/ipad-talents.png" alt="ipad">
-            </figure>
-            <article class="demo-test-blue-block__text">
-                <h2 data-aos="fade-up" data-aos-once="true" data-aos-duration="400" data-aos-delay="50">
-                    Протестируйте демо-версию<br>ТопФактор: Личный кабинет сотрудника
-                </h2>
-                <a class="demo-link" href="pages/demo-version/demo-version.html" data-aos="fade-up" data-aos-once="true" data-aos-duration="400" data-aos-delay="100" target="_blank">Хочу протестировать демо-версию</a>
-            </article>
-        </div>
-    </section>
+    <a id="stages"></a>
+    <a id="pricing"></a>
+    <script>
+        function sendForm () {
+            var v = grecaptcha.getResponse()
+            if (v.length == '') {
+                $('#captcha').text('Пройдите валидацию reCAPCHA')
+                return false
+            }
+            else {
+                return true
+            }
+        }
+    </script>
+
     <section class="main-content__calculator" id="calculator-section">
         <h2>Сравнить тарифы на облачную версию</h2>
         <div class="calculator-form-wrapper">
@@ -3940,248 +4078,376 @@
                 <a class="download-table-mobile" id="download-table-mobile" href="#" download>Скачать таблицу сравнения</a>
             </article>
         </div>
-    </section>
-    <section class="main-content__why-solution">
-        <h2>Почему это решение?</h2>
-        <div class="solutions-container" data-aos="fade-up" data-aos-once="true" data-aos-duration="400">
-            <article class="solution-item solution-item-1">
-                <h3>Ваши данные будут надежно защищены</h3>
-                <p>
-                    Защита информации реализована на платформе 1С:Предприятие 8.3,
-                    которая сертифицирована для работы с персональными данными любой
-                    категории
-                </p>
-            </article>
-            <article class="solution-item solution-item-2">
-                <h3>Вы будете использовать российский продукт</h3>
-                <p>
-                    Продукт внесен в единый реестр российских программ для электронных
-                    вычислительных машин и баз данных Минкомсвязи РФ под номером
-                    <a href="https://reestr.digital.gov.ru/reestr/768020/?sphrase_id=2836504">13742</a>
-                </p>
-            </article>
-            <article class="solution-item solution-item-3">
-                <h3>Вы будете использовать удобный для вас вид доступа к данным</h3>
-                <ul>
-                    <li>
-                        <span>Облачный сервис</span>
-                    </li>
-                    <li>
-                        <span>Корпоративная система</span>
-                    </li>
-                    <li>
-                        <span>Мобильное приложение</span>
-                    </li>
-                </ul>
-            </article>
-        </div>
-    </section>
-    <section class="main-content__examples" id="examples-section">
-        <h2>Примеры решения бизнес-задач с использованием предлагаемого продукта</h2>
-        <div class="arrows-shadow">
-            <div class="arrow prev-arrow" id="prev"></div>
-            <div class="examples-slider-wrapper">
-                <div class="swiper-wrapper examples-swiper">
-                    <div class="swiper-slide example-slide">
-                        <figure>
-                            <img class="example-slide__img" src="src/img/staff_selection/main-content/examples-slider/1.png" alt="">
-                        </figure>
-                        <p>
-                            <a href="https://topfactor.pro/blog/otzyv-o-vnedrenii-kpi-upravleniya-v-kompanii-ooo-tayten-pauer-solyushn-/" title="Отзыв о внедрении KPI-управления в компании ООО 'Тайтэн Пауэр Солюшн'">
-                                Отзыв о внедрении KPI-управления в компании ООО "Тайтэн Пауэр Солюшн"
-                            </a>
-                        </p>
-                    </div>
-                    <div class="swiper-slide example-slide">
-                        <figure>
-                            <img class="example-slide__img" src="src/img/staff_selection/main-content/examples-slider/2.png" alt="">
-                        </figure>
-                        <p>
-                            <a href="https://topfactor.pro/blog/otzyv-kompanii-ooo-planeta-leta-po-pilotnomu-proektu-upravlenie-komandnoy-vovlechennostyu-i-effektiv/" title="Отзыв компании ООО 'Планета Лета' по проекту 'Управление командной вовлеченностью и эффективностью'">
-                                Отзыв компании ООО "Планета Лета" по проекту "Управление командной вовлеченностью и эффективностью"
-                            </a>
-                        </p>
-                    </div>
-                    <div class="swiper-slide example-slide">
-                        <figure>
-                            <img class="example-slide__img" src="src/img/staff_selection/main-content/examples-slider/3.png" alt="">
-                        </figure>
-                        <p>
-                            <a href="https://topfactor.pro/blog/otzyv-o-provedenii-proekta-diagnostiki-vovlechennosti-i-motivatsii-v-kompanii-tayten-pauer-solyushn/" title="Отзыв о проведении проекта диагностики вовлеченности и мотивации в компании 'Тайтэн пауэр солюшн'">
-                                Отзыв о проведении проекта диагностики вовлеченности и мотивации в компании "Тайтэн пауэр солюшн"
-                            </a>
-                        </p>
-                    </div>
-                    <div class="swiper-slide example-slide">
-                        <figure>
-                            <img class="example-slide__img" src="src/img/staff_selection/main-content/examples-slider/4.png" alt="">
-                        </figure>
-                        <p>
-                            <a href="https://topfactor.pro/blog/otzyv-kompanii-ooo-yutim-o-vnedrenii-rasshireniya-programmnogo-produkta-1s-predpriyatie-upravlenie-p/" title="Отзыв компании ООО 'Ютим' по проекту 'Управление командной вовлеченностью и эффективностью'">
-                                Отзыв компании ООО "Ютим" по проекту "Управление командной вовлеченностью и эффективностью"
-                            </a>
-                        </p>
-                    </div>
-                    <div class="swiper-slide example-slide">
-                        <figure>
-                            <img class="example-slide__img" src="src/img/staff_selection/main-content/examples-slider/5.png" alt="">
-                        </figure>
-                        <p>
-                            <a href="https://topfactor.pro/blog/otzyv-kompanii-doktor-mebel/" title="Отзыв компании 'Доктор Мебель' по проекту автоматизации системы целевого и KPI-управления">
-                                Отзыв компании "Доктор Мебель" по проекту автоматизации системы целевого и KPI-управления
-                            </a>
-                        </p>
-                    </div>
-                    <div class="swiper-slide example-slide">
-                        <figure>
-                            <img class="example-slide__img" src="src/img/staff_selection/main-content/examples-slider/6.jpg" alt="">
-                        </figure>
-                        <p>
-                            <a href="https://topfactor.pro/blog/otzyv-kompanii-kezi/" title="Отзыв по проекту внедрения кафетерия льгот в фармацевтической компании Chiesi">
-                                Отзыв по проекту внедрения кафетерия льгот в фармацевтической компании Chiesi
-                            </a>
-                        </p>
+    </section> <!-- секция калькулятора -->
+    <div class="b-why-solution">
+        <div class="wrapper">
+            <div class="b-why-solution__title b-subtitle aos-init" data-aos="fade-up" data-aos-duration="600" data-aos-delay="0" data-aos-once="true">
+                Почему это решение?
+            </div>
+            <div class="b-why-solution__list">
+                <div class="b-why-solution__item aos-init" data-aos="fade-up" data-aos-duration="600" data-aos-delay="0" data-aos-once="true">
+                    <div class="b-why-solution__conter">1.</div>
+                    <div class="b-why-solution__subtitle">Вы будете работать в привычном интерфейсе 1С</div>
+                    <div class="b-why-solution__description">“ТопФактор:Управление подбором персонала” полностью интегрируется с программными модулями
+                        1С:Предприятие"
                     </div>
                 </div>
-                <div class="swiper-pagination"></div>
-                <div class="swiper-button-prev under-prev"></div>
-                <div class="swiper-button-next under-next"></div>
-            </div>
-            <div class="arrow next-arrow" id="next"></div>
-        </div>
-        <div class="read-review">
-            <a class="read-review-link" href="http://topfactor.pro/blog/?group=525">Читать все отзывы</a>
-        </div>
-    </section>
-</main>
-<footer class="footer-page">
-    <section class="footer-row footer-row-1">
-        <div class="footer-row-content">
-            <div class="footer-page__info">
-                <figure>
-                    <img class="footer-page__logo-img" src="src/img/staff_selection/header/logo.png" alt="top-factor-logo">
-                </figure>
-                <div class="contacts">
-                    <div class="address">
-                        <p>
-                            115419, г. Москва,<br>
-                            ул. Шаболовка, д. 34, стр.5, офис 7
-                        </p>
-                    </div>
-                    <div class="phone-call">
-                        <a href="tel:+74955085627">+7 495-508-56-27</a>
-                        <a class="order-call-footer-link" href="https://topfactor.pro/others/contact_us.php">Заказать звонок</a>
-                    </div>
-                    <div class="email-info">
-                        <a href="mailto:info@topfactor.pro">info@topfactor.pro</a>
-                    </div>
-                    <div class="social-links">
-                        <a href="https://www.facebook.com/KPI1C">
-                            <div class="social-visualizer facebook"></div>
-                        </a>
-                        <a href="https://vk.com/event74249743">
-                            <div class="social-visualizer vk"></div>
-                        </a>
-                        <a href="https://t.me/digital4hr">
-                            <div class="social-visualizer telegram"></div>
-                        </a>
-                        <a href="https://www.linkedin.com/grp/home?gid=8112464">
-                            <div class="social-visualizer linkedin"></div>
-                        </a>
+                <div class="b-why-solution__item aos-init" data-aos="fade-up" data-aos-duration="600" data-aos-delay="70" data-aos-once="true">
+                    <div class="b-why-solution__conter">2.</div>
+                    <div class="b-why-solution__subtitle">Ваши данные будут надежно&nbsp;защищены</div>
+                    <div class="b-why-solution__description">Защита информации реализована на платформе 1С:Предприятие 8.3, которая сертифицирована для работы с
+                        персональными данными любой категории
                     </div>
                 </div>
-                <a class="footer-page__demo-version-link hidden-link" href="pages/demo-version/demo-version.html" target="_Blank">Демо-версия</a>
-            </div>
-            <div class="footer-page__describe">
-                <h3>Подписка</h3>
-                <p>
-                    У нас предусмотрены специальные акции и скидки только для подписчиков!
-                    Мы делимся с Вами только свежей и актуальной информацией и новостями.
-                </p>
-                <ul>
-                    <li>
-                        <a href="https://topfactor.pro/blog/?group=524">Новости HR-автоматизации</a>
-                    </li>
-                    <li>
-                        <a href="https://topfactor.pro/calendar-of-events/">Анонсы мероприятий</a>
-                    </li>
-                    <li>
-                        <a href="https://topfactor.pro/blog/?group=523">Комментарии экспертов</a>
-                    </li>
-                </ul>
-                <input class="describe-field" id="describe-field"  name="describe-field" type="email" placeholder="Ваш E-mail">
-                <a class="describe-btn" id="describe-btn" href="https://topfactor.pro/others/podpiska.php" target="_Blank">Подписаться на новости</a>
-            </div>
-            <div class="footer-page__navigation">
-                <nav class="footer-navigation">
-                    <ul class="footer-navigation__list">
-                        <li>
-                            <a href="https://topfactor.pro/maps.php">Карта сайта</a>
-                        </li>
-                        <li>
-                            <a href="https://topfactor.pro/calendar-of-events/">Расписание мероприятий</a>
-                        </li>
-                        <li>
-                            <a href="https://topfactor.pro/blog/">Блог</a>
-                        </li>
-                        <li>
-                            <a href="https://topfactor.pro/about/">О компании</a>
-                        </li>
-                        <li>
-                            <a href="https://topfactor.pro/partners/select-partners/">Партнеры</a>
-                        </li>
-                        <li>
-                            <a href="https://topfactor.pro/partners/become-a-partner.php">Стать партнером</a>
-                        </li>
-                        <li>
-                            <a href="https://topfactor.pro/services/services-technology/">Консалтинговые услуги</a>
-                        </li>
-                        <li>
-                            <a href="https://topfactor.pro/services/services-kpi/">Услуги по внедрению</a>
-                        </li>
-                    </ul>
-                </nav>
-                <a class="footer-page__demo-version-link showed-link" href="pages/demo-version/demo-version.html" target="_Blank">Демо-версия</a>
+                <div class="b-why-solution__item aos-init" data-aos="fade-up" data-aos-duration="600" data-aos-delay="140" data-aos-once="true">
+                    <div class="b-why-solution__conter">3.</div>
+                    <div class="b-why-solution__subtitle">Вы будете использовать российский&nbsp;продукт</div>
+                    <div class="b-why-solution__description">Продукт внесен в единый реестр российских программ для ЭВМ и баз данных Минкомсвязи РФ под номером
+                        <a target="_blank" href="https://reestr.digital.gov.ru/reestr/575781/">13144</a>
+                    </div>
+                </div>
+                <div class="b-why-solution__item aos-init" data-aos="fade-up" data-aos-duration="600" data-aos-delay="210" data-aos-once="true">
+                    <div class="b-why-solution__conter">4.</div>
+                    <div class="b-why-solution__subtitle">Вы будете использовать удобный&nbsp;для&nbsp;Вас&nbsp;вид доступа&nbsp;к&nbsp;данным</div>
+                    <div class="b-why-solution__description">
+                        <div class="b-why-solution__ul">
+                            <div class="b-why-solution__li">облачный сервис (не нужны свои сервера 1С, удобные платежи)
+                            </div>
+                            <div class="b-why-solution__li">
+                                <a target="_blank" href="/talents/">
+                                    корпоративная система (интеграция с программными продуктами ТопФактор)
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-    </section>
-    <section class="footer-row footer-row-2">
-        <div class="footer-row-content showed-link">
-            <div class="footer-privacy-policy">
-                <a class="footer-privacy-policy-link" href="https://topfactor.pro/politika-konfidentsialnosti.php" target="_blank">Политика информационной безопасности</a>
-                <a class="footer-privacy-policy-link" href="https://topfactor.pro/politika-konfidentsialnosti-mobilnogo-prilozheniya/" target="_blank">Политика конфиденциальности мобильного приложения</a>
+    </div> <!-- секция "Почему это решение" -->
+
+    <script src="https://www.google.com/recaptcha/api.js" async="" defer=""></script>
+
+    <a id="cases"></a>
+
+
+    <div class="b-solution-examples">
+        <div class="wrapper">
+            <div class="b-solution-examples__title b-subtitle">Примеры решения бизнес-задач с использованием предлагаемого продукта</div>
+            <div class="b-solution-examples__list swiper-container swiper-container-horizontal"><div class="swiper-wrapper" style="transform: translate3d(-851px, 0px, 0px); transition-duration: 0ms;"><div class="b-solution-examples__item swiper-slide swiper-slide-duplicate" id="bx_3218110189_4650" data-swiper-slide-index="3" style="width: 253.667px; margin-right: 30px;">
+                <a class="b-solution-examples__link" href="/blog/otzyv-kompanii-ooo-yutim-o-vnedrenii-rasshireniya-programmnogo-produkta-1s-predpriyatie-upravlenie-p/" title="Отзыв компании ООО &quot;Ютим&quot; по проекту &quot;Управление командной вовлеченностью и эффективностью&quot;"></a>
+                <div class="b-solution-examples__image">
+                    <img src="/upload/iblock/d68/d68d412b30e4178a63b0816aa49c21f2.png">
+                </div>
+                <div class="b-solution-examples__title" title="Отзыв компании ООО &quot;Ютим&quot; по проекту &quot;Управление командной вовлеченностью и эффективностью&quot;">
+                    Отзыв компании ООО "Ютим" по проекту "Управление командной вовлеченностью и эффективностью"									</div>
+            </div><div class="b-solution-examples__item swiper-slide swiper-slide-duplicate" id="bx_3218110189_2899" data-swiper-slide-index="4" style="width: 253.667px; margin-right: 30px;">
+                <a class="b-solution-examples__link" href="/blog/otzyv-kompanii-doktor-mebel/" title="Отзыв компании &quot;Доктор Мебель&quot; по проекту автоматизации системы целевого и KPI-управления"></a>
+                <div class="b-solution-examples__image">
+                    <img src="/upload/iblock/384/3847b719d4fe576efdf55fd9a25366e6.png">
+                </div>
+                <div class="b-solution-examples__title" title="Отзыв компании &quot;Доктор Мебель&quot; по проекту автоматизации системы целевого и KPI-управления">
+                    Отзыв компании "Доктор Мебель" по проекту автоматизации системы целевого и KPI-управления									</div>
+            </div><div class="b-solution-examples__item swiper-slide swiper-slide-duplicate swiper-slide-prev" id="bx_3218110189_2781" data-swiper-slide-index="5" style="width: 253.667px; margin-right: 30px;">
+                <a class="b-solution-examples__link" href="/blog/otzyv-kompanii-kezi/" title="Отзыв по проекту внедрения кафетерия льгот в фармацевтической компании Chiesi"></a>
+                <div class="b-solution-examples__image">
+                    <img src="/upload/iblock/ada/ada32aba8fa527cad08bf83e82f4d60b.jpg">
+                </div>
+                <div class="b-solution-examples__title" title="Отзыв по проекту внедрения кафетерия льгот в фармацевтической компании Chiesi">
+                    Отзыв по проекту внедрения кафетерия льгот в фармацевтической компании Chiesi									</div>
             </div>
-            <div class="offer-block">
-                <span>2023©ТопФактор. Все права защищены.</span>
-                <a class="offer-link" href="https://topfactor.pro/oferta.php">Оферта на оказание консультационных услуг</a>
-            </div>
-            <div class="license-block">
-                <a class="license-link" href="https://topfactor.pro/litsenzirovanie/">Лицензирование</a>
+                <div class="b-solution-examples__item swiper-slide swiper-slide-active" id="bx_3218110189_4851" data-swiper-slide-index="0" style="width: 253.667px; margin-right: 30px;">
+                    <a class="b-solution-examples__link" href="/blog/otzyv-o-vnedrenii-kpi-upravleniya-v-kompanii-ooo-tayten-pauer-solyushn-/" title="Отзыв о внедрении KPI-управления в компании ООО &quot;Тайтэн Пауэр Солюшн&quot; "></a>
+                    <div class="b-solution-examples__image">
+                        <img src="/upload/iblock/ef4/ef43b1f9171597b73b7590d1cbc78557.png">
+                    </div>
+                    <div class="b-solution-examples__title" title="Отзыв о внедрении KPI-управления в компании ООО &quot;Тайтэн Пауэр Солюшн&quot; ">
+                        Отзыв о внедрении KPI-управления в компании ООО "Тайтэн Пауэр Солюшн" 									</div>
+                </div>
+                <div class="b-solution-examples__item swiper-slide swiper-slide-next" id="bx_3218110189_4651" data-swiper-slide-index="1" style="width: 253.667px; margin-right: 30px;">
+                    <a class="b-solution-examples__link" href="/blog/otzyv-kompanii-ooo-planeta-leta-po-pilotnomu-proektu-upravlenie-komandnoy-vovlechennostyu-i-effektiv/" title="Отзыв компании ООО &quot;Планета Лета&quot; по проекту &quot;Управление командной вовлеченностью и эффективностью&quot;"></a>
+                    <div class="b-solution-examples__image">
+                        <img src="/upload/iblock/a86/a86fd1ab8f61bbf7d7a4c8b9d4a75f53.png">
+                    </div>
+                    <div class="b-solution-examples__title" title="Отзыв компании ООО &quot;Планета Лета&quot; по проекту &quot;Управление командной вовлеченностью и эффективностью&quot;">
+                        Отзыв компании ООО "Планета Лета" по проекту "Управление командной вовлеченностью и эффективностью"									</div>
+                </div>
+                <div class="b-solution-examples__item swiper-slide" id="bx_3218110189_4853" data-swiper-slide-index="2" style="width: 253.667px; margin-right: 30px;">
+                    <a class="b-solution-examples__link" href="/blog/otzyv-o-provedenii-proekta-diagnostiki-vovlechennosti-i-motivatsii-v-kompanii-tayten-pauer-solyushn/" title="Отзыв о проведении проекта диагностики вовлеченности и мотивации в компании &quot;Тайтэн пауэр солюшн&quot;"></a>
+                    <div class="b-solution-examples__image">
+                        <img src="/upload/iblock/ef1/ef11ab6e51515d82fc66dfa1b46e9c00.png">
+                    </div>
+                    <div class="b-solution-examples__title" title="Отзыв о проведении проекта диагностики вовлеченности и мотивации в компании &quot;Тайтэн пауэр солюшн&quot;">
+                        Отзыв о проведении проекта диагностики вовлеченности и мотивации в компании "Тайтэн пауэр солюшн"									</div>
+                </div>
+                <div class="b-solution-examples__item swiper-slide" id="bx_3218110189_4650" data-swiper-slide-index="3" style="width: 253.667px; margin-right: 30px;">
+                    <a class="b-solution-examples__link" href="/blog/otzyv-kompanii-ooo-yutim-o-vnedrenii-rasshireniya-programmnogo-produkta-1s-predpriyatie-upravlenie-p/" title="Отзыв компании ООО &quot;Ютим&quot; по проекту &quot;Управление командной вовлеченностью и эффективностью&quot;"></a>
+                    <div class="b-solution-examples__image">
+                        <img src="/upload/iblock/d68/d68d412b30e4178a63b0816aa49c21f2.png">
+                    </div>
+                    <div class="b-solution-examples__title" title="Отзыв компании ООО &quot;Ютим&quot; по проекту &quot;Управление командной вовлеченностью и эффективностью&quot;">
+                        Отзыв компании ООО "Ютим" по проекту "Управление командной вовлеченностью и эффективностью"									</div>
+                </div>
+                <div class="b-solution-examples__item swiper-slide" id="bx_3218110189_2899" data-swiper-slide-index="4" style="width: 253.667px; margin-right: 30px;">
+                    <a class="b-solution-examples__link" href="/blog/otzyv-kompanii-doktor-mebel/" title="Отзыв компании &quot;Доктор Мебель&quot; по проекту автоматизации системы целевого и KPI-управления"></a>
+                    <div class="b-solution-examples__image">
+                        <img src="/upload/iblock/384/3847b719d4fe576efdf55fd9a25366e6.png">
+                    </div>
+                    <div class="b-solution-examples__title" title="Отзыв компании &quot;Доктор Мебель&quot; по проекту автоматизации системы целевого и KPI-управления">
+                        Отзыв компании "Доктор Мебель" по проекту автоматизации системы целевого и KPI-управления									</div>
+                </div>
+                <div class="b-solution-examples__item swiper-slide swiper-slide-duplicate-prev" id="bx_3218110189_2781" data-swiper-slide-index="5" style="width: 253.667px; margin-right: 30px;">
+                    <a class="b-solution-examples__link" href="/blog/otzyv-kompanii-kezi/" title="Отзыв по проекту внедрения кафетерия льгот в фармацевтической компании Chiesi"></a>
+                    <div class="b-solution-examples__image">
+                        <img src="/upload/iblock/ada/ada32aba8fa527cad08bf83e82f4d60b.jpg">
+                    </div>
+                    <div class="b-solution-examples__title" title="Отзыв по проекту внедрения кафетерия льгот в фармацевтической компании Chiesi">
+                        Отзыв по проекту внедрения кафетерия льгот в фармацевтической компании Chiesi									</div>
+                </div>
+                <div class="b-solution-examples__item swiper-slide swiper-slide-duplicate swiper-slide-duplicate-active" id="bx_3218110189_4851" data-swiper-slide-index="0" style="width: 253.667px; margin-right: 30px;">
+                    <a class="b-solution-examples__link" href="/blog/otzyv-o-vnedrenii-kpi-upravleniya-v-kompanii-ooo-tayten-pauer-solyushn-/" title="Отзыв о внедрении KPI-управления в компании ООО &quot;Тайтэн Пауэр Солюшн&quot; "></a>
+                    <div class="b-solution-examples__image">
+                        <img src="/upload/iblock/ef4/ef43b1f9171597b73b7590d1cbc78557.png">
+                    </div>
+                    <div class="b-solution-examples__title" title="Отзыв о внедрении KPI-управления в компании ООО &quot;Тайтэн Пауэр Солюшн&quot; ">
+                        Отзыв о внедрении KPI-управления в компании ООО "Тайтэн Пауэр Солюшн" 									</div>
+                </div><div class="b-solution-examples__item swiper-slide swiper-slide-duplicate swiper-slide-duplicate-next" id="bx_3218110189_4651" data-swiper-slide-index="1" style="width: 253.667px; margin-right: 30px;">
+                    <a class="b-solution-examples__link" href="/blog/otzyv-kompanii-ooo-planeta-leta-po-pilotnomu-proektu-upravlenie-komandnoy-vovlechennostyu-i-effektiv/" title="Отзыв компании ООО &quot;Планета Лета&quot; по проекту &quot;Управление командной вовлеченностью и эффективностью&quot;"></a>
+                    <div class="b-solution-examples__image">
+                        <img src="/upload/iblock/a86/a86fd1ab8f61bbf7d7a4c8b9d4a75f53.png">
+                    </div>
+                    <div class="b-solution-examples__title" title="Отзыв компании ООО &quot;Планета Лета&quot; по проекту &quot;Управление командной вовлеченностью и эффективностью&quot;">
+                        Отзыв компании ООО "Планета Лета" по проекту "Управление командной вовлеченностью и эффективностью"									</div>
+                </div><div class="b-solution-examples__item swiper-slide swiper-slide-duplicate" id="bx_3218110189_4853" data-swiper-slide-index="2" style="width: 253.667px; margin-right: 30px;">
+                    <a class="b-solution-examples__link" href="/blog/otzyv-o-provedenii-proekta-diagnostiki-vovlechennosti-i-motivatsii-v-kompanii-tayten-pauer-solyushn/" title="Отзыв о проведении проекта диагностики вовлеченности и мотивации в компании &quot;Тайтэн пауэр солюшн&quot;"></a>
+                    <div class="b-solution-examples__image">
+                        <img src="/upload/iblock/ef1/ef11ab6e51515d82fc66dfa1b46e9c00.png">
+                    </div>
+                    <div class="b-solution-examples__title" title="Отзыв о проведении проекта диагностики вовлеченности и мотивации в компании &quot;Тайтэн пауэр солюшн&quot;">
+                        Отзыв о проведении проекта диагностики вовлеченности и мотивации в компании "Тайтэн пауэр солюшн"									</div>
+                </div></div><div class="b-solution-examples__pagination swiper-pagination swiper-pagination-bullets"><span class="swiper-pagination-bullet swiper-pagination-bullet-active"></span><span class="swiper-pagination-bullet"></span><span class="swiper-pagination-bullet"></span><span class="swiper-pagination-bullet"></span><span class="swiper-pagination-bullet"></span><span class="swiper-pagination-bullet"></span></div><div class="b-solution-examples__hand b-solution-examples__hand_backward swiper-button-prev"></div><div class="b-solution-examples__hand b-solution-examples__hand_forward swiper-button-next"></div></div>
+            <div class="b-trust-us__footer">
+                <a class="b-trust-us__link-button" href="http://topfactor.pro/blog/?group=525">
+                    Читать все отзывы
+                </a>
             </div>
         </div>
-        <div class="footer-hidden-row-content hidden-link">
-            <div class="offer-block">
-                <span>2023©ТопФактор. Все права защищены.</span>
-            </div>
-            <div class="footer-privacy-policy">
-                <a class="footer-privacy-policy-link" href="https://topfactor.pro/politika-konfidentsialnosti.php" target="_blank">Политика информационной безопасности</a>
-                <a class="footer-privacy-policy-link" href="https://topfactor.pro/politika-konfidentsialnosti-mobilnogo-prilozheniya/" target="_blank">Политика конфиденциальности мобильного приложения</a>
-            </div>
-            <div class="license-block">
-                <a class="license-link" href="https://topfactor.pro/litsenzirovanie/">Лицензирование</a>
-            </div>
-            <div class="offer-block">
-                <a class="offer-link" href="https://topfactor.pro/oferta.php">Оферта на оказание консультационных услуг</a>
+    </div></div>
+<div class="b-footer">
+    <div class="b-footer__row">
+        <div class="wrapper">
+            <div class="b-footer__content">
+                <div class="b-footer__column b-footer__column_contact">
+                    <a href="/" class="b-logo b-logo_footer"></a>
+                    <div class="b-footer__contact b-contact">
+                        <div class="b-contact__item">
+                            <div class="b-contact__icon b-contact__icon_address"></div>
+                            <div class="b-contact__content">
+                                <nobr>115419, г. Москва,</nobr><br>
+                                <nobr>ул. Шаболовка, д. 34, стр.5, офис 7</nobr>
+                            </div>
+                        </div>
+                        <div class="b-contact__item">
+                            <div class="b-contact__icon b-contact__icon_phone"></div>
+                            <div class="b-contact__content">
+                                <nobr>+7 495-508-56-27</nobr><br>
+                                <!--								<nobr>+7 84-42-900-620</nobr><br/>-->
+                                <a class="b-contact__callback" href="http://topfactor.pro/others/contact_us.php">Заказать звонок</a>
+                            </div>
+                        </div>
+                        <div class="b-contact__item">
+                            <div class="b-contact__icon b-contact__icon_email"></div>
+                            <div class="b-contact__content">
+                                info@topfactor.pro
+                            </div>
+                        </div>
+                    </div>
+                    <div class="b-footer__social b-footer-social">
+                        <div class="b-footer-social__list">
+                            <div class="b-footer-social__item">
+                                <a class="b-footer-social__link" href="https://www.facebook.com/KPI1C">
+                                    <div class="b-footer-social__icon b-footer-social__icon_facebook"></div>
+                                </a>
+                            </div>
+                            <div class="b-footer-social__item">
+                                <a class="b-footer-social__link" href="http://vk.com/event74249743">
+                                    <div class="b-footer-social__icon b-footer-social__icon_vkontakte"></div>
+                                </a>
+                            </div>
+                            <div class="b-footer-social__item">
+                                <a class="b-footer-social__link" target="_blank" href="https://t.me/digital4hr">
+                                    <div class="b-footer-social__icon b-footer-social__icon_telegram"></div>
+                                </a>
+                            </div>
+                            <div class="b-footer-social__item">
+                                <a class="b-footer-social__link" href="https://www.linkedin.com/grp/home?gid=8112464">
+                                    <div class="b-footer-social__icon b-footer-social__icon_linkedin"></div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="b-footer__column b-footer__column_subscribe">
+                    <div class="b-footer__subscribe">
+                        <div class="b-footer-subscribe">
+                            <div class="b-footer-subscribe__title">Подписка</div>
+                            <div class="b-footer-subscribe__description">У нас предусмотрены специальные акции и скидки только для подписчиков! Мы делимся с Вами только свежей и актуальной информацией и новостями.</div>
+                            <div class="b-footer-subscribe__list">
+                                <div class="b-footer-subscribe__item">
+                                    <a class="b-footer-subscribe__link" href="http://topfactor.pro/blog/?group=524">Новости HR-автоматизации</a>
+                                </div>
+                                <div class="b-footer-subscribe__item">
+                                    <a class="b-footer-subscribe__link" href="http://topfactor.pro/calendar-of-events/">Анонсы мероприятий</a>
+                                </div>
+                                <div class="b-footer-subscribe__item">
+                                    <a class="b-footer-subscribe__link" href="http://topfactor.pro/blog/?group=523">Комментарии экспертов</a>
+                                </div>
+                            </div>
+                            <form class="b-footer-subscribe__form" action="/others/podpiska.php" method="post">
+                                <input type="email" name="email" class="b-footer-subscribe__input" placeholder="Ваш E-mail">
+                                <input type="submit" class="b-footer-subscribe__submit" value="Подписаться на новости">
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="b-footer__column b-footer__column_menu">
+                    <div class="b-footer__menu">
+                        <div class="b-footer-menu">
+                            <div class="b-footer-menu__logo">
+                                <div class="b-logo b-logo_footer"></div>
+                            </div>
+                            <div class="b-footer-menu__list">
+                                <div class="b-footer-menu__item">
+                                    <a class="b-footer-menu__link" href="http://topfactor.pro/maps.php">
+                                        Карта сайта
+                                    </a>
+                                </div>
+                                <div class="b-footer-menu__item">
+                                    <a class="b-footer-menu__link" href="http://topfactor.pro/calendar-of-events/">
+                                        Расписание мероприятий
+                                    </a>
+                                </div>
+                                <div class="b-footer-menu__item">
+                                    <a class="b-footer-menu__link" href="/blog/">
+                                        Блог
+                                    </a>
+                                </div>
+                                <div class="b-footer-menu__item">
+                                    <a class="b-footer-menu__link" href="/about/">
+                                        О компании
+                                    </a>
+                                </div>
+                                <div class="b-footer-menu__item">
+                                    <a class="b-footer-menu__link" href="/partners/select-partners/">
+                                        Партнеры
+                                    </a>
+                                </div>
+                                <div class="b-footer-menu__item">
+                                    <a class="b-footer-menu__link" href="http://topfactor.pro/partners/become-a-partner.php">
+                                        Стать партнером
+                                    </a>
+                                </div>
+                                <div class="b-footer-menu__item">
+                                    <a class="b-footer-menu__link" href="/services/services-technology/">
+                                        Консалтинговые услуги
+                                    </a>
+                                </div>
+                                <div class="b-footer-menu__item">
+                                    <a class="b-footer-menu__link" href="/services/services-kpi/">
+                                        Услуги по внедрению
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="b-footer-menu__footer">
+                                <a class="b-footer-menu__button-link" href="http://topfactor.pro/others/demoversion.php?">
+                                    Демо-версия
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-    </section>
-</footer>
-<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-<script src="src/js/business-functions/general.js"></script>
-<script src="src/js/bottom-swiper/bottom-swiper.js"></script>
-<script src="src/js/global/language.js"></script>
-<script src="src/js/global/everywhere.js"></script>
-<script src="src/js/global/details.js"></script>
-<script src="src/js/global/calculator.js"></script>
-</body>
-</html>
+    </div>
+    <div class="b-footer__row b-footer__row_border-top b-footer__row_for-desktop">
+        <div class="wrapper">
+            <div class="b-footer__content">
+                <div class="b-footer__column b-footer__column_privacy" style="text-align: center">
+                    <a class="b-footer__single-link" href="/politika-konfidentsialnosti.php">Политика информационной безопасности</a>
+                    <br><br><a class="b-footer__single-link" href="/politika-konfidentsialnosti-mobilnogo-prilozheniya/">Политика конфиденциальности мобильного приложения</a>
+                </div>
+                <div class="b-footer__column b-footer__column_copyright">
+                    <div class="b-footer__copyright">2023©ТопФактор. Все права защищены.</div>
+                    <a class="b-footer__single-link" href="/oferta.php">Оферта на оказание консультационных услуг</a>
+                </div>
+                <div class="b-footer__column b-footer__column_license">
+                    <a class="b-footer__single-link" href="/litsenzirovanie/">Лицензирование</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="b-footer__row b-footer__row_border-top b-footer__row_for-mobile">
+        <div class="wrapper">
+            <div class="b-footer__content b-footer__content_center">
+                <div class="b-footer__copyright">2023©ТопФактор. Все права защищены.</div>
+                <div class="b-footer__line" style="text-align: center">
+                    <a class="b-footer__single-link" href="/politika-konfidentsialnosti.php">Политика информационной безопасности</a>
+                    <br><br><a class="b-footer__single-link" href="/politika-konfidentsialnosti-mobilnogo-prilozheniya/">Политика конфиденциальности мобильного приложения</a>
+                </div>
+                <div class="b-footer__line">
+                    <a class="b-footer__single-link" href="/litsenzirovanie/">Лицензирование</a>
+                </div>
+                <div class="b-footer__line">
+                    <a class="b-footer__single-link" href="/oferta.php">Оферта на оказание консультационных услуг</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://topfactor.pro/bitrix/templates/topfactor/dist/app.js?v=5"></script>
+
+<script>
+    (function(w, d, s, h, id) {
+        w.roistatProjectId = id; w.roistatHost = h;
+        var p = d.location.protocol == "https:" ? "https://" : "http://";
+        var u = /^.*roistat_visit=[^;]+(.*)?$/.test(d.cookie) ? "/dist/module.js" : "/api/site/1.0/"+id+"/init";
+        var js = d.createElement(s); js.charset="UTF-8"; js.async = 1; js.src = p+h+u; var js2 = d.getElementsByTagName(s)[0]; js2.parentNode.insertBefore(js, js2);
+    })(window, document, 'script', 'cloud.roistat.com', '5e304b5e9ef62031d301556a9b520253');
+</script>
+
+<!-- Facebook Pixel Code -->
+<script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+        n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t,s)}(window, document,'script',
+        'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '730300841073146');
+    fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+               src="https://www.facebook.com/tr?id=730300841073146&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Facebook Pixel Code -->
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-68572792-1"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-68572792-1');
+</script>
+
+<script type="text/javascript">!function(){var t=document.createElement("script");t.type="text/javascript",t.async=!0,t.src="https://vk.com/js/api/openapi.js?168",t.onload=function(){VK.Retargeting.Init("VK-RTRG-494201-gjPSF"),VK.Retargeting.Hit()},document.head.appendChild(t)}();</script><noscript><img src="https://vk.com/rtrg?p=VK-RTRG-494201-gjPSF" style="position:fixed; left:-999px;" alt=""/></noscript>
+
+
+
+
+<div style="background-color: rgb(255, 255, 255); border: 1px solid rgb(204, 204, 204); box-shadow: rgba(0, 0, 0, 0.2) 2px 2px 3px; position: absolute; transition: visibility 0s linear 0.3s, opacity 0.3s linear 0s; opacity: 0; visibility: hidden; z-index: 2000000000; left: 0px; top: -10000px;"><div style="width: 100%; height: 100%; position: fixed; top: 0px; left: 0px; z-index: 2000000000; background-color: rgb(255, 255, 255); opacity: 0.05;"></div><div class="g-recaptcha-bubble-arrow" style="border: 11px solid transparent; width: 0px; height: 0px; position: absolute; pointer-events: none; margin-top: -11px; z-index: 2000000000;"></div><div class="g-recaptcha-bubble-arrow" style="border: 10px solid transparent; width: 0px; height: 0px; position: absolute; pointer-events: none; margin-top: -10px; z-index: 2000000000;"></div><div style="z-index: 2000000000; position: relative;"><iframe title="текущую проверку reCAPTCHA можно пройти в течение ещё двух минут" src="https://www.google.com/recaptcha/api2/bframe?hl=ru&amp;v=6MY32oPwFCn9SUKWt8czDsDw&amp;k=6LcRIxIeAAAAAMZ1uM3Y4B99wK090pP3wi4IyCLx" name="c-kbcm9ls3egx8" frameborder="0" scrolling="no" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox" style="width: 100%; height: 100%;"></iframe></div></div><div id="jivo-iframe-container" style="opacity: 0; visibility: hidden; width: 0px; height: 0px; overflow: hidden;"><iframe src="" role="presentation" allow="autoplay" title="Jivochat" name="jivo_container" id="jivo_container" frameborder="no"></iframe></div><jdiv><jdiv class="globalClass_b4d0"><jdiv style="animation: 300ms cubic-bezier(0.39, 0.24, 0.21, 0.99) 0s 1 normal both running Label_CLOSE_WIDGET_abc3; display: block; z-index: 2147483646; position: fixed;"><jdiv class="label_d9f3 _bottom_da79 __show_f83e notranslate" translate="no" id="jvlabelWrap" style="right: 30px; bottom: 0px; background: linear-gradient(95deg, rgb(56, 61, 69) 20%, rgb(56, 61, 69) 80%);"><jdiv class="hoverl_ccc6"><jdiv class="omnichannel_ed00 bottom_a6c5"><jdiv class="root_bf36 __lgRadius_f0f4" style="box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 17px 1px, rgba(0, 0, 0, 0.16) 0px 0px 4px; width: 280px; transform: translate(0px, calc(-100% - 16px));"><jdiv class="menuWrapper_ea9b desktop_db02"><jdiv class="menu_de13"><a href="https://t.me/Digital4HR_bot" target="_blank" rel="nofollow noopener noreferrer" class="link_d2ea item_f8dd"><jdiv class="desktop_c40a"><jdiv class="icon_d242 telegramIcon_bbd8" style="background-image: url(&quot;data:image/svg+xml,%3Csvg%20width%3D%2224%22%20height%3D%2224%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M0%2012C0%205.373%205.373%200%2012%200s12%205.373%2012%2012-5.373%2012-12%2012S0%2018.627%200%2012Z%22%20fill%3D%22%23fff%22%2F%3E%3Cpath%20fill-rule%3D%22evenodd%22%20clip-rule%3D%22evenodd%22%20d%3D%22M24%2012c0%206.627-5.373%2012-12%2012S0%2018.627%200%2012%205.373%200%2012%200s12%205.373%2012%2012ZM12.43%208.859c-1.167.485-3.5%201.49-6.998%203.014-.568.226-.866.447-.893.663-.046.366.412.51%201.034.705.085.027.173.054.263.084.613.199%201.437.432%201.865.441.389.008.823-.152%201.302-.48%203.268-2.207%204.955-3.322%205.061-3.346.075-.017.179-.039.249.024.07.062.063.18.056.212-.046.193-1.84%201.862-2.77%202.726-.29.269-.495.46-.537.504-.094.097-.19.19-.282.279-.57.548-.996.96.024%201.632.49.323.882.59%201.273.856.427.291.853.581%201.405.943.14.092.274.187.405.28.497.355.944.673%201.496.623.32-.03.652-.331.82-1.23.397-2.126%201.179-6.73%201.36-8.628a2.112%202.112%200%200%200-.02-.472.506.506%200%200%200-.172-.325c-.143-.117-.365-.142-.465-.14-.451.008-1.143.249-4.476%201.635Z%22%20fill%3D%22%2354A6E4%22%2F%3E%3C%2Fsvg%3E&quot;);"></jdiv><jdiv class="title_ddec">Telegram</jdiv></jdiv></a><a href="https://vk.com/im?sel=-64597155" target="_blank" rel="nofollow noopener noreferrer" class="link_d2ea item_f8dd"><jdiv class="desktop_c40a"><jdiv class="icon_d242 vkIcon_e17c" style="background-image: url(&quot;data:image/svg+xml,%3Csvg%20width%3D%2224%22%20height%3D%2224%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M14.243%201.5H8.257C2.797%201.5%201.5%202.797%201.5%208.257v5.986C1.5%2019.703%202.797%2021%208.257%2021h5.986C19.703%2021%2021%2019.703%2021%2014.243V8.257c0-5.46-1.297-6.757-6.757-6.757Zm3.003%2013.913h-1.423c-.537%200-.702-.438-1.648-1.404-.858-.809-1.229-.926-1.433-.926-.283%200-.37.078-.37.487v1.278c0%20.341-.108.555-1.015.555-1.501%200-3.168-.916-4.338-2.603-1.765-2.476-2.243-4.348-2.243-4.719%200-.204.068-.4.478-.4h1.433c.36%200%20.497.157.634.546.702%202.048%201.872%203.803%202.35%203.803.185%200%20.263-.088.263-.536V9.398c-.049-.956-.566-1.044-.566-1.385%200-.175.137-.332.361-.332h2.233c.302%200%20.41.157.41.527v2.818c0%20.302.126.41.223.41.176%200%20.332-.108.654-.44%201.024-1.14%201.755-2.905%201.755-2.905.097-.205.253-.4.633-.4h1.395c.429%200%20.526.224.429.527-.176.829-1.911%203.276-1.892%203.276-.156.244-.214.35%200%20.633.146.205.644.634.975%201.014.605.693%201.073%201.268%201.2%201.668.107.4-.088.604-.498.604Z%22%20fill%3D%22%232787F5%22%2F%3E%3C%2Fsvg%3E&quot;);"></jdiv><jdiv class="title_ddec">Сообщение ВКонтакте<jdiv class="subTitle_bbcf">Обычно отвечаем в течение нескольких минут</jdiv></jdiv></jdiv></a><jdiv class="item_f8dd"><jdiv class="desktop_c40a"><jdiv class="icon_d242" style="background-image: url(&quot;data:image/svg+xml,%3Csvg%20width%3D%2224%22%20height%3D%2224%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill-rule%3D%22evenodd%22%20clip-rule%3D%22evenodd%22%20d%3D%22M12%2017.86c4.97%200%209-3.297%209-7.364s-4.03-7.364-9-7.364-9%203.297-9%207.364c0%202.452%201.465%204.624%203.717%205.962-.677%202.418-1.837%204.41-1.837%204.41s3.568-.864%206.327-3.037c.26.019.526.029.793.029Z%22%20fill%3D%22%2318c139%22%2F%3E%3C%2Fsvg%3E&quot;);"></jdiv><jdiv class="title_ddec">Написать в чат</jdiv></jdiv></jdiv></jdiv></jdiv></jdiv></jdiv></jdiv><jdiv class="text_f283 contentTransitionWrap_d9b3 _noAd_aa7e" style="font-size: 14px; font-family: Arial, Arial; font-style: normal; color: rgb(240, 241, 241);">Напишите нам, мы не боты!</jdiv><jdiv class="leafCont_cf66"><jdiv class="leaf_fe4d _bottom_ce01"><jdiv class="cssLeaf_ea59" style="background-image: url(&quot;data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2232%22%20height%3D%2240%22%20viewBox%3D%220%200%2032%2040%22%3E%0A%20%20%20%20%3Cg%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20fill%3D%22%23383d45%22%20d%3D%22M0%200h9.02L32%2033.196V40H0z%22%2F%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20fill%3D%22%2318c139%22%20d%3D%22M9%200c3.581.05%2023%205.426%2023%2033.08v.03C18.922%2030.751%209%2019.311%209%205.554V0z%22%2F%3E%0A%20%20%20%20%3C%2Fg%3E%0A%3C%2Fsvg%3E%0A&quot;);"></jdiv></jdiv></jdiv></jdiv></jdiv><jdiv id="jivo-player" class="player_bd85"><audio preload="auto" id="jivo-sound-agent_message"><source src="https://code.jivosite.com/sounds/agent_message.mp3" type="audio/mpeg"><source src="https://code.jivosite.com/sounds/agent_message.ogg" type="audio/ogg; codecs=vorbis"><source src="https://code.jivosite.com/sounds/agent_message.wav" type="audio/wav"></audio><audio preload="auto" id="jivo-sound-notification"><source src="https://code.jivosite.com/sounds/notification.mp3" type="audio/mpeg"><source src="https://code.jivosite.com/sounds/notification.ogg" type="audio/ogg; codecs=vorbis"><source src="https://code.jivosite.com/sounds/notification.wav" type="audio/wav"></audio><audio preload="auto" id="jivo-sound-outgoing_message"><source src="https://code.jivosite.com/sounds/outgoing_message.mp3" type="audio/mpeg"><source src="https://code.jivosite.com/sounds/outgoing_message.ogg" type="audio/ogg; codecs=vorbis"><source src="https://code.jivosite.com/sounds/outgoing_message.wav" type="audio/wav"></audio></jdiv><jdiv id="jcont" style="animation: 300ms cubic-bezier(0.39, 0.24, 0.21, 0.99) 0s 1 normal both running WidgetContainer_CLOSE_WIDGET_d5ec; --jright:30px; --jheight:496px; display: block; position: fixed; --jlabelwidth:300px; --jlabelright:30px;"><jdiv class="wrap_ed47" dir="ltr" id="jivo_action"><jdiv class="closeButton_cb37" id="jivo_close_button"><jdiv class="closeIcon_b96b" style="background-image: url(&quot;data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2228%22%20height%3D%2228%22%20viewBox%3D%220%200%2028%2028%22%3E%0A%20%20%20%20%3Cg%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%20transform%3D%22translate(2%202)%22%3E%0A%20%20%20%20%20%20%20%20%3Ccircle%20cx%3D%2212%22%20cy%3D%2212%22%20r%3D%2212%22%20fill%3D%22%23FFF%22%20opacity%3D%221%22%2F%3E%0A%20%20%20%20%20%20%20%20%3Ccircle%20cx%3D%2212%22%20cy%3D%2212%22%20r%3D%2212.75%22%20stroke%3D%22%23222D38%22%20stroke-width%3D%221.5%22%20opacity%3D%221%22%2F%3E%0A%20%20%20%20%20%20%20%20%3Cg%20fill%3D%22%23222D38%22%20opacity%3D%221%22%20transform%3D%22translate(6%206)%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Crect%20width%3D%221.611%22%20height%3D%2213.9%22%20x%3D%225.435%22%20y%3D%22-.941%22%20rx%3D%22.806%22%20transform%3D%22rotate(45%206.24%206.01)%22%2F%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Crect%20width%3D%221.611%22%20height%3D%2213.9%22%20x%3D%225.435%22%20y%3D%22-.941%22%20rx%3D%22.806%22%20transform%3D%22scale(-1%201)%20rotate(45%200%20-9.058)%22%2F%3E%0A%20%20%20%20%20%20%20%20%3C%2Fg%3E%0A%20%20%20%20%3C%2Fg%3E%0A%3C%2Fsvg%3E%0A&quot;);"></jdiv></jdiv></jdiv><jdiv class="contentWrapper_dfb3 notranslate" translate="no"></jdiv></jdiv><jdiv class="pseudoHeight_f77b"></jdiv><jdiv class="jivoMouseTrack_d00f"></jdiv></jdiv></jdiv>
+<script src="src/js/global/calculator.js"></script> <!-- подключить для работы калькулятора -->
+</body></html>
