@@ -37,7 +37,7 @@ numberFields.forEach(field => field.addEventListener('input', e => {
 }));
 
 numberFields.forEach(field => {
-    field.addEventListener('blur', e => {
+    field.addEventListener('keyup', e => {
         const property = e.target.getAttribute('id');
 
         if (property === 'kedo-field' && e.target.value <= 0)
