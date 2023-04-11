@@ -63,10 +63,6 @@
     .calculator-actions {
         font-size: 15px;
     }
-    
-    .question-hint {
-        width: 230px;   
-    }
 }
 
 @media (max-width: 426px) {
