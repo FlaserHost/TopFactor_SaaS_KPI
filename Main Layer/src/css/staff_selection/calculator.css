@@ -111,6 +111,9 @@ input[type="number"] {
 
 .field-description > label {
     font-size: 18px;
+}
+
+.field-area-2 .field-description > label {
     margin-left: 10px;
 }
 
@@ -285,7 +288,7 @@ input[type="number"] {
 
 .rates-mobile-header,
 .rates-prices-mobile-header,
-.rates-price-mobile > span:last-child {
+.rates-price-mobile > span:not(:first-child) {
     font-weight: 100;
 }
 
@@ -294,7 +297,8 @@ input[type="number"] {
 }
 
 .rates-prices-mobile-header,
-.rates-price-mobile {
+.rates-price-mobile,
+.rates-price-mobile > span:not(:first-child) {
     text-align: right;
 }
 
@@ -303,9 +307,8 @@ input[type="number"] {
     font-size: 18px;
 }
 
-.rates-price-mobile > span:last-child {
+.rates-price-mobile > span:not(:first-child) {
     font-size: 14px;
-    text-align: center;
     color: #828282;
     margin-top: 17px;
 }
