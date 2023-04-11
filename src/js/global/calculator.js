@@ -100,6 +100,14 @@ document.getElementById('calculate-btn').addEventListener('click', e => {
     const calculateForm = document.getElementById('new-calculator-form');
     const calculateData = [...new FormData(calculateForm)]; // аналогично как Array.from(new FormData(calculateForm))
 
+    if (calculateData[0][1] === '' || calculateData[1][1] === '')
+    {
+        document.getElementById('kedo-field').value = 1;
+        document.getElementById('vcep-field').value = 1;
+        calculateData[0][1] = 1;
+        calculateData[1][1] = 1;
+    }
+    
     const tmpSumm = calculateData[0][1] > 1
         ? (--calculateData[0][1]) * priceList.additional_recruiter + priceList.one_recruiter
         : calculateData[0][1] * priceList.one_recruiter;
