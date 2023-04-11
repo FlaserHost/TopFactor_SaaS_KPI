@@ -436,7 +436,7 @@ article.fixed-header-bg-color * {
     font-size: 16px;
 }
 
-.fixed-header-bg-color .period {
+.fixed-header-bg-color .block_with_question_mark {
     display: none;
 }
 
@@ -520,4 +520,26 @@ article.fixed-header-bg-color * {
 
 .rates-table-link:hover {
     text-decoration: underline;
+}
+
+.block_with_question_mark {
+    display: inline-block;
+    position: relative;
+    margin-top: 9px;
+}
+
+.block_with_question_mark > .question-mark {
+    position: absolute;
+    left: calc(100% + 5px);
+    top: 0;
+}
+
+.block_with_question_mark > .question-hint {
+    width: 230px;
+    padding: 14px;
+}
+
+.request-rate-flex {
+    display: flex;
+    justify-content: center;
 }
