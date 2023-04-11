@@ -15,7 +15,11 @@ triangles.forEach(triangle => {
         {
             closestInputValue = limit;
         }
-        else if (closestInputValue < 0)
+        else if (closestInputID === 'kedo-field' && closestInputValue <= 0)
+        {
+            closestInputValue = 1;
+        }
+        else if (closestInputValue <= 0)
         {
             closestInputValue = 0;
         }
@@ -34,11 +38,15 @@ numberFields.forEach(field => field.addEventListener('input', e => {
 
 numberFields.forEach(field => {
     field.addEventListener('blur', e => {
-        if (e.target.value === '0')
+        const property = e.target.getAttribute('id');
+
+        if (property === 'kedo-field' && e.target.value <= 0)
         {
-            e.target.value = '';
-            e.target.focus();
-            e.target.blur();
+            e.target.value = 1;
+        }
+        else if (e.target.value < 0)
+        {
+            e.target.value = 0;
         }
     })
 });
