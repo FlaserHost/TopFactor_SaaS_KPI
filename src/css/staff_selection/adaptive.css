@@ -9,24 +9,8 @@
         width: 239px;
     }
 
-    .functions-table tr > td:first-child {
-        min-width: 288px;
-    }
-
-    .functions-table tr > td:not(:first-child) {
-        min-width: 222px;
-    }
-
     .examples-slider-wrapper {
         width: 888px;
-    }
-
-    .field-area {
-        width: 314px;
-    }
-
-    .new-form-btn {
-        padding: 20px 44px;
     }
 
     .footer-page {
@@ -101,57 +85,6 @@
         width: 100%;
     }
 
-    .stages {
-        padding: 80px 10px;
-    }
-
-    .field-area {
-        width: 230px;
-    }
-
-    .fixed-header-bg-color .table-rates th {
-        padding-left: 46px;
-        font-size: 16px;
-        padding-right: 82px;
-    }
-
-    .fixed-header-bg-color .header-row > td {
-        font-size: 18px;
-    }
-
-    .table-rates th {
-        font-size: 20px;
-    }
-
-    .header-row > td {
-        font-size: 21px;
-    }
-
-    .functions-table tr {
-        padding: 25px 0;
-    }
-
-    .functions-table tr > td:first-child {
-        min-width: 206px;
-    }
-
-    .functions-table tr > td:not(:first-child) {
-        min-width: 164px;
-    }
-
-    .absolute-ruble {
-        top: auto;
-        bottom: calc(100% + 4px);
-    }
-
-    .actions-place {
-        justify-content: space-between;
-    }
-
-    .calculator-actions {
-        font-size: 15px;
-    }
-
     .examples-slider-wrapper {
         width: 650px;
     }
@@ -219,30 +152,17 @@
     }
 
     .slide-content > a,
-    .field-area,
-    .new-form-btn-2,
     .footer-row-content > div {
         width: 100%;
     }
 
-    .form-field {
-        padding-right: 35px;
-    }
-
     .order-call-link,
-    .new-form-btn-1,
-    .rates-outer-block,
     .footer-page__demo-version-link,
     .contacts,
-    .showed-link,
-    .rates-outer-block {
+    .showed-link {
         display: none;
     }
 
-    .new-calculator-form__new-form-fields,
-    .new-form-btns,
-    .triangle-btn,
-    .rates-outer-block-mobile,
     .hidden-link {
         display: block;
     }
@@ -342,28 +262,6 @@
     .main-content > footer .footer-row:last-child {
         padding-bottom: 10px;
     }
-
-    .new-form-btn-2:hover {
-        background-color: #0072BC;
-        color: #fff;
-    }
-
-    .new-form-btn-2:active {
-        background-color: transparent;
-        color: #0072BC;
-    }
-
-    .new-form-btns {
-        margin-top: 42px;
-    }
-
-    .question-hint {
-        width: 260px;
-    }
-
-    .rates-outer-block-mobile {
-        margin-top: 20px;
-    }
 }
 
 @media (max-width: 376px) {
@@ -385,14 +283,6 @@
 
     .demo-test-blue-block__text > h2 {
         font-size: 25px;
-    }
-
-    .new-calculator-form {
-        margin-top: 10px;
-    }
-
-    .download-table-mobile {
-        font-size: 17px;
     }
 
     .examples-slider-wrapper {
@@ -436,18 +326,6 @@
 
     .ipad {
         width: 305px;
-    }
-
-    .calculate-btn {
-        font-size: 16px;
-    }
-
-    .download-table-mobile {
-        font-size: 14px;
-    }
-
-    .field-description > label {
-        font-size: 14px;
     }
 
     .examples-slider-wrapper {
