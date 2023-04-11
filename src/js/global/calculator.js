@@ -1,13 +1,16 @@
 // треугольники регулировщики
 const triangles = Array.from(document.querySelectorAll('.triangle-btn'));
 
+const leftFieldMax = 30;
+const rightFieldMax = 100;
+
 triangles.forEach(triangle => {
     triangle.addEventListener('click', e => {
         const currentProperty = e.target.getAttribute('data-property');
         const closestInput = e.target.closest('.input-place').querySelector('.form-field');
         const closestInputID = closestInput.getAttribute('id');
         let closestInputValue = +closestInput.value;
-        let limit = closestInputID === 'kedo-field' ? 30000 : 100;
+        let limit = closestInputID === 'kedo-field' ? leftFieldMax : rightFieldMax;
 
         currentProperty === 'up' ? closestInputValue++ : closestInputValue--;
 
@@ -32,7 +35,7 @@ triangles.forEach(triangle => {
 const numberFields = Array.from(document.querySelectorAll('.new-calculator-form input.form-field'));
 numberFields.forEach(field => field.addEventListener('input', e => {
     const thisField = e.target.getAttribute('id');
-    const limit = thisField === 'kedo-field' ? 30000 : 100;
+    const limit = thisField === 'kedo-field' ? leftFieldMax : rightFieldMax;
     e.target.value = e.target.value <= limit ? +e.target.value : limit;
 }));
 
@@ -100,18 +103,6 @@ document.getElementById('calculate-btn').addEventListener('click', e => {
     const calculateForm = document.getElementById('new-calculator-form');
     const calculateData = [...new FormData(calculateForm)]; // аналогично как Array.from(new FormData(calculateForm))
 
-    if (calculateData[0][1] === '')
-    {
-        document.getElementById('kedo-field').value = 1;
-        calculateData[0][1] = 1;
-    }
-    
-    if (calculateData[1][1] === '')
-    { 
-        document.getElementById('vcep-field').value = 1;
-        calculateData[1][1] = 1;
-    }
-    
     const tmpSumm = calculateData[0][1] > 1
         ? (--calculateData[0][1]) * priceList.additional_recruiter + priceList.one_recruiter
         : calculateData[0][1] * priceList.one_recruiter;
@@ -119,7 +110,7 @@ document.getElementById('calculate-btn').addEventListener('click', e => {
     const fastStart = tmpSumm + calculateData[1][1] * priceList.additional_connection;
 
     const fastStartFormatted = fastStart.toLocaleString();
-    const extendedFormatted = (fastStart + priceList.allowance).toLocaleString();
+    const extendedFormatted = (fastStart + priceList.allowance * (++calculateData[0][1])).toLocaleString();
 
     Array.from(document.querySelectorAll('.fast-start')).forEach(item => item.innerHTML = `${fastStartFormatted} руб`);
     Array.from(document.querySelectorAll('.extended')).forEach(item => item.innerHTML = `${extendedFormatted} руб`);
