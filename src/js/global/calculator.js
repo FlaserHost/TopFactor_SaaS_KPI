@@ -1,12 +1,12 @@
 // треугольники регулировщики
-const triangles = Array.from(document.querySelectorAll('.triangle-btn'));
+const triangles = document.querySelectorAll('.triangle-btn');
 
-const leftFieldMax = 30;
-const rightFieldMax = 100;
+const leftFieldMax = 3000;
+const rightFieldMax = 5000;
 
 triangles.forEach(triangle => {
     triangle.addEventListener('click', e => {
-        const currentProperty = e.target.getAttribute('data-property');
+        const currentProperty = e.target.dataset.property;
         const closestInput = e.target.closest('.input-place').querySelector('.form-field');
         const closestInputID = closestInput.getAttribute('id');
         let closestInputValue = +closestInput.value;
@@ -32,27 +32,12 @@ triangles.forEach(triangle => {
 });
 
 // ограничение числовых полей
-const numberFields = Array.from(document.querySelectorAll('.new-calculator-form input.form-field'));
+const numberFields = document.querySelectorAll('.new-calculator-form input.form-field');
 numberFields.forEach(field => field.addEventListener('input', e => {
     const thisField = e.target.getAttribute('id');
     const limit = thisField === 'kedo-field' ? leftFieldMax : rightFieldMax;
     e.target.value = e.target.value <= limit ? +e.target.value : limit;
 }));
-
-numberFields.forEach(field => {
-    field.addEventListener('keyup', e => {
-        const property = e.target.getAttribute('id');
-
-        if (property === 'kedo-field' && e.target.value <= 0)
-        {
-            e.target.value = 1;
-        }
-        else if (e.target.value < 0)
-        {
-            e.target.value = 0;
-        }
-    })
-});
 
 // события прокрутки
 const rates = document.querySelector('.rates-outer-block').offsetTop * -1;
@@ -91,11 +76,14 @@ document.getElementById('show-functionality-btn').addEventListener('click', btn 
 });
 
 // логика рассчета
+const middle = 1700;
+
 const priceList = {
-    one_recruiter: 4000,
-    additional_recruiter: 1900,
-    additional_connection: 950,
-    allowance: 2000
+    5: 131100,
+    10: 176316,
+    20: 296196,
+    50: 568836,
+    100: 863460
 };
 
 document.getElementById('calculate-btn').addEventListener('click', e => {
@@ -103,15 +91,20 @@ document.getElementById('calculate-btn').addEventListener('click', e => {
     const calculateForm = document.getElementById('new-calculator-form');
     const calculateData = [...new FormData(calculateForm)]; // аналогично как Array.from(new FormData(calculateForm))
 
-    const tmpSumm = calculateData[0][1] > 1
-        ? (--calculateData[0][1]) * priceList.additional_recruiter + priceList.one_recruiter
-        : calculateData[0][1] * priceList.one_recruiter;
+    // calculateData[0][1] - левое поле
+    // calculateData[1][1] - правое поле
 
-    const fastStart = tmpSumm + calculateData[1][1] * priceList.additional_connection;
+    const leftYear = calculateData[0][1] * middle;
+    const leftMonth = leftYear / 12;
 
-    const fastStartFormatted = fastStart.toLocaleString();
-    const extendedFormatted = (fastStart + priceList.allowance * (++calculateData[0][1])).toLocaleString();
+    const rightYear = priceList[calculateData[1][1]];
+    const rightMonth = rightYear / 12;
 
-    Array.from(document.querySelectorAll('.fast-start')).forEach(item => item.innerHTML = `${fastStartFormatted} руб`);
-    Array.from(document.querySelectorAll('.extended')).forEach(item => item.innerHTML = `${extendedFormatted} руб`);
+    const fullYearSumm = leftYear + rightYear;
+    const fullMonthSumm = leftMonth + rightMonth;
+
+    const fastStartFormatted = Math.round(fullMonthSumm).toLocaleString();
+
+    document.querySelectorAll('.fast-start').forEach(item => item.innerHTML = `${fastStartFormatted} руб`);
+    //document.querySelectorAll('.extended').forEach(item => item.innerHTML = `${extendedFormatted} руб`);*/
 });
